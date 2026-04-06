@@ -16,10 +16,11 @@ const testimonials = [
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="section-padding bg-background">
+    <section id="experience" className="section-padding bg-background relative">
+      <div className="section-divider absolute top-0 left-0 right-0" />
       <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-14"
@@ -33,21 +34,22 @@ const ExperienceSection = () => {
           </p>
         </motion.div>
 
-        {/* Process steps */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {steps.map((step, i) => (
             <motion.div
               key={step.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="relative card-elevated text-center group"
+              className="relative card-glass text-center group"
             >
-              <div className="text-xs font-bold text-primary/40 font-heading absolute top-4 right-4">
+              <div className="text-xs font-bold font-heading absolute top-4 right-4"
+                style={{ color: "hsl(var(--primary) / 0.3)" }}>
                 0{i + 1}
               </div>
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4 transition-all duration-300 group-hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)]"
+                style={{ background: "hsl(var(--primary) / 0.1)" }}>
                 <step.icon className="w-6 h-6 text-primary" />
               </div>
               <h3 className="font-heading text-base font-bold text-foreground mb-2">{step.title}</h3>
@@ -56,7 +58,6 @@ const ExperienceSection = () => {
           ))}
         </div>
 
-        {/* Testimonials */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -70,11 +71,11 @@ const ExperienceSection = () => {
           {testimonials.map((t, i) => (
             <motion.div
               key={t.name}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="card-elevated"
+              className="card-glass"
             >
               <div className="flex gap-0.5 mb-3">
                 {Array.from({ length: t.rating }).map((_, j) => (

@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useRef } from "react";
 
 import studio1v1 from "@/assets/studio1-v1.png";
 import studio1v2 from "@/assets/studio1-v2.png";
@@ -30,43 +30,37 @@ export interface StudioData {
 
 const studios: StudioData[] = [
   {
-    id: 1,
-    name: "Studio 1",
+    id: 1, name: "Studio 1",
     variant1: { name: "The Leadership Lounge", ideal: "Executive interviews & leadership talks", image: studio1v1 },
     variant2: { name: "The Think Tank", ideal: "Panel discussions & brainstorming sessions", image: studio1v2 },
     features: ["Cinematic lighting", "Dual camera setup", "Soundproof walls", "Premium seating"],
   },
   {
-    id: 2,
-    name: "Studio 2",
+    id: 2, name: "Studio 2",
     variant1: { name: "The Insight Exchange", ideal: "Deep-dive interviews & expert panels", image: studio2v1 },
     variant2: { name: "The Vision Room", ideal: "Creative sessions & brand storytelling", image: studio2v2 },
     features: ["Multi-camera recording", "LED accent lighting", "Acoustic treatment", "Teleprompter ready"],
   },
   {
-    id: 3,
-    name: "Studio 3",
+    id: 3, name: "Studio 3",
     variant1: { name: "The Insight Room", ideal: "Solo podcasts & intimate conversations", image: studio3v1 },
     variant2: { name: "The Quadcast Room", ideal: "Group podcasts & roundtable discussions", image: studio3v2 },
     features: ["4-person setup", "Professional mics", "Mood lighting", "Content-ready backdrop"],
   },
   {
-    id: 4,
-    name: "Studio 4",
+    id: 4, name: "Studio 4",
     variant1: { name: "The Fourth Wall", ideal: "Cinematic interviews & storytelling", image: studio4v1 },
     variant2: { name: "The Mic Lounge", ideal: "Casual podcast conversations & guest features", image: studio4v2 },
     features: ["Blue-tone ambiance", "Designer furniture", "Professional mics", "Cozy setting"],
   },
   {
-    id: 5,
-    name: "Studio 5",
+    id: 5, name: "Studio 5",
     variant1: { name: "The Conversa", ideal: "One-on-one deep conversations", image: studio5v1 },
     variant2: { name: "The Talk Corner", ideal: "Vibrant discussions & debate formats", image: studio5v2 },
     features: ["Elegant seating", "Warm lighting", "Acoustic panels", "Botanical accents"],
   },
   {
-    id: 6,
-    name: "Studio 6",
+    id: 6, name: "Studio 6",
     variant1: { name: "Thinkcast Studio", ideal: "Thought leadership & executive recording", image: studio6v1 },
     variant2: { name: "The Insight Table", ideal: "Expert roundtables & knowledge sharing", image: studio6v2 },
     features: ["Wood-paneled backdrop", "Leather seating", "Dual mic setup", "Premium aesthetics"],
@@ -79,65 +73,91 @@ const StudioCard = ({ studio, index }: { studio: StudioData; index: number }) =>
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.3, delay: index * 0.04 }}
-      className="rounded-2xl border border-border overflow-hidden bg-card"
+      transition={{ duration: 0.4, delay: index * 0.06 }}
+      className="card-glass group overflow-hidden"
     >
-      <div className="aspect-[16/10] overflow-hidden">
-        <img
-          src={current.image}
-          alt={current.name}
-          className="w-full h-full object-cover transition-all duration-200 hover:scale-105"
-        />
+      <div className="aspect-[16/10] overflow-hidden rounded-xl mb-4 relative">
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={activeVariant}
+            src={current.image}
+            alt={current.name}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            loading="lazy"
+          />
+        </AnimatePresence>
+        <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
 
-      <div className="p-5">
-        <p className="text-xs uppercase tracking-widest text-primary font-semibold mb-3 font-body">
-          {studio.name}
-        </p>
+      <p className="text-xs uppercase tracking-widest text-primary font-semibold mb-3 font-body neon-glow">
+        {studio.name}
+      </p>
 
-        <div className="flex gap-2 mb-4">
-          {[1, 2].map((v) => (
-            <button
-              key={v}
-              onClick={() => setActiveVariant(v as 1 | 2)}
-              className={`px-4 py-1.5 rounded-lg text-sm font-body font-medium transition-all duration-200 ${
-                activeVariant === v
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-muted text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {v === 1 ? studio.variant1.name : studio.variant2.name}
-            </button>
-          ))}
-        </div>
-
-        <p className="text-sm text-muted-foreground font-body">
-          Ideal for: {current.ideal}
-        </p>
-
-        <a
-          href="#booking"
-          className="inline-block mt-4 text-xs uppercase tracking-wider text-primary font-body font-semibold hover:translate-x-1 transition-transform duration-300"
-        >
-          Book This Studio →
-        </a>
+      <div className="flex gap-2 mb-4">
+        {[1, 2].map((v) => (
+          <button
+            key={v}
+            onClick={() => setActiveVariant(v as 1 | 2)}
+            className={`px-4 py-1.5 rounded-lg text-xs font-body font-medium transition-all duration-200 ${
+              activeVariant === v
+                ? "text-primary-foreground shadow-[0_0_15px_hsl(var(--primary)/0.3)]"
+                : "text-muted-foreground hover:text-foreground"
+            }`}
+            style={{
+              background: activeVariant === v
+                ? "linear-gradient(135deg, hsl(var(--primary)), hsl(var(--brand-blue)))"
+                : "hsl(var(--muted) / 0.5)",
+            }}
+          >
+            {v === 1 ? studio.variant1.name : studio.variant2.name}
+          </button>
+        ))}
       </div>
+
+      <p className="text-sm text-muted-foreground font-body mb-4">
+        Ideal for: {current.ideal}
+      </p>
+
+      <div className="flex flex-wrap gap-2 mb-4">
+        {studio.features.map((f) => (
+          <span key={f} className="text-[10px] px-2.5 py-1 rounded-full font-body text-muted-foreground"
+            style={{ background: "hsl(var(--muted) / 0.5)", border: "1px solid hsl(var(--border) / 0.4)" }}>
+            {f}
+          </span>
+        ))}
+      </div>
+
+      <a
+        href="#booking"
+        className="inline-block text-xs uppercase tracking-wider text-primary font-body font-semibold hover:translate-x-1 transition-transform duration-300"
+      >
+        Book This Studio →
+      </a>
     </motion.div>
   );
 };
 
 const StudiosSection = () => {
+  const [activeStudio, setActiveStudio] = useState<number | null>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
   return (
-    <section id="studios" className="section-padding bg-background">
-      <div className="max-w-7xl mx-auto">
+    <section id="studios" className="section-padding bg-background relative">
+      <div className="section-divider absolute top-0 left-0 right-0" />
+
+      <div className="max-w-7xl mx-auto" ref={sectionRef}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-14"
+          className="text-center mb-8"
         >
           <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3 font-body">Our Spaces</p>
           <h2 className="font-heading text-3xl md:text-5xl font-extrabold text-foreground mb-4">
@@ -148,9 +168,40 @@ const StudiosSection = () => {
           </p>
         </motion.div>
 
+        {/* Sticky studio tabs */}
+        <div className="sticky top-16 z-30 py-3 mb-8 -mx-6 px-6"
+          style={{
+            background: "hsla(220, 20%, 6%, 0.85)",
+            backdropFilter: "blur(16px)",
+          }}>
+          <div className="flex gap-2 justify-center flex-wrap">
+            {studios.map((s) => (
+              <a
+                key={s.id}
+                href={`#studio-${s.id}`}
+                className={`px-4 py-2 rounded-lg text-xs font-body font-medium transition-all duration-200 ${
+                  activeStudio === s.id
+                    ? "text-primary-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+                style={{
+                  background: activeStudio === s.id
+                    ? "linear-gradient(135deg, hsl(var(--primary)), hsl(var(--brand-blue)))"
+                    : "hsl(var(--muted) / 0.4)",
+                }}
+                onClick={() => setActiveStudio(s.id)}
+              >
+                {s.name}
+              </a>
+            ))}
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {studios.map((studio, i) => (
-            <StudioCard key={studio.id} studio={studio} index={i} />
+            <div key={studio.id} id={`studio-${studio.id}`}>
+              <StudioCard studio={studio} index={i} />
+            </div>
           ))}
         </div>
       </div>
