@@ -11,41 +11,38 @@ const services = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="section-padding relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-72 h-72 rounded-full bg-coral/5 blur-[100px]" />
-
+    <section id="about" className="section-padding bg-muted/50">
       <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
-          <p className="text-sm uppercase tracking-[0.3em] text-coral mb-4 font-body">About Us</p>
-          <h2 className="font-display text-4xl md:text-6xl lg:text-7xl mb-6">
-            Full Stack <span className="gradient-text-coral">Podcast</span> Production
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3 font-body">About Us</p>
+          <h2 className="font-heading text-3xl md:text-5xl font-extrabold text-foreground mb-4">
+            Full Stack Podcast Production
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg font-body font-light">
+          <p className="text-muted-foreground max-w-2xl mx-auto font-body font-light">
             Looking for a full-stack, result-driven podcast setup? Welcome to Banter Studio — we handle everything so you can focus on your fame.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
           {services.map((s, i) => (
             <motion.div
               key={s.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="glass-card-hover p-6 text-center group"
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              className="card-elevated text-center"
             >
-              <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-coral/10 flex items-center justify-center group-hover:bg-coral/20 transition-colors duration-300">
-                <s.icon className="w-6 h-6 text-coral" />
+              <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-primary/10 flex items-center justify-center">
+                <s.icon className="w-5 h-5 text-primary" />
               </div>
-              <h3 className="font-display text-xl mb-2 tracking-wide">{s.title}</h3>
-              <p className="text-muted-foreground text-sm font-body">{s.desc}</p>
+              <h3 className="font-heading text-base font-bold mb-2 text-foreground">{s.title}</h3>
+              <p className="text-muted-foreground text-sm font-body leading-relaxed">{s.desc}</p>
             </motion.div>
           ))}
         </div>

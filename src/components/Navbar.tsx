@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/banter-logo-dark.png";
 
 const navLinks = [
   { label: "Home", href: "#hero" },
@@ -25,64 +26,52 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
-        scrolled ? "glass-card py-3" : "py-6"
+      transition={{ duration: 0.6 }}
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        scrolled ? "bg-background/90 backdrop-blur-md shadow-sm py-3" : "bg-background py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <a href="#hero" className="font-display text-2xl md:text-3xl tracking-widest">
-          BANTER<span className="gradient-text-coral">STUDIO</span>
+        <a href="#hero">
+          <img src={logo} alt="Banter Marketo" className="h-10 md:h-12" />
         </a>
 
-        {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-sm uppercase tracking-wider text-muted-foreground hover:text-foreground transition-colors duration-300"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               {link.label}
             </a>
           ))}
-          <a href="#booking" className="btn-glow-coral text-xs !px-6 !py-3">
+          <a href="#booking" className="btn-primary text-xs !px-6 !py-2.5">
             Book Now
           </a>
         </div>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-foreground"
-        >
+        <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden text-foreground">
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass-card mt-2 mx-4 rounded-xl overflow-hidden"
+            className="md:hidden bg-background border-t border-border mx-4 mt-2 rounded-xl overflow-hidden shadow-lg"
           >
             <div className="flex flex-col p-6 gap-4">
               {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="text-sm uppercase tracking-wider text-muted-foreground hover:text-foreground transition-colors"
-                >
+                <a key={link.label} href={link.href} onClick={() => setMobileOpen(false)}
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
                   {link.label}
                 </a>
               ))}
-              <a href="#booking" className="btn-glow-coral text-xs text-center !py-3 mt-2">
-                Book Now
-              </a>
+              <a href="#booking" className="btn-primary text-xs text-center !py-2.5 mt-2">Book Now</a>
             </div>
           </motion.div>
         )}

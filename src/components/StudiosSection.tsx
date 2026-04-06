@@ -74,19 +74,17 @@ const StudiosSection = () => {
   const [selected, setSelected] = useState<StudioData | null>(null);
 
   return (
-    <section id="studios" className="section-padding relative">
-      <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-blue/5 blur-[120px]" />
-
+    <section id="studios" className="section-padding bg-background">
       <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
-          <p className="text-sm uppercase tracking-[0.3em] text-coral mb-4 font-body">Our Spaces</p>
-          <h2 className="font-display text-4xl md:text-6xl lg:text-7xl mb-4">
-            Studio <span className="gradient-text-coral">Showcase</span>
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3 font-body">Our Spaces</p>
+          <h2 className="font-heading text-3xl md:text-5xl font-extrabold text-foreground mb-4">
+            Studio Showcase
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto font-body font-light">
             Six unique studios, each with two distinct variants tailored for different content styles.
@@ -97,32 +95,27 @@ const StudiosSection = () => {
           {studios.map((studio, i) => (
             <motion.div
               key={studio.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
               onClick={() => setSelected(studio)}
-              className="group cursor-pointer relative rounded-xl overflow-hidden aspect-[4/3]"
+              className="group cursor-pointer relative rounded-2xl overflow-hidden aspect-[4/3] border border-border"
             >
               <img
                 src={studio.overviewImg}
                 alt={studio.name}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-500" />
-              <div className="absolute inset-0 border border-transparent group-hover:border-coral/30 rounded-xl transition-colors duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
 
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <p className="text-xs uppercase tracking-[0.2em] text-coral mb-1 font-body">{studio.name}</p>
-                <h3 className="font-display text-2xl tracking-wide mb-1">{studio.variant1.name}</h3>
-                <p className="text-muted-foreground text-sm font-body">{studio.variant2.name}</p>
-                <motion.span
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  className="inline-block mt-3 text-xs uppercase tracking-wider text-coral font-body font-semibold group-hover:translate-x-2 transition-transform duration-300"
-                >
+              <div className="absolute bottom-0 left-0 right-0 p-5">
+                <p className="text-xs uppercase tracking-widest text-primary font-semibold mb-1 font-body">{studio.name}</p>
+                <h3 className="font-heading text-xl font-bold text-primary-foreground mb-0.5">{studio.variant1.name}</h3>
+                <p className="text-primary-foreground/70 text-sm font-body">{studio.variant2.name}</p>
+                <span className="inline-block mt-2 text-xs uppercase tracking-wider text-primary font-body font-semibold group-hover:translate-x-1 transition-transform duration-300">
                   View Setup →
-                </motion.span>
+                </span>
               </div>
             </motion.div>
           ))}

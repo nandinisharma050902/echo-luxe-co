@@ -1,46 +1,41 @@
 import { motion } from "framer-motion";
-import heroImg from "@/assets/cover.jpg";
+import { Mic2, Headphones, Radio } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <img src={heroImg} alt="Banter Studio" className="w-full h-full object-cover opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background" />
-        <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
-      </div>
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+      {/* Subtle background accent */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-[0.06]"
+        style={{ background: "radial-gradient(circle, hsl(352, 98%, 63%), transparent 70%)" }} />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-[0.04]"
+        style={{ background: "radial-gradient(circle, hsl(211, 100%, 58%), transparent 70%)" }} />
 
-      {/* Glow orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-coral/10 blur-[120px] animate-pulse-glow" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-blue/10 blur-[100px] animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
-
-      {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-5xl">
-        <motion.p
+      <div className="relative z-10 text-center px-6 max-w-4xl pt-20">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-sm md:text-base uppercase tracking-[0.3em] text-coral mb-6 font-body"
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted text-sm text-muted-foreground mb-8 font-body"
         >
+          <Mic2 className="w-4 h-4 text-primary" />
           Premium Podcast & Content Studio
-        </motion.p>
+        </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="font-display text-5xl md:text-7xl lg:text-8xl xl:text-9xl leading-none tracking-wide mb-6"
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="font-heading text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-6 text-foreground"
         >
           Build Your Voice.
           <br />
-          <span className="gradient-text-coral">Amplify Your Story.</span>
+          <span className="text-primary">Amplify Your Story.</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
           className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10 font-body font-light"
         >
           Premium Podcast Studios for Creators, Brands & Visionaries
@@ -49,29 +44,37 @@ const HeroSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <a href="#booking" className="btn-glow-coral">Book Studio</a>
-          <a href="#studios" className="btn-glow-blue">Explore Setups</a>
+          <a href="#booking" className="btn-primary">Book Studio</a>
+          <a href="#studios" className="btn-outline">Explore Setups</a>
+        </motion.div>
+
+        {/* Stats row */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1 }}
+          className="flex flex-wrap justify-center gap-8 md:gap-16 mt-16 pt-8 border-t border-border"
+        >
+          {[
+            { icon: Mic2, stat: "6", label: "Unique Studios" },
+            { icon: Headphones, stat: "12", label: "Setup Variants" },
+            { icon: Radio, stat: "500+", label: "Episodes Recorded" },
+          ].map((item) => (
+            <div key={item.label} className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center">
+                <item.icon className="w-5 h-5 text-primary" />
+              </div>
+              <div className="text-left">
+                <p className="font-heading text-2xl font-bold text-foreground">{item.stat}</p>
+                <p className="text-xs text-muted-foreground font-body">{item.label}</p>
+              </div>
+            </div>
+          ))}
         </motion.div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-          className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center pt-2"
-        >
-          <div className="w-1.5 h-1.5 rounded-full bg-coral" />
-        </motion.div>
-      </motion.div>
     </section>
   );
 };
