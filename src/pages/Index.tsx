@@ -6,6 +6,7 @@ import FeaturesSection from "@/components/FeaturesSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import BookingSection from "@/components/BookingSection";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
   return (
@@ -21,6 +22,9 @@ const Index = () => {
       <ExperienceSection />
       <BookingSection />
       <Footer />
+
+      {/* WhatsApp floating button */}
+      <WhatsAppButton />
 
       {/* Mobile sticky CTA */}
       <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden p-3"
