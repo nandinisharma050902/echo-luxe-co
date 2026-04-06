@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Mic2, Headphones, Radio } from "lucide-react";
+import logo from "@/assets/banter-logo.png";
 
 const HeroSection = () => {
   return (
@@ -11,6 +12,16 @@ const HeroSection = () => {
         style={{ background: "radial-gradient(circle, hsl(211, 100%, 58%), transparent 70%)" }} />
 
       <div className="relative z-10 text-center px-6 max-w-4xl pt-20">
+        {/* Logo blended into hero */}
+        <motion.img
+          src={logo}
+          alt="Banter Marketo"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="h-20 md:h-28 mx-auto mb-8 object-contain"
+        />
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
