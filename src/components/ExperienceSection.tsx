@@ -1,15 +1,12 @@
 import { motion } from "framer-motion";
-import { useRef } from "react";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { Star, CalendarCheck, Film, Sparkles, Send } from "lucide-react";
 
-import img1 from "@/assets/studio1-variants.jpg";
-import img2 from "@/assets/studio2-variants.jpg";
-import img3 from "@/assets/studio3-variants.jpg";
-import img4 from "@/assets/studio4-variants.jpg";
-import img5 from "@/assets/studio5-variants.jpg";
-import img6 from "@/assets/studio6-variants.jpg";
-
-const studioImages = [img1, img2, img3, img4, img5, img6];
+const steps = [
+  { icon: CalendarCheck, title: "Book Your Session", desc: "Pick your studio, variant, and time slot in seconds." },
+  { icon: Film, title: "Show Up & Record", desc: "Walk into a fully prepped, cinematic-grade setup." },
+  { icon: Sparkles, title: "Post-Production", desc: "Our team handles editing, color grading & sound mixing." },
+  { icon: Send, title: "Publish & Distribute", desc: "Get your content delivered, ready to publish anywhere." },
+];
 
 const testimonials = [
   { name: "Arjun Mehta", role: "Tech Podcaster", text: "Banter Studio completely elevated our production quality. The lighting and sound are top-notch!", rating: 5 },
@@ -18,14 +15,6 @@ const testimonials = [
 ];
 
 const ExperienceSection = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  const scroll = (dir: "left" | "right") => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: dir === "left" ? -350 : 350, behavior: "smooth" });
-    }
-  };
-
   return (
     <section id="experience" className="section-padding bg-background">
       <div className="max-w-7xl mx-auto">
@@ -33,39 +22,38 @@ const ExperienceSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-14"
         >
           <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3 font-body">The Experience</p>
           <h2 className="font-heading text-3xl md:text-5xl font-extrabold text-foreground mb-4">
-            Behind The Scenes
+            How It Works
           </h2>
+          <p className="text-muted-foreground max-w-xl mx-auto font-body font-light">
+            From booking to publishing — a seamless four-step journey.
+          </p>
         </motion.div>
 
-        {/* Horizontal scroll gallery */}
-        <div className="relative mb-20">
-          <button onClick={() => scroll("left")}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors">
-            <ChevronLeft className="w-5 h-5 text-foreground" />
-          </button>
-          <button onClick={() => scroll("right")}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors">
-            <ChevronRight className="w-5 h-5 text-foreground" />
-          </button>
-
-          <div ref={scrollRef} className="flex gap-4 overflow-x-auto px-8 snap-x snap-mandatory" style={{ scrollbarWidth: "none" }}>
-            {studioImages.map((img, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="flex-shrink-0 w-80 md:w-96 aspect-video rounded-2xl overflow-hidden border border-border snap-center"
-              >
-                <img src={img} alt={`Studio ${i + 1}`} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-              </motion.div>
-            ))}
-          </div>
+        {/* Process steps */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+          {steps.map((step, i) => (
+            <motion.div
+              key={step.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="relative card-elevated text-center group"
+            >
+              <div className="text-xs font-bold text-primary/40 font-heading absolute top-4 right-4">
+                0{i + 1}
+              </div>
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <step.icon className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="font-heading text-base font-bold text-foreground mb-2">{step.title}</h3>
+              <p className="text-sm text-muted-foreground font-body">{step.desc}</p>
+            </motion.div>
+          ))}
         </div>
 
         {/* Testimonials */}
