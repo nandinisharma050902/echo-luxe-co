@@ -4,33 +4,53 @@ import { Mic2, Headphones, Radio } from "lucide-react";
 const HeroSection = () => {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      {/* Subtle background accent */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-[0.06]"
-        style={{ background: "radial-gradient(circle, hsl(352, 98%, 63%), transparent 70%)" }} />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-[0.04]"
-        style={{ background: "radial-gradient(circle, hsl(211, 100%, 58%), transparent 70%)" }} />
+      {/* Animated gradient orbs */}
+      <motion.div
+        className="absolute top-[-200px] right-[-200px] w-[700px] h-[700px] rounded-full opacity-[0.12]"
+        style={{ background: "radial-gradient(circle, hsl(352, 98%, 63%), transparent 60%)" }}
+        animate={{ scale: [1, 1.2, 1], x: [0, 30, 0], y: [0, -20, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute bottom-[-150px] left-[-150px] w-[600px] h-[600px] rounded-full opacity-[0.08]"
+        style={{ background: "radial-gradient(circle, hsl(211, 100%, 58%), transparent 60%)" }}
+        animate={{ scale: [1, 1.15, 1], x: [0, -20, 0], y: [0, 30, 0] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute top-[40%] left-[60%] w-[300px] h-[300px] rounded-full opacity-[0.05]"
+        style={{ background: "radial-gradient(circle, hsl(280, 80%, 60%), transparent 60%)" }}
+        animate={{ scale: [1, 1.3, 1] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+      />
 
-      <div className="relative z-10 text-center px-6 max-w-4xl pt-20">
-
+      <div className="relative z-10 text-center px-6 max-w-4xl pt-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted text-sm text-muted-foreground mb-8 font-body"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm mb-8 font-body gradient-border"
+          style={{
+            background: "hsl(var(--muted) / 0.5)",
+            backdropFilter: "blur(8px)",
+            color: "hsl(var(--muted-foreground))",
+          }}
         >
           <Mic2 className="w-4 h-4 text-primary" />
           Premium Podcast & Content Studio
         </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="font-heading text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight mb-6 text-foreground"
         >
           Build Your Voice.
           <br />
-          <span className="text-primary">Amplify Your Story.</span>
+          <span className="neon-glow" style={{ color: "hsl(var(--primary))" }}>
+            Amplify Your Story.
+          </span>
         </motion.h1>
 
         <motion.p
@@ -57,15 +77,17 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1 }}
-          className="flex flex-wrap justify-center gap-8 md:gap-16 mt-16 pt-8 border-t border-border"
+          className="flex flex-wrap justify-center gap-8 md:gap-16 mt-16 pt-8"
+          style={{ borderTop: "1px solid hsl(var(--border) / 0.5)" }}
         >
           {[
             { icon: Mic2, stat: "6", label: "Unique Studios" },
             { icon: Headphones, stat: "12", label: "Setup Variants" },
             { icon: Radio, stat: "500+", label: "Episodes Recorded" },
           ].map((item) => (
-            <div key={item.label} className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center">
+            <div key={item.label} className="flex items-center gap-3 group">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_0_15px_hsl(var(--primary)/0.3)]"
+                style={{ background: "hsl(var(--muted) / 0.6)" }}>
                 <item.icon className="w-5 h-5 text-primary" />
               </div>
               <div className="text-left">
