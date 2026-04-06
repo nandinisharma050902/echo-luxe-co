@@ -34,8 +34,8 @@ const Navbar = () => {
       }`}
       style={{
         background: scrolled
-          ? "hsla(220, 20%, 6%, 0.85)"
-          : "hsla(220, 20%, 6%, 0.4)",
+          ? "hsla(0, 0%, 100%, 0.85)"
+          : "hsla(0, 0%, 100%, 0.4)",
         backdropFilter: "blur(20px)",
         borderBottom: scrolled ? "1px solid hsla(220, 14%, 16%, 0.6)" : "none",
       }}
