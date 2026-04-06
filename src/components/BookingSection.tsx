@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Calendar, Clock, Film, ImageIcon, Scissors } from "lucide-react";
 
-const studios = [
+const studioOptions = [
   "Studio 1 – Leadership Lounge / Think Tank",
   "Studio 2 – Insight Exchange / Vision Room",
   "Studio 3 – Insight Room / Quadcast Room",
@@ -32,132 +32,81 @@ const BookingSection = () => {
     alert("Booking submitted! We'll get back to you shortly.");
   };
 
-  return (
-    <section id="booking" className="section-padding relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-coral/5 blur-[120px]" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-blue/5 blur-[100px]" />
+  const inputClass = "w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all placeholder:text-muted-foreground";
 
-      <div className="max-w-4xl mx-auto">
+  return (
+    <section id="booking" className="section-padding bg-muted/50">
+      <div className="max-w-3xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-10"
         >
-          <p className="text-sm uppercase tracking-[0.3em] text-coral mb-4 font-body">Reserve Your Spot</p>
-          <h2 className="font-display text-4xl md:text-6xl lg:text-7xl mb-4">
-            Book Your <span className="gradient-text-coral">Session</span>
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3 font-body">Reserve Your Spot</p>
+          <h2 className="font-heading text-3xl md:text-5xl font-extrabold text-foreground mb-3">
+            Book Your Session
           </h2>
-          <p className="text-muted-foreground font-body font-light">
+          <p className="text-muted-foreground font-body text-sm">
             100% advance payment required. 18% GST applicable on all bookings.
           </p>
         </motion.div>
 
         <motion.form
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
+          transition={{ delay: 0.15 }}
           onSubmit={handleSubmit}
-          className="glass-card p-6 md:p-10 space-y-6"
+          className="bg-background rounded-2xl border border-border p-6 md:p-8 shadow-sm space-y-5"
         >
-          {/* Studio selection */}
           <div>
-            <label className="block text-sm uppercase tracking-wider text-muted-foreground mb-2 font-body">Select Studio</label>
-            <select
-              value={form.studio}
-              onChange={(e) => setForm({ ...form, studio: e.target.value })}
-              required
-              className="w-full bg-muted border border-border rounded-lg px-4 py-3 text-foreground font-body focus:outline-none focus:ring-2 focus:ring-coral/50 transition-all"
-            >
+            <label className="block text-xs uppercase tracking-wider text-muted-foreground mb-1.5 font-body font-medium">Select Studio</label>
+            <select value={form.studio} onChange={(e) => setForm({ ...form, studio: e.target.value })} required className={inputClass}>
               <option value="">Choose a studio...</option>
-              {studios.map((s) => (
-                <option key={s} value={s}>{s}</option>
-              ))}
+              {studioOptions.map((s) => (<option key={s} value={s}>{s}</option>))}
             </select>
           </div>
 
-          {/* Date & Time */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm uppercase tracking-wider text-muted-foreground mb-2 font-body">
-                <Calendar className="w-4 h-4 inline mr-1" /> Date
+              <label className="block text-xs uppercase tracking-wider text-muted-foreground mb-1.5 font-body font-medium">
+                <Calendar className="w-3.5 h-3.5 inline mr-1" /> Date
               </label>
-              <input
-                type="date"
-                value={form.date}
-                onChange={(e) => setForm({ ...form, date: e.target.value })}
-                required
-                className="w-full bg-muted border border-border rounded-lg px-4 py-3 text-foreground font-body focus:outline-none focus:ring-2 focus:ring-coral/50 transition-all"
-              />
+              <input type="date" value={form.date} onChange={(e) => setForm({ ...form, date: e.target.value })} required className={inputClass} />
             </div>
             <div>
-              <label className="block text-sm uppercase tracking-wider text-muted-foreground mb-2 font-body">
-                <Clock className="w-4 h-4 inline mr-1" /> Time
+              <label className="block text-xs uppercase tracking-wider text-muted-foreground mb-1.5 font-body font-medium">
+                <Clock className="w-3.5 h-3.5 inline mr-1" /> Time
               </label>
-              <input
-                type="time"
-                value={form.time}
-                onChange={(e) => setForm({ ...form, time: e.target.value })}
-                required
-                className="w-full bg-muted border border-border rounded-lg px-4 py-3 text-foreground font-body focus:outline-none focus:ring-2 focus:ring-coral/50 transition-all"
-              />
+              <input type="time" value={form.time} onChange={(e) => setForm({ ...form, time: e.target.value })} required className={inputClass} />
             </div>
           </div>
 
-          {/* Contact info */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <input
-              type="text"
-              placeholder="Your Name"
-              value={form.name}
-              onChange={(e) => setForm({ ...form, name: e.target.value })}
-              required
-              className="bg-muted border border-border rounded-lg px-4 py-3 text-foreground font-body placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-coral/50 transition-all"
-            />
-            <input
-              type="email"
-              placeholder="Email Address"
-              value={form.email}
-              onChange={(e) => setForm({ ...form, email: e.target.value })}
-              required
-              className="bg-muted border border-border rounded-lg px-4 py-3 text-foreground font-body placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-coral/50 transition-all"
-            />
-            <input
-              type="tel"
-              placeholder="Phone Number"
-              value={form.phone}
-              onChange={(e) => setForm({ ...form, phone: e.target.value })}
-              required
-              className="bg-muted border border-border rounded-lg px-4 py-3 text-foreground font-body placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-coral/50 transition-all"
-            />
+            <input type="text" placeholder="Your Name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required className={inputClass} />
+            <input type="email" placeholder="Email Address" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} required className={inputClass} />
+            <input type="tel" placeholder="Phone Number" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} required className={inputClass} />
           </div>
 
-          {/* Add-ons */}
           <div>
-            <label className="block text-sm uppercase tracking-wider text-muted-foreground mb-3 font-body">Add-ons</label>
+            <label className="block text-xs uppercase tracking-wider text-muted-foreground mb-2 font-body font-medium">Add-ons</label>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
               {addons.map((addon) => (
-                <button
-                  key={addon.id}
-                  type="button"
-                  onClick={() => toggleAddon(addon.id)}
-                  className={`flex items-center gap-3 p-4 rounded-lg border transition-all duration-300 ${
+                <button key={addon.id} type="button" onClick={() => toggleAddon(addon.id)}
+                  className={`flex items-center gap-3 p-3 rounded-lg border text-sm transition-all duration-200 font-body ${
                     form.addons.includes(addon.id)
-                      ? "border-coral/50 bg-coral/10 text-coral"
-                      : "border-border bg-muted text-muted-foreground hover:border-border hover:bg-muted"
-                  }`}
-                >
-                  <addon.icon className="w-5 h-5" />
-                  <span className="text-sm font-body">{addon.label}</span>
+                      ? "border-primary bg-primary/5 text-primary"
+                      : "border-border text-muted-foreground hover:border-primary/30"
+                  }`}>
+                  <addon.icon className="w-4 h-4" />
+                  <span>{addon.label}</span>
                 </button>
               ))}
             </div>
           </div>
 
-          <button type="submit" className="btn-glow-coral w-full text-center">
-            Book Your Slot
-          </button>
+          <button type="submit" className="btn-primary w-full text-center">Book Your Slot</button>
         </motion.form>
       </div>
     </section>
