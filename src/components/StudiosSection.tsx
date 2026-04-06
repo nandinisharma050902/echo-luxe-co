@@ -145,7 +145,6 @@ const StudioCard = ({ studio, index }: { studio: StudioData; index: number }) =>
 };
 
 const StudiosSection = () => {
-  const [activeStudio, setActiveStudio] = useState<number | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -157,7 +156,7 @@ const StudiosSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-8"
+          className="text-center mb-12"
         >
           <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3 font-body">Our Spaces</p>
           <h2 className="font-heading text-3xl md:text-5xl font-extrabold text-foreground mb-4">
@@ -167,35 +166,6 @@ const StudiosSection = () => {
             Six unique studios, each with two distinct variants tailored for different content styles.
           </p>
         </motion.div>
-
-        {/* Sticky studio tabs */}
-        <div className="sticky top-16 z-30 py-3 mb-8 -mx-6 px-6"
-          style={{
-            background: "hsla(0, 0%, 100%, 0.85)",
-            backdropFilter: "blur(16px)",
-          }}>
-          <div className="flex gap-2 justify-center flex-wrap">
-            {studios.map((s) => (
-              <a
-                key={s.id}
-                href={`#studio-${s.id}`}
-                className={`px-4 py-2 rounded-lg text-xs font-body font-medium transition-all duration-200 ${
-                  activeStudio === s.id
-                    ? "text-primary-foreground"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-                style={{
-                  background: activeStudio === s.id
-                    ? "linear-gradient(135deg, hsl(var(--primary)), hsl(var(--brand-blue)))"
-                    : "hsl(var(--muted) / 0.4)",
-                }}
-                onClick={() => setActiveStudio(s.id)}
-              >
-                {s.name}
-              </a>
-            ))}
-          </div>
-        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {studios.map((studio, i) => (
