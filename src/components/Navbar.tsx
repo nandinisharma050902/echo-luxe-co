@@ -37,7 +37,7 @@ const Navbar = () => {
           ? "hsla(0, 0%, 100%, 0.85)"
           : "hsla(0, 0%, 100%, 0.4)",
         backdropFilter: "blur(20px)",
-        borderBottom: scrolled ? "1px solid hsla(220, 14%, 16%, 0.6)" : "none",
+        borderBottom: scrolled ? "1px solid hsla(220, 13%, 91%, 0.6)" : "none",
       }}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
