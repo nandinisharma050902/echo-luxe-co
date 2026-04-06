@@ -70,21 +70,16 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo + Brand */}
-        <a href="#hero" className="flex items-center gap-3 group">
+        <a href="#hero" className="flex items-center group">
           <motion.img
             src={logo}
             alt="Banter Studio"
-            className="h-10 md:h-12 w-auto drop-shadow-[0_0_8px_hsla(352,98%,63%,0.25)]"
-            whileHover={{ scale: 1.06 }}
+            className="h-12 md:h-14 w-auto"
+            whileHover={{ scale: 1.04 }}
+            style={{
+              filter: scrolled ? "none" : "brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0,0,0,0.3))",
+            }}
           />
-          <span
-            className={`text-lg md:text-xl font-extrabold uppercase tracking-tight transition-all duration-300 group-hover:drop-shadow-[0_0_12px_hsla(352,98%,63%,0.4)] ${
-              scrolled ? "" : "text-white"
-            }`}
-            style={scrolled ? { color: "hsl(352, 98%, 63%)" } : { color: "white", textShadow: "0 2px 8px rgba(0,0,0,0.3)" }}
-          >
-            Banter Studio
-          </span>
         </a>
 
         {/* Desktop Nav */}
