@@ -82,9 +82,9 @@ const Navbar = () => {
             transition={{ duration: 0.2 }}
             className="md:hidden mx-4 mt-2 rounded-xl overflow-hidden"
             style={{
-              background: "hsla(220, 18%, 10%, 0.95)",
+              background: "hsla(0, 0%, 100%, 0.95)",
               backdropFilter: "blur(20px)",
-              border: "1px solid hsla(220, 14%, 16%, 0.6)",
+              border: "1px solid hsla(220, 13%, 91%, 0.6)",
             }}
           >
             <div className="flex flex-col p-6 gap-4">

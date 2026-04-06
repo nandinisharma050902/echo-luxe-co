@@ -171,7 +171,7 @@ const StudiosSection = () => {
         {/* Sticky studio tabs */}
         <div className="sticky top-16 z-30 py-3 mb-8 -mx-6 px-6"
           style={{
-            background: "hsla(220, 20%, 6%, 0.85)",
+            background: "hsla(0, 0%, 100%, 0.85)",
             backdropFilter: "blur(16px)",
           }}>
           <div className="flex gap-2 justify-center flex-wrap">

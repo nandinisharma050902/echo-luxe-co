@@ -42,13 +42,13 @@
     --font-heading: 'Plus Jakarta Sans', sans-serif;
     --font-body: 'Inter', sans-serif;
 
-    --sidebar-background: 220 18% 8%;
-    --sidebar-foreground: 0 0% 95%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 220 20% 10%;
     --sidebar-primary: 352 98% 63%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 16% 14%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 220 14% 16%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 220 20% 10%;
+    --sidebar-border: 220 13% 91%;
     --sidebar-ring: 352 98% 63%;
   }
 }
