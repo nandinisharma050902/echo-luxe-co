@@ -11,10 +11,11 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section id="features" className="section-padding bg-muted/50">
+    <section id="features" className="section-padding bg-background relative">
+      <div className="section-divider absolute top-0 left-0 right-0" />
       <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-14"
@@ -29,13 +30,14 @@ const FeaturesSection = () => {
           {features.map((f, i) => (
             <motion.div
               key={f.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className={`card-elevated ${i === 4 ? "md:col-span-2 lg:col-span-1" : ""}`}
+              transition={{ duration: 0.4, delay: i * 0.08 }}
+              className={`card-glass group ${i === 4 ? "md:col-span-2 lg:col-span-1" : ""}`}
             >
-              <div className="w-12 h-12 mb-4 rounded-xl bg-primary/10 flex items-center justify-center">
+              <div className="w-12 h-12 mb-4 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)]"
+                style={{ background: "hsl(var(--primary) / 0.1)" }}>
                 <f.icon className="w-5 h-5 text-primary" />
               </div>
               <h3 className="font-heading text-lg font-bold text-foreground mb-2">{f.title}</h3>

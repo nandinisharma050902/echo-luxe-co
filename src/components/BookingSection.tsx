@@ -32,13 +32,14 @@ const BookingSection = () => {
     alert("Booking submitted! We'll get back to you shortly.");
   };
 
-  const inputClass = "w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground font-body text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all placeholder:text-muted-foreground";
+  const inputClass = "w-full rounded-xl px-4 py-3 font-body text-sm transition-all placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30";
 
   return (
-    <section id="booking" className="section-padding bg-muted/50">
+    <section id="booking" className="section-padding bg-background relative">
+      <div className="section-divider absolute top-0 left-0 right-0" />
       <div className="max-w-3xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-10"
@@ -53,16 +54,18 @@ const BookingSection = () => {
         </motion.div>
 
         <motion.form
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.15 }}
           onSubmit={handleSubmit}
-          className="bg-background rounded-2xl border border-border p-6 md:p-8 shadow-sm space-y-5"
+          className="card-glass !p-6 md:!p-8 space-y-5"
         >
           <div>
             <label className="block text-xs uppercase tracking-wider text-muted-foreground mb-1.5 font-body font-medium">Select Studio</label>
-            <select value={form.studio} onChange={(e) => setForm({ ...form, studio: e.target.value })} required className={inputClass}>
+            <select value={form.studio} onChange={(e) => setForm({ ...form, studio: e.target.value })} required
+              className={inputClass}
+              style={{ background: "hsl(var(--muted) / 0.4)", color: "hsl(var(--foreground))", border: "1px solid hsl(var(--border) / 0.5)" }}>
               <option value="">Choose a studio...</option>
               {studioOptions.map((s) => (<option key={s} value={s}>{s}</option>))}
             </select>
@@ -73,20 +76,32 @@ const BookingSection = () => {
               <label className="block text-xs uppercase tracking-wider text-muted-foreground mb-1.5 font-body font-medium">
                 <Calendar className="w-3.5 h-3.5 inline mr-1" /> Date
               </label>
-              <input type="date" value={form.date} onChange={(e) => setForm({ ...form, date: e.target.value })} required className={inputClass} />
+              <input type="date" value={form.date} onChange={(e) => setForm({ ...form, date: e.target.value })} required
+                className={inputClass}
+                style={{ background: "hsl(var(--muted) / 0.4)", color: "hsl(var(--foreground))", border: "1px solid hsl(var(--border) / 0.5)" }} />
             </div>
             <div>
               <label className="block text-xs uppercase tracking-wider text-muted-foreground mb-1.5 font-body font-medium">
                 <Clock className="w-3.5 h-3.5 inline mr-1" /> Time
               </label>
-              <input type="time" value={form.time} onChange={(e) => setForm({ ...form, time: e.target.value })} required className={inputClass} />
+              <input type="time" value={form.time} onChange={(e) => setForm({ ...form, time: e.target.value })} required
+                className={inputClass}
+                style={{ background: "hsl(var(--muted) / 0.4)", color: "hsl(var(--foreground))", border: "1px solid hsl(var(--border) / 0.5)" }} />
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <input type="text" placeholder="Your Name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} required className={inputClass} />
-            <input type="email" placeholder="Email Address" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} required className={inputClass} />
-            <input type="tel" placeholder="Phone Number" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} required className={inputClass} />
+            {[
+              { type: "text", placeholder: "Your Name", key: "name" },
+              { type: "email", placeholder: "Email Address", key: "email" },
+              { type: "tel", placeholder: "Phone Number", key: "phone" },
+            ].map((field) => (
+              <input key={field.key} type={field.type} placeholder={field.placeholder}
+                value={(form as any)[field.key]}
+                onChange={(e) => setForm({ ...form, [field.key]: e.target.value })} required
+                className={inputClass}
+                style={{ background: "hsl(var(--muted) / 0.4)", color: "hsl(var(--foreground))", border: "1px solid hsl(var(--border) / 0.5)" }} />
+            ))}
           </div>
 
           <div>
@@ -94,11 +109,16 @@ const BookingSection = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
               {addons.map((addon) => (
                 <button key={addon.id} type="button" onClick={() => toggleAddon(addon.id)}
-                  className={`flex items-center gap-3 p-3 rounded-lg border text-sm transition-all duration-200 font-body ${
+                  className={`flex items-center gap-3 p-3 rounded-xl text-sm transition-all duration-200 font-body ${
                     form.addons.includes(addon.id)
-                      ? "border-primary bg-primary/5 text-primary"
-                      : "border-border text-muted-foreground hover:border-primary/30"
-                  }`}>
+                      ? "text-primary"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                  style={{
+                    background: form.addons.includes(addon.id) ? "hsl(var(--primary) / 0.1)" : "hsl(var(--muted) / 0.3)",
+                    border: `1px solid ${form.addons.includes(addon.id) ? "hsl(var(--primary) / 0.4)" : "hsl(var(--border) / 0.4)"}`,
+                    boxShadow: form.addons.includes(addon.id) ? "0 0 15px hsl(var(--primary) / 0.15)" : "none",
+                  }}>
                   <addon.icon className="w-4 h-4" />
                   <span>{addon.label}</span>
                 </button>
