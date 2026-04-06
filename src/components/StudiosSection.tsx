@@ -7,6 +7,12 @@ import studio2v1 from "@/assets/studio2-v1.png";
 import studio2v2 from "@/assets/studio2-v2.png";
 import studio3v1 from "@/assets/studio3-v1.png";
 import studio3v2 from "@/assets/studio3-v2.png";
+import studio4v1 from "@/assets/studio4-v1.png";
+import studio4v2 from "@/assets/studio4-v2.png";
+import studio5v1 from "@/assets/studio5-v1.png";
+import studio5v2 from "@/assets/studio5-v2.png";
+import studio6v1 from "@/assets/studio6-v1.png";
+import studio6v2 from "@/assets/studio6-v2.png";
 
 export interface StudioVariant {
   name: string;
@@ -44,6 +50,27 @@ const studios: StudioData[] = [
     variant2: { name: "The Quadcast Room", ideal: "Group podcasts & roundtable discussions", image: studio3v2 },
     features: ["4-person setup", "Professional mics", "Mood lighting", "Content-ready backdrop"],
   },
+  {
+    id: 4,
+    name: "Studio 4",
+    variant1: { name: "The Fourth Wall", ideal: "Cinematic interviews & storytelling", image: studio4v1 },
+    variant2: { name: "The Mic Lounge", ideal: "Casual podcast conversations & guest features", image: studio4v2 },
+    features: ["Blue-tone ambiance", "Designer furniture", "Professional mics", "Cozy setting"],
+  },
+  {
+    id: 5,
+    name: "Studio 5",
+    variant1: { name: "The Conversa", ideal: "One-on-one deep conversations", image: studio5v1 },
+    variant2: { name: "The Talk Corner", ideal: "Vibrant discussions & debate formats", image: studio5v2 },
+    features: ["Elegant seating", "Warm lighting", "Acoustic panels", "Botanical accents"],
+  },
+  {
+    id: 6,
+    name: "Studio 6",
+    variant1: { name: "Thinkcast Studio", ideal: "Thought leadership & executive recording", image: studio6v1 },
+    variant2: { name: "The Insight Table", ideal: "Expert roundtables & knowledge sharing", image: studio6v2 },
+    features: ["Wood-paneled backdrop", "Leather seating", "Dual mic setup", "Premium aesthetics"],
+  },
 ];
 
 const StudioCard = ({ studio, index }: { studio: StudioData; index: number }) => {
@@ -55,7 +82,7 @@ const StudioCard = ({ studio, index }: { studio: StudioData; index: number }) =>
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      transition={{ duration: 0.5, delay: index * 0.08 }}
       className="rounded-2xl border border-border overflow-hidden bg-card"
     >
       <div className="aspect-[16/10] overflow-hidden">
@@ -117,7 +144,7 @@ const StudiosSection = () => {
             Studio Showcase
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto font-body font-light">
-            Three unique studios, each with two distinct variants tailored for different content styles.
+            Six unique studios, each with two distinct variants tailored for different content styles.
           </p>
         </motion.div>
 
