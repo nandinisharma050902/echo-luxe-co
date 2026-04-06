@@ -82,14 +82,14 @@ const StudioCard = ({ studio, index }: { studio: StudioData; index: number }) =>
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.08 }}
+      transition={{ duration: 0.3, delay: index * 0.04 }}
       className="rounded-2xl border border-border overflow-hidden bg-card"
     >
       <div className="aspect-[16/10] overflow-hidden">
         <img
           src={current.image}
           alt={current.name}
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+          className="w-full h-full object-cover transition-all duration-200 hover:scale-105"
         />
       </div>
 
