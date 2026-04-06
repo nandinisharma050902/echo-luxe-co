@@ -34,10 +34,10 @@ const Navbar = () => {
       }`}
       style={{
         background: scrolled
-          ? "hsla(220, 20%, 6%, 0.85)"
-          : "hsla(220, 20%, 6%, 0.4)",
+          ? "hsla(0, 0%, 100%, 0.85)"
+          : "hsla(0, 0%, 100%, 0.4)",
         backdropFilter: "blur(20px)",
-        borderBottom: scrolled ? "1px solid hsla(220, 14%, 16%, 0.6)" : "none",
+        borderBottom: scrolled ? "1px solid hsla(220, 13%, 91%, 0.6)" : "none",
       }}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -82,9 +82,9 @@ const Navbar = () => {
             transition={{ duration: 0.2 }}
             className="md:hidden mx-4 mt-2 rounded-xl overflow-hidden"
             style={{
-              background: "hsla(220, 18%, 10%, 0.95)",
+              background: "hsla(0, 0%, 100%, 0.95)",
               backdropFilter: "blur(20px)",
-              border: "1px solid hsla(220, 14%, 16%, 0.6)",
+              border: "1px solid hsla(220, 13%, 91%, 0.6)",
             }}
           >
             <div className="flex flex-col p-6 gap-4">
