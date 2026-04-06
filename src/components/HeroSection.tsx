@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Mic2, Headphones, Radio } from "lucide-react";
-import logo from "@/assets/banter-logo.png";
 
 const HeroSection = () => {
   return (
