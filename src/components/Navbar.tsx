@@ -32,8 +32,8 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <a href="#hero">
-          <img src={logo} alt="Banter Marketo" className="h-10 md:h-12" />
+        <a href="#hero" className="flex items-center gap-2">
+          <img src={logo} alt="Banter Studio" className="h-8 md:h-10" />
         </a>
 
         <div className="hidden md:flex items-center gap-8">

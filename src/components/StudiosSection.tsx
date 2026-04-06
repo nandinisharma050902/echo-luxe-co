@@ -89,7 +89,7 @@ const StudioCard = ({ studio, index }: { studio: StudioData; index: number }) =>
         <img
           src={current.image}
           alt={current.name}
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+          className="w-full h-full object-cover transition-all duration-200 hover:scale-105"
         />
       </div>
 
