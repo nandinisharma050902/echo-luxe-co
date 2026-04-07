@@ -61,11 +61,9 @@ const Navbar = () => {
         scrolled ? "py-2" : "py-4"
       }`}
       style={{
-        background: scrolled
-          ? "hsla(0, 0%, 100%, 0.92)"
-          : "transparent",
-        backdropFilter: scrolled ? "blur(20px)" : "none",
-        borderBottom: scrolled ? "1px solid hsla(220, 13%, 91%, 0.6)" : "none",
+        background: "hsla(0, 0%, 100%, 0.95)",
+        backdropFilter: "blur(20px)",
+        borderBottom: "1px solid hsla(220, 13%, 91%, 0.6)",
       }}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -76,9 +74,6 @@ const Navbar = () => {
             alt="Banter Studio"
             className="h-14 md:h-16 lg:h-[72px] w-auto"
             whileHover={{ scale: 1.04 }}
-            style={{
-              filter: scrolled ? "none" : "brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0,0,0,0.3))",
-            }}
           />
         </a>
 
@@ -89,9 +84,7 @@ const Navbar = () => {
               <div key={link.label} className="relative" ref={dropdownRef}>
                 <button
                   onClick={() => setStudiosOpen(!studiosOpen)}
-                  className={`flex items-center gap-1 text-sm font-medium transition-colors duration-300 ${
-                    scrolled ? "text-muted-foreground hover:text-primary" : "text-white/80 hover:text-white"
-                  }`}
+                  className="flex items-center gap-1 text-sm font-medium transition-colors duration-300 text-muted-foreground hover:text-primary"
                 >
                   {link.label}
                   <ChevronDown
@@ -132,9 +125,7 @@ const Navbar = () => {
               <a
                 key={link.label}
                 href={link.href}
-                className={`text-sm font-medium transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full ${
-                  scrolled ? "text-muted-foreground hover:text-primary" : "text-white/80 hover:text-white"
-                }`}
+                className="text-sm font-medium transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full text-muted-foreground hover:text-primary"
               >
                 {link.label}
               </a>
@@ -146,7 +137,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile toggle */}
-        <button onClick={() => setMobileOpen(!mobileOpen)} className={`md:hidden ${scrolled ? "text-foreground" : "text-white"}`}>
+        <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden text-foreground">
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
