@@ -61,11 +61,9 @@ const Navbar = () => {
         scrolled ? "py-2" : "py-4"
       }`}
       style={{
-        background: scrolled
-          ? "hsla(0, 0%, 100%, 0.92)"
-          : "transparent",
-        backdropFilter: scrolled ? "blur(20px)" : "none",
-        borderBottom: scrolled ? "1px solid hsla(220, 13%, 91%, 0.6)" : "none",
+        background: "hsla(0, 0%, 100%, 0.95)",
+        backdropFilter: "blur(20px)",
+        borderBottom: "1px solid hsla(220, 13%, 91%, 0.6)",
       }}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
