@@ -74,9 +74,6 @@ const Navbar = () => {
             alt="Banter Studio"
             className="h-14 md:h-16 lg:h-[72px] w-auto"
             whileHover={{ scale: 1.04 }}
-            style={{
-              filter: scrolled ? "none" : "brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0,0,0,0.3))",
-            }}
           />
         </a>
 
