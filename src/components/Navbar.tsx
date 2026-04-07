@@ -125,9 +125,7 @@ const Navbar = () => {
               <a
                 key={link.label}
                 href={link.href}
-                className={`text-sm font-medium transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full ${
-                  scrolled ? "text-muted-foreground hover:text-primary" : "text-white/80 hover:text-white"
-                }`}
+                className="text-sm font-medium transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full text-muted-foreground hover:text-primary"
               >
                 {link.label}
               </a>
