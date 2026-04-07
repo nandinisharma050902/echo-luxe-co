@@ -84,9 +84,7 @@ const Navbar = () => {
               <div key={link.label} className="relative" ref={dropdownRef}>
                 <button
                   onClick={() => setStudiosOpen(!studiosOpen)}
-                  className={`flex items-center gap-1 text-sm font-medium transition-colors duration-300 ${
-                    scrolled ? "text-muted-foreground hover:text-primary" : "text-white/80 hover:text-white"
-                  }`}
+                  className="flex items-center gap-1 text-sm font-medium transition-colors duration-300 text-muted-foreground hover:text-primary"
                 >
                   {link.label}
                   <ChevronDown
