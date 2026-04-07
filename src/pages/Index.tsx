@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
+import BlogSection from "@/components/BlogSection";
 import StudiosSection from "@/components/StudiosSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import ExperienceSection from "@/components/ExperienceSection";
