@@ -137,7 +137,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile toggle */}
-        <button onClick={() => setMobileOpen(!mobileOpen)} className={`md:hidden ${scrolled ? "text-foreground" : "text-white"}`}>
+        <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden text-foreground">
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
