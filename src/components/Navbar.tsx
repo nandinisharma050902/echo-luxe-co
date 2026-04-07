@@ -6,6 +6,7 @@ import logo from "@/assets/banter-logo.png";
 const navLinks = [
   { label: "Home", href: "#hero" },
   { label: "About", href: "#about" },
+  { label: "Blog", href: "#blog" },
   { label: "Studios", href: "#studios", hasDropdown: true },
   { label: "Features", href: "#features" },
   { label: "Experience", href: "#experience" },
