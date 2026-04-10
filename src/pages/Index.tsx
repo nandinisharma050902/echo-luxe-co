@@ -6,6 +6,7 @@ import StudiosSection from "@/components/StudiosSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import BookingSection from "@/components/BookingSection";
+import LeadCaptureSection from "@/components/LeadCaptureSection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
@@ -23,6 +24,7 @@ const Index = () => {
       <FeaturesSection />
       <ExperienceSection />
       <BookingSection />
+      <LeadCaptureSection />
       <Footer />
 
       {/* WhatsApp floating button */}
