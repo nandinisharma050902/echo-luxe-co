@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MessageCircle } from "lucide-react";
+import whatsappIcon from "@/assets/whatsapp-icon.svg";
 
 const WhatsAppButton = () => {
   return (
@@ -19,7 +19,7 @@ const WhatsAppButton = () => {
       }}
       aria-label="Chat with us on WhatsApp"
     >
-      <MessageCircle className="w-6 h-6 text-white" fill="white" />
+      <img src={whatsappIcon} alt="WhatsApp" className="w-7 h-7" />
       
       {/* Tooltip */}
       <span className="absolute right-16 px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none"
