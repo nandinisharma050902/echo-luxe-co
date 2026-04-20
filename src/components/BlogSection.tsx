@@ -1,5 +1,18 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar, Clock, User } from "lucide-react";
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+
+const firstPostArticle = `Setting up your first podcast studio doesn't require a massive budget or a professional recording facility—it requires smart choices, a bit of planning, and a focus on sound quality over aesthetics. Start with your recording space, because even the best microphone can't fix poor acoustics. Choose a quiet room with minimal echo; soft furnishings like rugs, curtains, and even bookshelves help absorb sound and reduce reverb. Once your space is ready, invest in a good-quality USB or XLR microphone—this is the most important piece of gear, as clear audio is what keeps listeners engaged. Pair it with closed-back headphones so you can monitor your recordings in real time without sound bleeding into the mic. If you're using an XLR mic, you'll also need an audio interface to connect it to your computer and ensure clean signal processing.
+
+Next, consider your recording and editing software. Beginners can start with free tools like Audacity or GarageBand, while more advanced users might prefer Adobe Audition or Logic Pro for greater control. Make sure your setup includes a stable mic stand or boom arm and a pop filter to minimize unwanted noise from plosive sounds. As you grow, you can enhance your studio with acoustic panels, a mixer, or multiple microphones for interviews. However, don't let gear overwhelm you—content and consistency matter more than having a perfect setup from day one.
+
+Finally, think about workflow and comfort. Arrange your equipment so everything is within reach, keep cables organized, and ensure your seating supports long recording sessions. Test your setup before publishing your first episode, paying attention to background noise, volume levels, and clarity. With a thoughtful approach and a focus on fundamentals, you can create a podcast studio that sounds professional, feels comfortable, and scales with your ambitions—turning your ideas into a listening experience people will want to come back to.`;
 
 const blogPosts = [
   {
@@ -32,6 +45,8 @@ const blogPosts = [
 ];
 
 const BlogSection = () => {
+  const [openFirst, setOpenFirst] = useState(false);
+
   return (
     <section id="blog" className="py-20 md:py-28 bg-background">
       <div className="max-w-7xl mx-auto px-6">
@@ -63,6 +78,7 @@ const BlogSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              onClick={() => index === 0 && setOpenFirst(true)}
               className="group rounded-2xl overflow-hidden border border-border/40 bg-card hover:shadow-xl transition-all duration-500 cursor-pointer"
             >
               {/* Image */}
@@ -111,6 +127,41 @@ const BlogSection = () => {
           ))}
         </div>
       </div>
+
+      {/* First blog post modal */}
+      <Dialog open={openFirst} onOpenChange={setOpenFirst}>
+        <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl p-0 gap-0 border-border/40">
+          <DialogHeader className="px-6 md:px-8 pt-6 md:pt-8 pb-4 border-b border-border/40">
+            <DialogTitle className="text-2xl md:text-3xl font-bold text-foreground pr-8 leading-tight text-left">
+              How to Set Up Your First Podcast Studio
+            </DialogTitle>
+            <div className="flex items-center gap-4 text-xs text-muted-foreground/80 pt-3">
+              <span className="flex items-center gap-1.5">
+                <User size={12} />
+                Banter Team
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Calendar size={12} />
+                Apr 2, 2026
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Clock size={12} />
+                5 min read
+              </span>
+            </div>
+          </DialogHeader>
+          <div className="px-6 md:px-8 py-6 md:py-8 space-y-5">
+            {firstPostArticle.split("\n\n").map((paragraph, i) => (
+              <p
+                key={i}
+                className="text-sm md:text-base text-muted-foreground leading-relaxed"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
