@@ -4,7 +4,7 @@ import whatsappIcon from "@/assets/whatsapp-icon.svg";
 const WhatsAppButton = () => {
   return (
     <motion.a
-      href="https://wa.me/91XXXXXXXXXX"
+      href="https://wa.me/919911098231"
       target="_blank"
       rel="noopener noreferrer"
       initial={{ scale: 0, opacity: 0 }}
