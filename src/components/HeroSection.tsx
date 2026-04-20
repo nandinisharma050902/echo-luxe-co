@@ -26,10 +26,10 @@ const HeroSection = () => {
       <AnimatePresence mode="popLayout">
         <motion.div
           key={current}
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1, scale: 1.05 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ opacity: { duration: 1.2 }, scale: { duration: 8, ease: "linear" } }}
+          transition={{ opacity: { duration: 1.2 } }}
           className="absolute inset-0"
           style={{
             backfaceVisibility: "hidden",
