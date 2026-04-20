@@ -78,6 +78,7 @@ const BlogSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              onClick={() => index === 0 && setOpenFirst(true)}
               className="group rounded-2xl overflow-hidden border border-border/40 bg-card hover:shadow-xl transition-all duration-500 cursor-pointer"
             >
               {/* Image */}
@@ -126,6 +127,41 @@ const BlogSection = () => {
           ))}
         </div>
       </div>
+
+      {/* First blog post modal */}
+      <Dialog open={openFirst} onOpenChange={setOpenFirst}>
+        <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl p-0 gap-0 border-border/40">
+          <DialogHeader className="px-6 md:px-8 pt-6 md:pt-8 pb-4 border-b border-border/40">
+            <DialogTitle className="text-2xl md:text-3xl font-bold text-foreground pr-8 leading-tight text-left">
+              How to Set Up Your First Podcast Studio
+            </DialogTitle>
+            <div className="flex items-center gap-4 text-xs text-muted-foreground/80 pt-3">
+              <span className="flex items-center gap-1.5">
+                <User size={12} />
+                Banter Team
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Calendar size={12} />
+                Apr 2, 2026
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Clock size={12} />
+                5 min read
+              </span>
+            </div>
+          </DialogHeader>
+          <div className="px-6 md:px-8 py-6 md:py-8 space-y-5">
+            {firstPostArticle.split("\n\n").map((paragraph, i) => (
+              <p
+                key={i}
+                className="text-sm md:text-base text-muted-foreground leading-relaxed"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
