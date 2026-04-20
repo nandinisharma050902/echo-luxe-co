@@ -272,6 +272,56 @@ const BlogSection = () => {
           </div>
         </DialogContent>
       </Dialog>
+
+      {/* Third blog post modal */}
+      <Dialog open={openThird} onOpenChange={setOpenThird}>
+        <DialogContent
+          className="max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl p-0 gap-0 border border-[hsl(350_90%_88%)]/70 shadow-[0_20px_60px_-15px_hsl(352_98%_63%/0.35)]"
+          style={{
+            background:
+              "linear-gradient(180deg, hsl(350 100% 98%) 0%, hsl(0 0% 100%) 35%)",
+          }}
+        >
+          <DialogHeader
+            className="px-6 md:px-8 pt-7 md:pt-9 pb-5 border-b border-[hsl(350_90%_90%)]/80"
+            style={{
+              background:
+                "linear-gradient(135deg, hsl(350 100% 96%) 0%, hsl(345 90% 94%) 60%, hsl(340 85% 92%) 100%)",
+            }}
+          >
+            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-primary mb-2 inline-block w-fit px-2.5 py-1 rounded-full bg-[hsl(350_100%_94%)] border border-[hsl(350_90%_85%)]/60">
+              Industry
+            </span>
+            <DialogTitle className="text-2xl md:text-3xl font-bold text-foreground pr-8 leading-tight text-left">
+              Why Every Brand Needs a Podcast in 2026
+            </DialogTitle>
+            <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground pt-3">
+              <span className="flex items-center gap-1.5">
+                <User size={12} className="text-primary" />
+                Banter Team
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Calendar size={12} className="text-primary" />
+                Mar 18, 2026
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Clock size={12} className="text-primary" />
+                6 min read
+              </span>
+            </div>
+          </DialogHeader>
+          <div className="px-6 md:px-8 py-6 md:py-8 space-y-5">
+            {thirdPostArticle.split("\n\n").map((paragraph, i) => (
+              <p
+                key={i}
+                className="text-sm md:text-base text-foreground/80 leading-relaxed first:first-letter:text-4xl first:first-letter:font-bold first:first-letter:text-primary first:first-letter:mr-1 first:first-letter:float-left first:first-letter:leading-none first:first-letter:mt-1"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
