@@ -31,6 +31,13 @@ const HeroSection = () => {
           exit={{ opacity: 0 }}
           transition={{ opacity: { duration: 1.2 }, scale: { duration: 8, ease: "linear" } }}
           className="absolute inset-0"
+          style={{
+            backfaceVisibility: "hidden",
+            WebkitBackfaceVisibility: "hidden",
+            transformStyle: "flat",
+            WebkitTransform: "translate3d(0,0,0)",
+            willChange: "opacity, transform",
+          }}
         >
           <img
             src={slides[current]}
@@ -38,6 +45,7 @@ const HeroSection = () => {
             className="w-full h-full object-cover"
             width={1920}
             height={1080}
+            style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
           />
         </motion.div>
       </AnimatePresence>
@@ -47,7 +55,12 @@ const HeroSection = () => {
 
       {/* Faint logo watermark */}
       <div className="absolute inset-0 z-[1] flex items-center justify-center pointer-events-none">
-        <img src={logo} alt="" className="w-[300px] md:w-[500px] opacity-[0.04]" />
+        <img
+          src={logo}
+          alt=""
+          className="w-[300px] md:w-[500px] opacity-[0.04]"
+          style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
+        />
       </div>
 
       {/* Content */}
