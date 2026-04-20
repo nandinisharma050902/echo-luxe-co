@@ -29,6 +29,18 @@ const secondPostMistakes = [
 
 const secondPostClosing = `Starting a podcast is exciting, but many beginners unknowingly make mistakes that can hurt their growth early on. The good news is that most of these pitfalls are easy to avoid once you're aware of them. By focusing on audio quality, staying consistent, understanding your audience, and promoting your content effectively, you can build a strong foundation. Podcasting success doesn't happen overnight—but with patience and the right approach, you can create content that resonates and grows over time.`;
 
+const thirdPostArticle = `Podcasting has evolved into one of the most powerful branding tools in 2026, and for businesses looking to build meaningful connections, it's no longer just an option—it's a strategic necessity. Unlike traditional marketing channels that rely on short attention spans and constant interruptions, podcasts offer something rare: uninterrupted time with your audience. When someone listens to your podcast, they're choosing to engage with your brand in a focused and intentional way. This creates a deeper level of trust and familiarity that is difficult to achieve through ads or social media posts alone. Over time, this consistent presence helps position your brand not just as a service provider, but as a trusted voice in your industry.
+
+One of the biggest advantages of podcasting is its ability to humanize your brand. In a digital landscape filled with polished visuals and scripted messaging, podcasts bring authenticity to the forefront. Your audience hears your tone, your thoughts, and your perspective in a way that feels real and relatable. This emotional connection plays a critical role in modern branding, where consumers are more likely to support businesses they feel aligned with. By sharing stories, experiences, and insights, brands can create a sense of community rather than just broadcasting messages. This shift from transactional marketing to relationship-driven communication is what sets podcasting apart.
+
+Another key reason brands are investing in podcasts is the opportunity to establish authority and thought leadership. By consistently discussing industry trends, offering expert advice, or hosting conversations with influential guests, your brand becomes a go-to resource for valuable information. This not only builds credibility but also keeps your audience coming back for more. Unlike short-form content, podcasts allow you to explore topics in depth, providing real value rather than surface-level insights. This depth is especially important in 2026, where audiences are increasingly seeking meaningful, educational content rather than quick entertainment alone.
+
+Podcasting also plays a significant role in content strategy and scalability. A single podcast episode can be repurposed into multiple forms of content—blog posts, social media snippets, newsletters, and even video clips. This multiplies your reach without requiring entirely new ideas for every platform. It also ensures consistency across your brand messaging, reinforcing your voice and positioning wherever your audience engages with you. In addition, podcasts are highly accessible, allowing listeners to consume content while multitasking, which increases the likelihood of regular engagement.
+
+From a growth perspective, podcasts help attract a highly targeted audience. People typically choose podcasts based on their interests, which means your listeners are already aligned with your niche. This makes it easier to convert them into loyal followers or customers over time. Moreover, inviting guests onto your podcast opens the door to collaborations and cross-promotion, expanding your reach organically. Each guest brings their own audience, creating a network effect that can significantly accelerate your brand's visibility.
+
+Finally, starting a podcast is more achievable than ever. With affordable equipment and user-friendly software, brands can produce high-quality content without a large upfront investment. The key is not perfection, but consistency and clarity. By focusing on delivering value, maintaining a regular publishing schedule, and continuously improving your content, you can build a strong and sustainable presence. In a world where attention is limited and trust is everything, podcasting stands out as a long-term strategy that not only amplifies your brand's voice but also builds lasting relationships with your audience.`;
+
 const blogPosts = [
   {
     title: "How to Set Up Your First Podcast Studio",
@@ -62,6 +74,7 @@ const blogPosts = [
 const BlogSection = () => {
   const [openFirst, setOpenFirst] = useState(false);
   const [openSecond, setOpenSecond] = useState(false);
+  const [openThird, setOpenThird] = useState(false);
 
   return (
     <section id="blog" className="py-20 md:py-28 bg-background">
@@ -97,6 +110,7 @@ const BlogSection = () => {
               onClick={() => {
                 if (index === 0) setOpenFirst(true);
                 if (index === 1) setOpenSecond(true);
+                if (index === 2) setOpenThird(true);
               }}
               className="group rounded-2xl overflow-hidden border border-border/40 bg-card hover:shadow-xl transition-all duration-500 cursor-pointer"
             >
@@ -255,6 +269,56 @@ const BlogSection = () => {
                 {secondPostClosing}
               </p>
             </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Third blog post modal */}
+      <Dialog open={openThird} onOpenChange={setOpenThird}>
+        <DialogContent
+          className="max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl p-0 gap-0 border border-[hsl(350_90%_88%)]/70 shadow-[0_20px_60px_-15px_hsl(352_98%_63%/0.35)]"
+          style={{
+            background:
+              "linear-gradient(180deg, hsl(350 100% 98%) 0%, hsl(0 0% 100%) 35%)",
+          }}
+        >
+          <DialogHeader
+            className="px-6 md:px-8 pt-7 md:pt-9 pb-5 border-b border-[hsl(350_90%_90%)]/80"
+            style={{
+              background:
+                "linear-gradient(135deg, hsl(350 100% 96%) 0%, hsl(345 90% 94%) 60%, hsl(340 85% 92%) 100%)",
+            }}
+          >
+            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-primary mb-2 inline-block w-fit px-2.5 py-1 rounded-full bg-[hsl(350_100%_94%)] border border-[hsl(350_90%_85%)]/60">
+              Industry
+            </span>
+            <DialogTitle className="text-2xl md:text-3xl font-bold text-foreground pr-8 leading-tight text-left">
+              Why Every Brand Needs a Podcast in 2026
+            </DialogTitle>
+            <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground pt-3">
+              <span className="flex items-center gap-1.5">
+                <User size={12} className="text-primary" />
+                Banter Team
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Calendar size={12} className="text-primary" />
+                Mar 18, 2026
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Clock size={12} className="text-primary" />
+                6 min read
+              </span>
+            </div>
+          </DialogHeader>
+          <div className="px-6 md:px-8 py-6 md:py-8 space-y-5">
+            {thirdPostArticle.split("\n\n").map((paragraph, i) => (
+              <p
+                key={i}
+                className="text-sm md:text-base text-foreground/80 leading-relaxed first:first-letter:text-4xl first:first-letter:font-bold first:first-letter:text-primary first:first-letter:mr-1 first:first-letter:float-left first:first-letter:leading-none first:first-letter:mt-1"
+              >
+                {paragraph}
+              </p>
+            ))}
           </div>
         </DialogContent>
       </Dialog>
