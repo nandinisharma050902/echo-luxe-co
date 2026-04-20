@@ -14,6 +14,21 @@ Next, consider your recording and editing software. Beginners can start with fre
 
 Finally, think about workflow and comfort. Arrange your equipment so everything is within reach, keep cables organized, and ensure your seating supports long recording sessions. Test your setup before publishing your first episode, paying attention to background noise, volume levels, and clarity. With a thoughtful approach and a focus on fundamentals, you can create a podcast studio that sounds professional, feels comfortable, and scales with your ambitions—turning your ideas into a listening experience people will want to come back to.`;
 
+const secondPostMistakes = [
+  "Poor audio quality that drives listeners away",
+  "Ignoring recording environment and acoustics",
+  "Overinvesting in equipment instead of content",
+  "Inconsistent publishing schedule",
+  "Not defining a clear target audience",
+  "Lack of episode structure or planning",
+  "Skipping proper editing and cleanup",
+  "Weak or missing podcast branding",
+  "Not promoting episodes effectively",
+  "Giving up too early before seeing growth",
+];
+
+const secondPostClosing = `Starting a podcast is exciting, but many beginners unknowingly make mistakes that can hurt their growth early on. The good news is that most of these pitfalls are easy to avoid once you're aware of them. By focusing on audio quality, staying consistent, understanding your audience, and promoting your content effectively, you can build a strong foundation. Podcasting success doesn't happen overnight—but with patience and the right approach, you can create content that resonates and grows over time.`;
+
 const blogPosts = [
   {
     title: "How to Set Up Your First Podcast Studio",
@@ -46,6 +61,7 @@ const blogPosts = [
 
 const BlogSection = () => {
   const [openFirst, setOpenFirst] = useState(false);
+  const [openSecond, setOpenSecond] = useState(false);
 
   return (
     <section id="blog" className="py-20 md:py-28 bg-background">
@@ -78,7 +94,10 @@ const BlogSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              onClick={() => index === 0 && setOpenFirst(true)}
+              onClick={() => {
+                if (index === 0) setOpenFirst(true);
+                if (index === 1) setOpenSecond(true);
+              }}
               className="group rounded-2xl overflow-hidden border border-border/40 bg-card hover:shadow-xl transition-all duration-500 cursor-pointer"
             >
               {/* Image */}
@@ -174,6 +193,68 @@ const BlogSection = () => {
                 {paragraph}
               </p>
             ))}
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Second blog post modal */}
+      <Dialog open={openSecond} onOpenChange={setOpenSecond}>
+        <DialogContent
+          className="max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl p-0 gap-0 border border-[hsl(350_90%_88%)]/70 shadow-[0_20px_60px_-15px_hsl(352_98%_63%/0.35)]"
+          style={{
+            background:
+              "linear-gradient(180deg, hsl(350 100% 98%) 0%, hsl(0 0% 100%) 35%)",
+          }}
+        >
+          <DialogHeader
+            className="px-6 md:px-8 pt-7 md:pt-9 pb-5 border-b border-[hsl(350_90%_90%)]/80"
+            style={{
+              background:
+                "linear-gradient(135deg, hsl(350 100% 96%) 0%, hsl(345 90% 94%) 60%, hsl(340 85% 92%) 100%)",
+            }}
+          >
+            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-primary mb-2 inline-block w-fit px-2.5 py-1 rounded-full bg-[hsl(350_100%_94%)] border border-[hsl(350_90%_85%)]/60">
+              Tips
+            </span>
+            <DialogTitle className="text-2xl md:text-3xl font-bold text-foreground pr-8 leading-tight text-left">
+              Top 10 Podcasting Mistakes Beginners Make
+            </DialogTitle>
+            <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground pt-3">
+              <span className="flex items-center gap-1.5">
+                <User size={12} className="text-primary" />
+                Banter Team
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Calendar size={12} className="text-primary" />
+                Mar 25, 2026
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Clock size={12} className="text-primary" />
+                4 min read
+              </span>
+            </div>
+          </DialogHeader>
+          <div className="px-6 md:px-8 py-6 md:py-8 space-y-6">
+            <ol className="space-y-3">
+              {secondPostMistakes.map((mistake, i) => (
+                <li
+                  key={i}
+                  className="flex items-start gap-4 p-3 md:p-4 rounded-xl bg-[hsl(350_100%_98%)] border border-[hsl(350_90%_92%)]/70 hover:border-[hsl(350_90%_85%)] transition-colors duration-300"
+                >
+                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-primary to-[hsl(340_90%_55%)] text-primary-foreground text-sm font-bold flex items-center justify-center shadow-[0_4px_12px_-2px_hsl(352_98%_63%/0.4)]">
+                    {i + 1}
+                  </span>
+                  <span className="text-sm md:text-base text-foreground/85 leading-relaxed pt-1">
+                    {mistake}
+                  </span>
+                </li>
+              ))}
+            </ol>
+            <div className="pt-2 border-t border-[hsl(350_90%_92%)]/70">
+              <p className="text-sm md:text-base text-foreground/80 leading-relaxed pt-5">
+                {secondPostClosing}
+              </p>
+            </div>
           </div>
         </DialogContent>
       </Dialog>
