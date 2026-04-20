@@ -21,7 +21,7 @@ const HeroSection = () => {
   }, [next]);
 
   return (
-    <section id="hero" className="relative w-full overflow-hidden" style={{ height: "calc(100vh - 100px)", marginTop: "100px" }}>
+    <section id="hero" className="relative w-full overflow-hidden bg-black" style={{ height: "calc(100vh - 100px)", marginTop: "100px" }}>
       {/* Background image slider */}
       <AnimatePresence mode="popLayout">
         <motion.div
