@@ -196,6 +196,68 @@ const BlogSection = () => {
           </div>
         </DialogContent>
       </Dialog>
+
+      {/* Second blog post modal */}
+      <Dialog open={openSecond} onOpenChange={setOpenSecond}>
+        <DialogContent
+          className="max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl p-0 gap-0 border border-[hsl(350_90%_88%)]/70 shadow-[0_20px_60px_-15px_hsl(352_98%_63%/0.35)]"
+          style={{
+            background:
+              "linear-gradient(180deg, hsl(350 100% 98%) 0%, hsl(0 0% 100%) 35%)",
+          }}
+        >
+          <DialogHeader
+            className="px-6 md:px-8 pt-7 md:pt-9 pb-5 border-b border-[hsl(350_90%_90%)]/80"
+            style={{
+              background:
+                "linear-gradient(135deg, hsl(350 100% 96%) 0%, hsl(345 90% 94%) 60%, hsl(340 85% 92%) 100%)",
+            }}
+          >
+            <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-primary mb-2 inline-block w-fit px-2.5 py-1 rounded-full bg-[hsl(350_100%_94%)] border border-[hsl(350_90%_85%)]/60">
+              Tips
+            </span>
+            <DialogTitle className="text-2xl md:text-3xl font-bold text-foreground pr-8 leading-tight text-left">
+              Top 10 Podcasting Mistakes Beginners Make
+            </DialogTitle>
+            <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground pt-3">
+              <span className="flex items-center gap-1.5">
+                <User size={12} className="text-primary" />
+                Banter Team
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Calendar size={12} className="text-primary" />
+                Mar 25, 2026
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Clock size={12} className="text-primary" />
+                4 min read
+              </span>
+            </div>
+          </DialogHeader>
+          <div className="px-6 md:px-8 py-6 md:py-8 space-y-6">
+            <ol className="space-y-3">
+              {secondPostMistakes.map((mistake, i) => (
+                <li
+                  key={i}
+                  className="flex items-start gap-4 p-3 md:p-4 rounded-xl bg-[hsl(350_100%_98%)] border border-[hsl(350_90%_92%)]/70 hover:border-[hsl(350_90%_85%)] transition-colors duration-300"
+                >
+                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-primary to-[hsl(340_90%_55%)] text-primary-foreground text-sm font-bold flex items-center justify-center shadow-[0_4px_12px_-2px_hsl(352_98%_63%/0.4)]">
+                    {i + 1}
+                  </span>
+                  <span className="text-sm md:text-base text-foreground/85 leading-relaxed pt-1">
+                    {mistake}
+                  </span>
+                </li>
+              ))}
+            </ol>
+            <div className="pt-2 border-t border-[hsl(350_90%_92%)]/70">
+              <p className="text-sm md:text-base text-foreground/80 leading-relaxed pt-5">
+                {secondPostClosing}
+              </p>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
