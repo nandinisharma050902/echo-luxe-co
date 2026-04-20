@@ -14,6 +14,21 @@ Next, consider your recording and editing software. Beginners can start with fre
 
 Finally, think about workflow and comfort. Arrange your equipment so everything is within reach, keep cables organized, and ensure your seating supports long recording sessions. Test your setup before publishing your first episode, paying attention to background noise, volume levels, and clarity. With a thoughtful approach and a focus on fundamentals, you can create a podcast studio that sounds professional, feels comfortable, and scales with your ambitions—turning your ideas into a listening experience people will want to come back to.`;
 
+const secondPostMistakes = [
+  "Poor audio quality that drives listeners away",
+  "Ignoring recording environment and acoustics",
+  "Overinvesting in equipment instead of content",
+  "Inconsistent publishing schedule",
+  "Not defining a clear target audience",
+  "Lack of episode structure or planning",
+  "Skipping proper editing and cleanup",
+  "Weak or missing podcast branding",
+  "Not promoting episodes effectively",
+  "Giving up too early before seeing growth",
+];
+
+const secondPostClosing = `Starting a podcast is exciting, but many beginners unknowingly make mistakes that can hurt their growth early on. The good news is that most of these pitfalls are easy to avoid once you're aware of them. By focusing on audio quality, staying consistent, understanding your audience, and promoting your content effectively, you can build a strong foundation. Podcasting success doesn't happen overnight—but with patience and the right approach, you can create content that resonates and grows over time.`;
+
 const blogPosts = [
   {
     title: "How to Set Up Your First Podcast Studio",
@@ -46,6 +61,7 @@ const blogPosts = [
 
 const BlogSection = () => {
   const [openFirst, setOpenFirst] = useState(false);
+  const [openSecond, setOpenSecond] = useState(false);
 
   return (
     <section id="blog" className="py-20 md:py-28 bg-background">
@@ -78,7 +94,10 @@ const BlogSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              onClick={() => index === 0 && setOpenFirst(true)}
+              onClick={() => {
+                if (index === 0) setOpenFirst(true);
+                if (index === 1) setOpenSecond(true);
+              }}
               className="group rounded-2xl overflow-hidden border border-border/40 bg-card hover:shadow-xl transition-all duration-500 cursor-pointer"
             >
               {/* Image */}
