@@ -4,7 +4,6 @@ import heroSlide1 from "@/assets/hero-slide-1.jpg";
 import heroSlide2 from "@/assets/hero-slide-2.jpg";
 import heroSlide3 from "@/assets/hero-slide-3.jpg";
 import heroSlide4 from "@/assets/hero-slide-4.jpg";
-import logo from "@/assets/banter-logo.png";
 
 const slides = [heroSlide1, heroSlide2, heroSlide3, heroSlide4];
 
@@ -52,16 +51,6 @@ const HeroSection = () => {
 
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 z-[1]" />
-
-      {/* Faint logo watermark */}
-      <div className="absolute inset-0 z-[1] flex items-center justify-center pointer-events-none">
-        <img
-          src={logo}
-          alt=""
-          className="w-[300px] md:w-[500px] opacity-[0.04]"
-          style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
-        />
-      </div>
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
