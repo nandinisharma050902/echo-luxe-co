@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Calendar, Clock, Film, ImageIcon, Scissors } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const studioOptions = [
   "Studio 1 – Leadership Lounge / Think Tank",
@@ -19,6 +21,8 @@ const addons = [
 
 const BookingSection = () => {
   const [form, setForm] = useState({ studio: "", date: "", time: "", name: "", email: "", phone: "", addons: [] as string[] });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const toggleAddon = (id: string) => {
     setForm((prev) => ({
@@ -27,9 +31,35 @@ const BookingSection = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Booking submitted! We'll get back to you shortly.");
+    if (isSubmitting) return;
+    setIsSubmitting(true);
+    try {
+      const addonLabels = form.addons
+        .map((id) => addons.find((a) => a.id === id)?.label)
+        .filter(Boolean) as string[];
+
+      const { error } = await supabase.functions.invoke("send-booking-email", {
+        body: {
+          studio: form.studio,
+          date: form.date,
+          time: form.time,
+          name: form.name.trim(),
+          email: form.email.trim(),
+          phone: form.phone.trim(),
+          addons: addonLabels,
+        },
+      });
+      if (error) throw error;
+      toast({ title: "Booking submitted!", description: "We'll get back to you shortly." });
+      setForm({ studio: "", date: "", time: "", name: "", email: "", phone: "", addons: [] });
+    } catch (err) {
+      console.error("Booking error:", err);
+      toast({ title: "Something went wrong", description: "Please try again or contact us directly.", variant: "destructive" });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const inputClass = "w-full rounded-xl px-4 py-3 font-body text-sm transition-all placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30";
@@ -126,7 +156,9 @@ const BookingSection = () => {
             </div>
           </div>
 
-          <button type="submit" className="btn-primary w-full text-center">Book Your Slot</button>
+          <button type="submit" disabled={isSubmitting} className="btn-primary w-full text-center disabled:opacity-60 disabled:cursor-not-allowed">
+            {isSubmitting ? "Sending..." : "Book Your Slot"}
+          </button>
         </motion.form>
       </div>
     </section>
