@@ -1,14 +1,16 @@
+import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
-import BlogSection from "@/components/BlogSection";
-import StudiosSection from "@/components/StudiosSection";
-import FeaturesSection from "@/components/FeaturesSection";
-import ExperienceSection from "@/components/ExperienceSection";
-import BookingSection from "@/components/BookingSection";
-import LeadCaptureSection from "@/components/LeadCaptureSection";
-import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+
+const AboutSection = lazy(() => import("@/components/AboutSection"));
+const BlogSection = lazy(() => import("@/components/BlogSection"));
+const StudiosSection = lazy(() => import("@/components/StudiosSection"));
+const FeaturesSection = lazy(() => import("@/components/FeaturesSection"));
+const ExperienceSection = lazy(() => import("@/components/ExperienceSection"));
+const BookingSection = lazy(() => import("@/components/BookingSection"));
+const LeadCaptureSection = lazy(() => import("@/components/LeadCaptureSection"));
+const Footer = lazy(() => import("@/components/Footer"));
+const WhatsAppButton = lazy(() => import("@/components/WhatsAppButton"));
 
 const Index = () => {
   return (
@@ -18,17 +20,17 @@ const Index = () => {
       
       <Navbar />
       <HeroSection />
-      <BookingSection />
-      <AboutSection />
-      <BlogSection />
-      <StudiosSection />
-      <FeaturesSection />
-      <ExperienceSection />
-      <LeadCaptureSection />
-      <Footer />
-
-      {/* WhatsApp floating button */}
-      <WhatsAppButton />
+      <Suspense fallback={null}>
+        <BookingSection />
+        <AboutSection />
+        <BlogSection />
+        <StudiosSection />
+        <FeaturesSection />
+        <ExperienceSection />
+        <LeadCaptureSection />
+        <Footer />
+        <WhatsAppButton />
+      </Suspense>
 
       {/* Mobile sticky CTA */}
       <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden p-3"
