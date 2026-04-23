@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 import logo from "@/assets/banter-logo.png";
 
@@ -29,8 +28,16 @@ const Navbar = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", onScroll);
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 50);
+        ticking = false;
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -53,11 +60,8 @@ const Navbar = () => {
   };
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
+    <nav
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 animate-fade-in ${
         scrolled ? "py-2" : "py-4"
       }`}
       style={{
@@ -69,11 +73,12 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo + Brand */}
         <a href="#hero" className="flex items-center group">
-          <motion.img
+          <img
             src={logo}
             alt="Banter Studio"
-            className="h-14 md:h-16 lg:h-[72px] w-auto"
-            whileHover={{ scale: 1.04 }}
+            width={200}
+            height={72}
+            className="h-14 md:h-16 lg:h-[72px] w-auto transition-transform duration-200 hover:scale-[1.04]"
           />
         </a>
 
