@@ -15,9 +15,6 @@ const WhatsAppButton = lazy(() => import("@/components/WhatsAppButton"));
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground relative">
-      {/* Film grain overlay */}
-      <div className="grain-overlay" />
-      
       <Navbar />
       <HeroSection />
       <Suspense fallback={null}>
