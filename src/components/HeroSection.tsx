@@ -44,6 +44,10 @@ const HeroSection = () => {
             className="w-full h-full object-cover"
             width={1920}
             height={1080}
+            loading={current === 0 ? "eager" : "lazy"}
+            decoding="async"
+            // @ts-expect-error fetchpriority is valid HTML
+            fetchpriority={current === 0 ? "high" : "low"}
             style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
           />
         </motion.div>
