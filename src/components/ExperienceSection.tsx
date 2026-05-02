@@ -1,6 +1,13 @@
 import { motion } from "framer-motion";
 import { Star, CalendarCheck, Film, Sparkles, Send, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
 
 const steps = [
   {
@@ -174,29 +181,40 @@ const ExperienceSection = () => {
           <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground">Creator Testimonials</h3>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {testimonials.map((t, i) => (
-            <motion.div
-              key={t.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="card-glass"
-            >
-              <div className="flex gap-0.5 mb-3">
-                {Array.from({ length: t.rating }).map((_, j) => (
-                  <Star key={j} className="w-4 h-4 fill-primary text-primary" />
-                ))}
-              </div>
-              <p className="text-muted-foreground font-body text-sm mb-4 leading-relaxed">"{t.text}"</p>
-              <div>
-                <p className="font-heading text-sm font-bold text-foreground">{t.name}</p>
-                <p className="text-xs text-muted-foreground font-body">{t.role}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        <Carousel
+          opts={{ align: "start", loop: true }}
+          className="w-full px-2 sm:px-8"
+        >
+          <CarouselContent>
+            {testimonials.map((t, i) => (
+              <CarouselItem
+                key={t.name}
+                className="basis-full sm:basis-1/2 lg:basis-1/3"
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="card-glass h-full"
+                >
+                  <div className="flex gap-0.5 mb-3">
+                    {Array.from({ length: t.rating }).map((_, j) => (
+                      <Star key={j} className="w-4 h-4 fill-primary text-primary" />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground font-body text-sm mb-4 leading-relaxed">"{t.text}"</p>
+                  <div>
+                    <p className="font-heading text-sm font-bold text-foreground">{t.name}</p>
+                    <p className="text-xs text-muted-foreground font-body">{t.role}</p>
+                  </div>
+                </motion.div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden sm:flex" />
+          <CarouselNext className="hidden sm:flex" />
+        </Carousel>
       </div>
     </section>
   );
