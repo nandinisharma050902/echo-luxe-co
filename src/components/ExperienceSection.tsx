@@ -40,16 +40,6 @@ const ExperienceSection = () => {
     <section id="experience" className="relative bg-background overflow-hidden">
       <div className="section-divider absolute top-0 left-0 right-0" />
 
-      {/* Soft premium background */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse at 20% 0%, hsl(var(--primary) / 0.08), transparent 60%), radial-gradient(ellipse at 80% 100%, hsl(var(--primary) / 0.06), transparent 60%)",
-        }}
-      />
-
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-36">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
