@@ -4,12 +4,12 @@ import logo from "@/assets/banter-logo.png";
 
 const navLinks = [
   { label: "Home", href: "#hero" },
+  { label: "Studios", href: "#studios", hasDropdown: true },
+  { label: "Experience", href: "#experience" },
+  { label: "Features", href: "#features" },
+  { label: "Testimonials", href: "#testimonials" },
   { label: "About", href: "#about" },
   { label: "Blog", href: "#blog" },
-  { label: "Studios", href: "#studios", hasDropdown: true },
-  { label: "Features", href: "#features" },
-  { label: "Experience", href: "#experience" },
-  { label: "Testimonials", href: "#testimonials" },
 ];
 
 const studioItems = [

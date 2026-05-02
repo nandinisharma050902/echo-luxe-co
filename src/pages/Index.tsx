@@ -18,13 +18,14 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <Suspense fallback={null}>
+        <StudiosSection />
+        <ExperienceSection />
+        <FeaturesSection />
+        {/* Testimonials live inside ExperienceSection */}
         <AboutSection />
         <BookingSection />
-        <BlogSection />
-        <StudiosSection />
-        <FeaturesSection />
-        <ExperienceSection />
         <LeadCaptureSection />
+        <BlogSection />
         <Footer />
         <WhatsAppButton />
       </Suspense>
