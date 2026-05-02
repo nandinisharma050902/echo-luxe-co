@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="section-padding bg-background relative">
       <div className="section-divider absolute top-0 left-0 right-0" />
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
           <div>
             <div className="flex items-center gap-3 mb-4">
               <img src={logo} alt="Banter Studio" className="h-10 drop-shadow-[0_0_6px_hsla(352,98%,63%,0.3)]" />
@@ -15,17 +15,6 @@ const Footer = () => {
             <p className="text-muted-foreground font-body text-sm leading-relaxed">
               Premium podcast & content studios for creators, brands, and visionaries. Build your voice. Amplify your story.
             </p>
-          </div>
-
-          <div>
-            <h4 className="font-heading text-sm font-bold uppercase tracking-wider text-foreground mb-4">Quick Links</h4>
-            <div className="space-y-2">
-              {["About", "Studios", "Features", "Booking"].map((link) => (
-                <a key={link} href={`#${link.toLowerCase()}`} className="block text-muted-foreground hover:text-primary transition-colors text-sm font-body">
-                  {link}
-                </a>
-              ))}
-            </div>
           </div>
 
           <div>
