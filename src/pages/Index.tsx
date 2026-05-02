@@ -18,8 +18,8 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <Suspense fallback={null}>
-        <BookingSection />
         <AboutSection />
+        <BookingSection />
         <BlogSection />
         <StudiosSection />
         <FeaturesSection />
