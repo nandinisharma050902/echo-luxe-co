@@ -9,6 +9,7 @@ const navLinks = [
   { label: "Studios", href: "#studios", hasDropdown: true },
   { label: "Features", href: "#features" },
   { label: "Experience", href: "#experience" },
+  { label: "Testimonials", href: "#testimonials" },
 ];
 
 const studioItems = [
