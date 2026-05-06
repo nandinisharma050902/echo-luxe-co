@@ -22,7 +22,7 @@ const BlogSection = () => {
             Latest from the Studio
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
-            Tips, insights, and stories from the world of podcasting.
+            Tips, insights and stories from the world of podcasting.
           </p>
         </motion.div>
 
