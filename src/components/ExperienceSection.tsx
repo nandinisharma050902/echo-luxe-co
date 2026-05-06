@@ -1,13 +1,9 @@
 import { motion } from "framer-motion";
 import { Star, CalendarCheck, Film, Sparkles, Send, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
-} from "@/components/ui/carousel";
+import arjunImg from "@/assets/testimonial-arjun.jpg";
+import priyaImg from "@/assets/testimonial-priya.jpg";
+import rohitImg from "@/assets/testimonial-rohit.jpg";
 
 const steps = [
   {
@@ -37,9 +33,9 @@ const steps = [
 ];
 
 const testimonials = [
-  { name: "Arjun Mehta", role: "Tech Podcaster", text: "Banter Studio completely elevated our production quality. The lighting and sound are top-notch!", rating: 5 },
-  { name: "Priya Sharma", role: "Brand Strategist", text: "The team handles everything from concept to distribution. A true full-stack studio experience.", rating: 5 },
-  { name: "Rohit Kapoor", role: "Content Creator", text: "Six studios with unique vibes, we always find the perfect setup for every episode.", rating: 5 },
+  { name: "Arjun Mehta", role: "Tech Podcaster", image: arjunImg, text: "Banter Studio completely elevated our production quality. The lighting and sound are top-notch!", rating: 5 },
+  { name: "Priya Sharma", role: "Brand Strategist", image: priyaImg, text: "The team handles everything from concept to distribution. A true full-stack studio experience.", rating: 5 },
+  { name: "Rohit Kapoor", role: "Content Creator", image: rohitImg, text: "Six studios with unique vibes, we always find the perfect setup for every episode.", rating: 5 },
 ];
 
 const ExperienceSection = () => {
@@ -182,40 +178,42 @@ const ExperienceSection = () => {
           <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground">Creator Testimonials</h3>
         </motion.div>
 
-        <Carousel
-          opts={{ align: "start", loop: true }}
-          className="w-full px-2 sm:px-8"
+        <div
+          className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 px-2 sm:px-4 scroll-smooth [scrollbar-width:thin]"
+          style={{ scrollbarColor: "hsl(var(--primary) / 0.4) transparent" }}
         >
-          <CarouselContent>
-            {testimonials.map((t, i) => (
-              <CarouselItem
-                key={t.name}
-                className="basis-full sm:basis-1/2 lg:basis-1/3"
-              >
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="card-glass h-full"
-                >
-                  <div className="flex gap-0.5 mb-3">
-                    {Array.from({ length: t.rating }).map((_, j) => (
-                      <Star key={j} className="w-4 h-4 fill-primary text-primary" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground font-body text-sm mb-4 leading-relaxed">"{t.text}"</p>
-                  <div>
-                    <p className="font-heading text-sm font-bold text-foreground">{t.name}</p>
-                    <p className="text-xs text-muted-foreground font-body">{t.role}</p>
-                  </div>
-                </motion.div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="hidden sm:flex" />
-          <CarouselNext className="hidden sm:flex" />
-        </Carousel>
+          {testimonials.map((t, i) => (
+            <motion.div
+              key={t.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="card-glass snap-start shrink-0 w-[85%] sm:w-[380px] flex flex-col"
+            >
+              <div className="flex items-center gap-4 mb-4">
+                <img
+                  src={t.image}
+                  alt={t.name}
+                  width={64}
+                  height={64}
+                  loading="lazy"
+                  className="w-16 h-16 rounded-full object-cover border-2 border-primary/40 shadow-[0_0_20px_hsl(var(--primary)/0.25)]"
+                />
+                <div>
+                  <p className="font-heading text-base font-bold text-foreground">{t.name}</p>
+                  <p className="text-xs text-muted-foreground font-body">{t.role}</p>
+                </div>
+              </div>
+              <div className="flex gap-0.5 mb-3">
+                {Array.from({ length: t.rating }).map((_, j) => (
+                  <Star key={j} className="w-4 h-4 fill-primary text-primary" />
+                ))}
+              </div>
+              <p className="text-muted-foreground font-body text-sm leading-relaxed">"{t.text}"</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
