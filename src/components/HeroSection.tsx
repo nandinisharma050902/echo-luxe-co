@@ -69,7 +69,7 @@ const HeroSection = () => {
         </h1>
 
         <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-body font-light animate-fade-in">
-          Professional podcast setups for creators, brands, and storytellers
+          Professional podcast setups for creators, brands and storytellers
         </p>
 
         <div className="animate-fade-in">

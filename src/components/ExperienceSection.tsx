@@ -13,7 +13,7 @@ const steps = [
   {
     icon: CalendarCheck,
     title: "Book Your Session",
-    desc: "Choose your studio, format, and time slot in seconds with our seamless booking system.",
+    desc: "Receive ready to publish content optimized for all your platforms.",
     detail: "Takes < 2 minutes",
   },
   {
@@ -39,7 +39,7 @@ const steps = [
 const testimonials = [
   { name: "Arjun Mehta", role: "Tech Podcaster", text: "Banter Studio completely elevated our production quality. The lighting and sound are top-notch!", rating: 5 },
   { name: "Priya Sharma", role: "Brand Strategist", text: "The team handles everything from concept to distribution. A true full-stack studio experience.", rating: 5 },
-  { name: "Rohit Kapoor", role: "Content Creator", text: "Six studios with unique vibes — we always find the perfect setup for every episode.", rating: 5 },
+  { name: "Rohit Kapoor", role: "Content Creator", text: "Six studios with unique vibes, we always find the perfect setup for every episode.", rating: 5 },
 ];
 
 const ExperienceSection = () => {
@@ -59,7 +59,7 @@ const ExperienceSection = () => {
             How It Works
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto font-body font-light leading-relaxed">
-            From booking to publishing — a seamless, end-to-end studio experience designed for creators.
+            From booking to publishing: a seamless, end to end studio experience designed for creators.
           </p>
         </motion.div>
 

@@ -40,7 +40,7 @@ export const blogPosts = [
   {
     slug: "how-to-set-up-your-first-podcast-studio",
     title: "How to Set Up Your First Podcast Studio",
-    excerpt: "A comprehensive guide to choosing the right equipment, acoustics, and layout for your podcast recording space.",
+    excerpt: "Discover how podcasting can elevate your brand's reach, build authentic connections and drive engagement.",
     author: "Banter Team",
     date: "Apr 2, 2026",
     readTime: "5 min read",

@@ -37,7 +37,7 @@ const studios: StudioData[] = [
   },
   {
     id: 2, name: "Studio 2",
-    variant1: { name: "The Insight Exchange", ideal: "Deep-dive interviews & expert panels", image: studio2v1 },
+    variant1: { name: "The Insight Exchange", ideal: "One on one deep conversations", image: studio2v1 },
     variant2: { name: "The Vision Room", ideal: "Creative sessions & brand storytelling", image: studio2v2 },
     features: ["Multi-camera recording", "LED accent lighting", "Acoustic treatment", "Teleprompter ready"],
   },
