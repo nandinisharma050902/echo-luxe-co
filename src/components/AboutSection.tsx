@@ -4,7 +4,7 @@ import { Lightbulb, Users, Mic2, Scissors, Send } from "lucide-react";
 const services = [
   { icon: Lightbulb, title: "Conceptualization", desc: "We brainstorm and develop your podcast concept from scratch" },
   { icon: Users, title: "Guest Outreach", desc: "We connect you with the right guests for compelling conversations" },
-  { icon: Mic2, title: "Recording", desc: "State-of-the-art studio recording with professional equipment" },
+  { icon: Mic2, title: "Recording", desc: "Multi platform distribution across all major channels" },
   { icon: Scissors, title: "Editing & Post", desc: "Professional editing, mixing, and mastering of your content" },
   { icon: Send, title: "Distribution", desc: "Multi-platform distribution across all major channels" },
 ];
@@ -25,7 +25,7 @@ const AboutSection = () => {
             Full Stack Podcast Production
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto font-body font-light">
-            Looking for a full-stack, result-driven podcast setup? Welcome to Banter Studio — we handle everything so you can focus on your fame.
+            Looking for a full-stack, result-driven podcast setup? Welcome to Banter Studio, we handle everything so you can focus on your fame.
           </p>
         </motion.div>
 
