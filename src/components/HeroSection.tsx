@@ -74,7 +74,7 @@ const HeroSection = () => {
 
         <div className="animate-fade-in">
           <a href="#booking" className="btn-primary text-base !px-10 !py-4">
-            Book Your Studio
+            Book Your Studio @ ₹3,999
           </a>
         </div>
       </div>
