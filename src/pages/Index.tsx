@@ -8,7 +8,6 @@ const StudiosSection = lazy(() => import("@/components/StudiosSection"));
 const FeaturesSection = lazy(() => import("@/components/FeaturesSection"));
 const ExperienceSection = lazy(() => import("@/components/ExperienceSection"));
 const BookingSection = lazy(() => import("@/components/BookingSection"));
-const LeadCaptureSection = lazy(() => import("@/components/LeadCaptureSection"));
 const Footer = lazy(() => import("@/components/Footer"));
 const WhatsAppButton = lazy(() => import("@/components/WhatsAppButton"));
 
@@ -24,7 +23,6 @@ const Index = () => {
         {/* Testimonials live inside ExperienceSection */}
         <AboutSection />
         <BookingSection />
-        <LeadCaptureSection />
         <BlogSection />
         <Footer />
         <WhatsAppButton />
