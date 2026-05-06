@@ -155,7 +155,7 @@ const ExperienceSection = () => {
                   onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })}
                   className="w-full sm:w-auto group transition-transform duration-200 hover:scale-[1.03]"
                 >
-                  Book Your Session
+                  Book Your Session @ ₹3,999
                   <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-0.5" />
                 </Button>
                 <Button
