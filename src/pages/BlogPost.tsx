@@ -99,9 +99,6 @@ const BlogPost = () => {
             Back to Blog
           </Link>
 
-          <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-primary mb-3 inline-block px-2.5 py-1 rounded-full bg-[hsl(350_100%_94%)] border border-[hsl(350_90%_85%)]/60">
-            {post.category}
-          </span>
           <h1 className="text-3xl md:text-5xl font-bold text-foreground leading-tight mb-5">
             {post.title}
           </h1>
