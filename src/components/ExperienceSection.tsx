@@ -179,40 +179,43 @@ const ExperienceSection = () => {
         </motion.div>
 
         <div
-          className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 px-2 sm:px-4 scroll-smooth [scrollbar-width:thin]"
-          style={{ scrollbarColor: "hsl(var(--primary) / 0.4) transparent" }}
+          className="group relative overflow-hidden"
+          style={{
+            maskImage:
+              "linear-gradient(to right, transparent, #000 8%, #000 92%, transparent)",
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent, #000 8%, #000 92%, transparent)",
+          }}
         >
-          {testimonials.map((t, i) => (
-            <motion.div
-              key={t.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="card-glass snap-start shrink-0 w-[85%] sm:w-[380px] flex flex-col"
-            >
-              <div className="flex items-center gap-4 mb-4">
-                <img
-                  src={t.image}
-                  alt={t.name}
-                  width={64}
-                  height={64}
-                  loading="lazy"
-                  className="w-16 h-16 rounded-full object-cover border-2 border-primary/40 shadow-[0_0_20px_hsl(var(--primary)/0.25)]"
-                />
-                <div>
-                  <p className="font-heading text-base font-bold text-foreground">{t.name}</p>
-                  <p className="text-xs text-muted-foreground font-body">{t.role}</p>
+          <div className="flex gap-6 w-max animate-marquee group-hover:[animation-play-state:paused] py-2">
+            {[...testimonials, ...testimonials].map((t, i) => (
+              <div
+                key={`${t.name}-${i}`}
+                className="card-glass shrink-0 w-[85%] sm:w-[380px] flex flex-col"
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <img
+                    src={t.image}
+                    alt={t.name}
+                    width={64}
+                    height={64}
+                    loading="lazy"
+                    className="w-16 h-16 rounded-full object-cover border-2 border-primary/40 shadow-[0_0_20px_hsl(var(--primary)/0.25)]"
+                  />
+                  <div>
+                    <p className="font-heading text-base font-bold text-foreground">{t.name}</p>
+                    <p className="text-xs text-muted-foreground font-body">{t.role}</p>
+                  </div>
                 </div>
+                <div className="flex gap-0.5 mb-3">
+                  {Array.from({ length: t.rating }).map((_, j) => (
+                    <Star key={j} className="w-4 h-4 fill-primary text-primary" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground font-body text-sm leading-relaxed">"{t.text}"</p>
               </div>
-              <div className="flex gap-0.5 mb-3">
-                {Array.from({ length: t.rating }).map((_, j) => (
-                  <Star key={j} className="w-4 h-4 fill-primary text-primary" />
-                ))}
-              </div>
-              <p className="text-muted-foreground font-body text-sm leading-relaxed">"{t.text}"</p>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
