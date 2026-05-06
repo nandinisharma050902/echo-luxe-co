@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Sun, Camera, ShieldCheck, Zap, Share2 } from "lucide-react";
 
 const features = [
-  { icon: Sun, title: "Cinematic Lighting", desc: "Professional-grade lighting rigs designed for stunning on-camera visuals" },
+  { icon: Sun, title: "Cinematic Lighting", desc: "Fully acoustically treated rooms for crystal clear audio" },
   { icon: Camera, title: "Multi-Camera Recording", desc: "Multiple angles captured simultaneously for dynamic content" },
   { icon: ShieldCheck, title: "Soundproof Environment", desc: "Fully acoustically treated rooms for crystal-clear audio" },
   { icon: Zap, title: "Instant Delivery", desc: "Get your raw and edited content delivered within hours" },
