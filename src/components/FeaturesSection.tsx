@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Sun, Camera, ShieldCheck, Zap, Share2 } from "lucide-react";
+import { Sun, Camera, ShieldCheck, Zap, Share2, Headphones } from "lucide-react";
 
 const features = [
   { icon: Sun, title: "Cinematic Lighting", desc: "Fully acoustically treated rooms for crystal clear audio" },
@@ -7,6 +7,7 @@ const features = [
   { icon: ShieldCheck, title: "Soundproof Environment", desc: "Fully acoustically treated rooms for crystal-clear audio" },
   { icon: Zap, title: "Instant Delivery", desc: "Get your raw and edited content delivered within hours" },
   { icon: Share2, title: "Social Optimized", desc: "Outputs formatted for YouTube, Instagram, Spotify & more" },
+  { icon: Headphones, title: "Expert Support", desc: "On-site producers and engineers to guide every session" },
 ];
 
 const FeaturesSection = () => {
@@ -34,7 +35,7 @@ const FeaturesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className={`card-glass group ${i === 4 ? "md:col-span-2 lg:col-span-1" : ""}`}
+              className="card-glass group"
             >
               <div className="w-12 h-12 mb-4 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)]"
                 style={{ background: "hsl(var(--primary) / 0.1)" }}>
