@@ -1465,7 +1465,7 @@ const brandSections: BrandSection[] = [
     video: {
       title: "Recommended Video: How Brands Can Use Podcasts for Thought Leadership",
       placeholder: "Add your YouTube video URL here.",
-      url: "https://www.youtube.com/embed/5I_ifG3h_B8",
+      url: "https://www.youtube.com/embed/Rzty6V6EVQI",
     },
   },
   {
