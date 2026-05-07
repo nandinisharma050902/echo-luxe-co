@@ -437,12 +437,12 @@ const StudioSetupArticle = () => {
                 <p className="text-base md:text-lg text-foreground/80 leading-relaxed first-letter:text-5xl first-letter:font-bold first-letter:text-primary first-letter:mr-1 first-letter:float-left first-letter:leading-none first-letter:mt-1">
                   Setting up your first podcast studio doesn't require a huge budget or a professional recording
                   facility. What it really requires is a quiet, controlled, comfortable space where your voice
-                  sounds clear and consistent — episode after episode. Most beginners get this backwards. They
+                  sounds clear and consistent episode after episode. Most beginners get this backwards. They
                   obsess over expensive microphones and ignore the room, the workflow and the recording habits
                   that actually make a podcast sound professional.
                 </p>
                 <p className="text-base md:text-lg text-foreground/80 leading-relaxed mt-5">
-                  This guide walks through every piece of a smart beginner podcast studio setup — from picking
+                  This guide walks through every piece of a smart beginner podcast studio setup from picking
                   the right room and treating it for sound, to choosing a microphone, headphones, audio
                   interface and recording software, to building a desk and workflow you'll actually enjoy
                   using. The goal isn't perfection. It's a setup that sounds great today and can scale with
@@ -509,8 +509,8 @@ const StudioSetupArticle = () => {
                             </TableRow>
                             <TableRow>
                               <TableCell className="font-medium align-top">Upgrade flexibility</TableCell>
-                              <TableCell className="align-top text-foreground/75">Limited — usually a full replacement to upgrade.</TableCell>
-                              <TableCell className="align-top text-foreground/75">High — swap mic, interface or cables independently.</TableCell>
+                              <TableCell className="align-top text-foreground/75">Limited: usually a full replacement to upgrade.</TableCell>
+                              <TableCell className="align-top text-foreground/75">High: swap mic, interface or cables independently.</TableCell>
                             </TableRow>
                             <TableRow>
                               <TableCell className="font-medium align-top">Best for</TableCell>
