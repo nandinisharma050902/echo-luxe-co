@@ -34,6 +34,715 @@ Finally, think about workflow and comfort. Arrange your equipment so everything 
 
 const thirdPostArticle = `Finally, starting a podcast is more achievable than ever. With affordable equipment and user friendly software, brands can produce high-quality content without a large upfront investment. The key is not perfection, but consistency and clarity. By focusing on delivering value, maintaining a regular publishing schedule, and continuously improving your content, you can build a strong and sustainable presence. In a world where attention is limited and trust is everything, podcasting stands out as a long term strategy that not only amplifies your brand's voice but also builds lasting relationships with your audience.`;
 
+// =====================================================================
+// "How to Set Up Your First Podcast Studio" — long-form article data
+// =====================================================================
+
+type StudioSection = {
+  id: string;
+  short: string;
+  title: string;
+  paragraphs: string[];
+  bullets?: string[];
+  callout?: { kind: "Beginner Tip" | "Common Mistake" | "Pro Tip" | "Budget Tip"; text: string };
+  image?: { src: string; alt: string; caption: string };
+};
+
+const studioSections: StudioSection[] = [
+  {
+    id: "recording-space",
+    short: "Start With the Right Recording Space",
+    title: "Start With the Right Recording Space",
+    paragraphs: [
+      "The room you record in matters far more than most beginners think. A modestly priced microphone in a quiet, soft room will almost always sound better than an expensive microphone in a hard, echoey space. Before you upgrade any gear, take a careful look at where you actually press record.",
+      "You're not chasing a perfect studio. You're chasing a controlled space where your voice sounds clear, close and consistent from one episode to the next.",
+    ],
+    bullets: [
+      "Choose the quietest room available in your home or office.",
+      "Avoid rooms near traffic, kitchens, fans, air conditioners or shared walls.",
+      "Smaller rooms with soft furnishings often outperform large empty rooms.",
+      "Record at the time of day when your environment is naturally quietest.",
+      "Turn off noisy appliances, notifications and HVAC during recording.",
+    ],
+    callout: {
+      kind: "Beginner Tip",
+      text: "Before buying more gear, record a 30-second voice test in different rooms and compare which one sounds the cleanest.",
+    },
+  },
+  {
+    id: "room-acoustics",
+    short: "Improve Room Acoustics",
+    title: "Improve Room Acoustics",
+    paragraphs: [
+      "It helps to separate two ideas that beginners often confuse. Soundproofing blocks outside noise from getting in. Acoustic treatment controls how sound reflects inside the room you're already recording in. For most home podcasters, acoustic treatment is the bigger win.",
+      "You don't need a studio full of foam panels to get a clean sound. A few soft surfaces in the right places will dramatically reduce the echo that makes voices feel distant or hollow.",
+    ],
+    bullets: [
+      "Lay down rugs or carpet to absorb floor reflections.",
+      "Hang curtains over windows and large hard surfaces.",
+      "Record near bookshelves, sofas or other soft, irregular surfaces.",
+      "Avoid bare walls, glass and large open spaces directly behind you.",
+      "Place blankets or acoustic panels behind and beside the microphone.",
+      "If possible, build a small corner booth with soft material on three sides.",
+    ],
+    callout: {
+      kind: "Common Mistake",
+      text: "Many beginners spend money on a better microphone when the real issue is room echo. Treat the room first.",
+    },
+    image: {
+      src: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=1600&q=80",
+      alt: "Beginner home podcast studio with simple acoustic treatment",
+      caption: "A simple home studio with acoustic panels, soft surfaces and a desk microphone.",
+    },
+  },
+  {
+    id: "right-microphone",
+    short: "Choose the Right Microphone",
+    title: "Choose the Right Microphone",
+    paragraphs: [
+      "Your microphone is one of the most important pieces of podcasting gear because voice clarity directly affects how long listeners stay with each episode. But the most expensive mic isn't automatically the right one — the best mic for you depends on your room, your workflow and your budget.",
+      "Two main mic types matter for beginners. Dynamic microphones reject more background noise and tend to sound great in untreated rooms. Condenser microphones capture more detail and warmth, but they also pick up much more of the room around you, including fans, traffic and echo.",
+    ],
+    bullets: [
+      "Dynamic mics are usually the safer choice for untreated home rooms.",
+      "Condenser mics shine in well-treated, quiet recording spaces.",
+      "USB mics are simple, affordable and beginner-friendly.",
+      "XLR mics offer more control, better sound and a longer upgrade path.",
+      "Skip the most expensive option until your room and habits are dialled in.",
+    ],
+    callout: {
+      kind: "Pro Tip",
+      text: "Speak about a fist's distance from the mic and slightly off-axis. This single habit improves clarity more than most upgrades.",
+    },
+  },
+  {
+    id: "usb-vs-xlr",
+    short: "USB vs XLR Microphones",
+    title: "USB vs XLR Microphones",
+    paragraphs: [
+      "If you're stuck choosing between USB and XLR, the question isn't which one is technically better — both can sound great. The real question is how much complexity you want to manage and how far you plan to scale.",
+      "USB microphones plug directly into your computer and are perfect for solo creators who want to start recording the same day. XLR microphones require an audio interface but unlock cleaner audio, multiple inputs for guests and the ability to upgrade individual pieces of your setup over time.",
+    ],
+  },
+  {
+    id: "headphones",
+    short: "Use Closed-Back Headphones",
+    title: "Use Closed-Back Headphones",
+    paragraphs: [
+      "Headphones aren't a luxury in podcasting — they're essential. They let you monitor your audio in real time so you can hear background noise, mouth clicks, clipping or volume issues as they happen, instead of discovering them in the edit when it's too late to fix.",
+      "Closed-back headphones are the right choice for recording. Open-back models leak sound, which your microphone will happily pick up and bake into your recording. Regular speakers should never be used while recording for the same reason.",
+    ],
+    bullets: [
+      "Use closed-back headphones to prevent audio bleed into the mic.",
+      "Monitor levels and clarity in real time during every recording.",
+      "Catch problems like fan noise, hum or distortion before they're permanent.",
+      "Ask guests to wear headphones too, especially in remote interviews.",
+    ],
+    image: {
+      src: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1600&q=80",
+      alt: "Closed-back headphones used for podcast recording",
+      caption: "Closed-back headphones beside a podcast microphone — essential for clean monitoring.",
+    },
+  },
+  {
+    id: "audio-interface",
+    short: "Add an Audio Interface",
+    title: "Add an Audio Interface If You Use XLR",
+    paragraphs: [
+      "An audio interface is the bridge between an XLR microphone and your computer. It powers the mic when needed, controls the input level (gain) and converts the analog signal into clean digital audio your software can record without noise or distortion.",
+      "If you're using a USB microphone, you don't need an interface — the conversion is built in. The moment you move to XLR, however, an interface becomes one of the most important pieces of your setup.",
+    ],
+    bullets: [
+      "Provides clean, controllable gain for your microphone.",
+      "Offers dedicated headphone monitoring with low latency.",
+      "Supports multiple mic inputs so you can record co-hosts and guests.",
+      "Delivers phantom power for condenser microphones that need it.",
+      "Gives you a noticeably cleaner signal than most onboard computer inputs.",
+    ],
+    callout: {
+      kind: "Budget Tip",
+      text: "A simple two-input interface is enough for most beginner podcasts. Don't pay for channels and features you won't use for the first year.",
+    },
+  },
+  {
+    id: "recording-software",
+    short: "Pick Recording Software",
+    title: "Pick Recording Software",
+    paragraphs: [
+      "Podcast recording software doesn't need to be complicated. The right tool is the one that matches your format, fits your skill level and lets you publish without friction. You can always upgrade once you know what you actually need.",
+      "There are four broad categories worth knowing about: simple voice recorders for solo episodes, multitrack DAWs for full editing control, remote interview platforms that record each guest on a separate clean track, and video recording tools for podcasts that will also live on YouTube.",
+    ],
+    bullets: [
+      "Multitrack recording so each speaker has their own clean audio track.",
+      "Built-in noise reduction or easy plugin support.",
+      "Visible level meters so you can watch your input volume.",
+      "Standard export options like WAV and MP3.",
+      "Backup or redundant recording in case of a crash.",
+      "An editing timeline you can navigate without a tutorial every time.",
+    ],
+  },
+  {
+    id: "desk-workflow",
+    short: "Set Up Your Desk and Workflow",
+    title: "Set Up Your Desk and Workflow",
+    paragraphs: [
+      "Comfort and workflow matter more than they sound. Recording and editing a podcast involves long sessions, and a chaotic desk almost guarantees mistakes — wrong takes, missed cues, distracting noises and wasted energy that should be going into the conversation.",
+      "Spend an hour setting up your desk properly once, and you'll save yourself countless hours over the life of your show.",
+    ],
+    bullets: [
+      "Position the microphone at mouth level so you don't lean or strain.",
+      "Use a sturdy boom arm or solid desk stand to stop bumps and rumble.",
+      "Always use a pop filter or windscreen to soften plosive sounds.",
+      "Keep your outline, notes or script visible without shuffling paper.",
+      "Route and tie cables so they don't tangle, snag or rattle.",
+      "Keep water within reach (but off the desk where it can be knocked).",
+      "Use a comfortable chair that supports long recording sessions.",
+    ],
+    image: {
+      src: "https://images.unsplash.com/photo-1581368135153-a506cf13b1e1?w=1600&q=80",
+      alt: "Organized beginner podcast desk setup",
+      caption: "An organized podcast desk with microphone, laptop, headphones and notes within reach.",
+    },
+  },
+  {
+    id: "lighting-camera",
+    short: "Lighting and Camera Setup",
+    title: "Lighting and Camera Setup for Video Podcasts",
+    paragraphs: [
+      "More podcasts now record video alongside audio for YouTube, TikTok, Instagram Reels and LinkedIn. You don't need a film studio to look professional — clean lighting, a clean background and a well-placed camera will get you most of the way there.",
+      "Always prioritize audio first. Listeners will forgive imperfect video, but no one tolerates poor sound.",
+    ],
+    bullets: [
+      "Face a window for natural light or use a single soft key light.",
+      "Avoid harsh overhead lighting that creates shadows under your eyes.",
+      "Keep the background clean, intentional and not visually distracting.",
+      "Place the camera at eye level — never below, looking up at you.",
+      "Frame yourself with your head and shoulders comfortably visible.",
+    ],
+    callout: {
+      kind: "Pro Tip",
+      text: "Record your video clips in 4K when possible, even if you publish in 1080p. It gives you room to crop for vertical shorts later.",
+    },
+  },
+  {
+    id: "test-publish",
+    short: "Test Before You Publish",
+    title: "Test Before You Publish",
+    paragraphs: [
+      "Most beginner episodes are released with avoidable problems — a buzzing fan, a clipped intro, one speaker twice as loud as the other — that a 60-second test would have caught. A small testing habit before each session is one of the highest-leverage things you can do.",
+      "Run the same quick check every time. It will save you re-records, listener complaints and the slow erosion of trust that bad audio causes.",
+    ],
+    bullets: [
+      "Record 30 to 60 seconds in your normal speaking voice.",
+      "Check for background noise, hum, fans or keyboard sounds.",
+      "Confirm your voice sounds clear, close and balanced.",
+      "Make sure levels stay out of the red and around -6 dB peaks.",
+      "Listen back through headphones, not laptop speakers.",
+      "Make small adjustments before recording the full episode.",
+    ],
+  },
+];
+
+const studioGear = [
+  { item: "Quiet room", why: "Clean recordings start with a quiet space, not better gear.", tip: "Pick the smallest, softest room you have access to.", priority: "Essential" as const },
+  { item: "Microphone (USB or XLR)", why: "The single biggest factor in how your voice is captured.", tip: "Beginners do well with a good dynamic USB mic.", priority: "Essential" as const },
+  { item: "Closed-back headphones", why: "Lets you monitor audio in real time and prevents bleed.", tip: "Avoid open-back or speakers while recording.", priority: "Essential" as const },
+  { item: "Recording software", why: "You need a way to capture, edit and export episodes.", tip: "Start with a free tool and upgrade only when limited.", priority: "Essential" as const },
+  { item: "Audio interface", why: "Required for XLR microphones; gives clean, controllable gain.", tip: "A 2-channel interface is plenty for most podcasts.", priority: "Recommended" as const },
+  { item: "Boom arm or mic stand", why: "Keeps the mic stable and at the right height.", tip: "A boom arm saves desk space and reduces bumps.", priority: "Recommended" as const },
+  { item: "Pop filter or windscreen", why: "Softens harsh plosive sounds like Ps and Bs.", tip: "Even a basic foam windscreen makes a noticeable difference.", priority: "Recommended" as const },
+  { item: "Acoustic treatment", why: "Reduces echo so your voice sounds close and clean.", tip: "Start with rugs, blankets and curtains before buying foam.", priority: "Recommended" as const },
+  { item: "Camera or webcam", why: "Needed if you also publish video on YouTube or social.", tip: "A modern webcam is enough to start a video podcast.", priority: "Optional" as const },
+  { item: "Lighting", why: "Clean, soft lighting makes video podcasts look professional.", tip: "A single key light or window is often all you need.", priority: "Optional" as const },
+  { item: "Cable organizer", why: "Keeps your desk tidy and your workflow distraction-free.", tip: "Velcro ties or under-desk trays work great.", priority: "Optional" as const },
+];
+
+const studioChecklist = [
+  "Choose the quietest room available",
+  "Add rugs, curtains, blankets or panels to reduce echo",
+  "Select a USB or XLR microphone that fits your room",
+  "Use closed-back headphones for monitoring",
+  "Add an audio interface if using an XLR microphone",
+  "Install your recording and editing software",
+  "Set the microphone at mouth level on a stand or boom arm",
+  "Organize cables and arrange your desk for comfort",
+  "Prepare episode notes or an outline before recording",
+  "Record a 60-second test clip and listen back on headphones",
+  "Check for noise, echo, clipping and balanced volume",
+  "Save a backup of every recording",
+  "Document a repeatable recording workflow you can follow each week",
+];
+
+const studioFaqs = [
+  {
+    q: "How much does it cost to set up a beginner podcast studio?",
+    a: "You can build a solid beginner setup on a modest budget if you focus on essentials first: a quiet room, a reliable microphone, closed-back headphones and recording software. Many great podcasts launch with under a few hundred dollars in gear and upgrade only when their workflow demands it.",
+  },
+  {
+    q: "Do I need a professional studio to start a podcast?",
+    a: "No. A treated home setup can sound genuinely professional with the right room choice, basic acoustic treatment and consistent recording habits. Most successful independent podcasts are recorded in spare bedrooms, home offices or small corner setups.",
+  },
+  {
+    q: "Is a USB microphone good enough for podcasting?",
+    a: "Yes, especially for beginners and solo creators. A good dynamic USB microphone is more than capable of producing professional-sounding episodes. XLR becomes useful when you need multiple mics, more control or a longer-term upgrade path.",
+  },
+  {
+    q: "What's more important — the microphone or the room?",
+    a: "Both matter, but for most beginners the room makes the bigger difference. A great mic in a bad room still sounds amateur, while a modest mic in a treated room can sound surprisingly clean. Treat the space first, then upgrade gear.",
+  },
+  {
+    q: "Should I record audio and video at the same time?",
+    a: "It depends on your strategy. Video is excellent for YouTube, social clips and discoverability, but audio quality should always remain the priority. If video adds friction that hurts your audio, start with audio only and add video later.",
+  },
+  {
+    q: "How do I reduce echo in my podcast room?",
+    a: "Add soft surfaces — rugs, curtains, blankets, bookshelves, sofas, acoustic panels — and record closer to the microphone. Avoid bare walls, hard floors and large empty rooms. Even a few changes will dramatically reduce reverb.",
+  },
+  {
+    q: "What software should beginners use to record a podcast?",
+    a: "Choose software that's easy to learn, supports multitrack recording and exports to common audio formats. Beginner-friendly tools like Audacity, GarageBand and similar free options are more than enough to launch a great-sounding show.",
+  },
+];
+
+const PRIORITY_COLOR: Record<string, string> = {
+  Essential: "bg-primary/10 text-primary border-primary/30",
+  Recommended: "bg-amber-500/10 text-amber-600 border-amber-500/30",
+  Optional: "bg-muted text-foreground/60 border-border",
+};
+
+const CALLOUT_STYLES: Record<NonNullable<StudioSection["callout"]>["kind"], string> = {
+  "Beginner Tip": "bg-[hsl(210_100%_98%)] border-[hsl(210_90%_88%)]/70",
+  "Common Mistake": "bg-[hsl(0_100%_98%)] border-[hsl(0_90%_88%)]/70",
+  "Pro Tip": "bg-[hsl(150_60%_97%)] border-[hsl(150_50%_85%)]/70",
+  "Budget Tip": "bg-[hsl(45_100%_97%)] border-[hsl(45_90%_85%)]/70",
+};
+
+const StudioSetupArticle = () => {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const h = document.documentElement;
+      const total = h.scrollHeight - h.clientHeight;
+      setProgress(total > 0 ? (h.scrollTop / total) * 100 : 0);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const handleCTA = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const el = document.getElementById("booking");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+    else window.location.href = "/#booking";
+  };
+
+  return (
+    <>
+      <div className="fixed top-0 left-0 right-0 h-1 z-50 bg-transparent">
+        <div
+          className="h-full bg-gradient-to-r from-primary to-[hsl(340_90%_55%)] transition-[width] duration-150"
+          style={{ width: `${progress}%` }}
+        />
+      </div>
+
+      <article className="pt-28 pb-20 md:pt-32 md:pb-28 scroll-smooth">
+        <div className="max-w-6xl mx-auto px-6">
+          <Link
+            to="/#blog"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all duration-300 mb-8"
+          >
+            <ArrowLeft size={16} />
+            Back to Blog
+          </Link>
+
+          {/* Hero */}
+          <header className="mb-10">
+            <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold tracking-wide uppercase mb-5">
+              Podcasting
+            </span>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-5">
+              How to Set Up Your First Podcast Studio
+            </h1>
+            <p className="text-lg md:text-xl text-foreground/70 leading-relaxed mb-7 max-w-3xl">
+              A beginner-friendly guide to building a clean, comfortable and professional-sounding podcast
+              setup — without overspending on gear you don't actually need.
+            </p>
+            <div className="flex flex-wrap items-center gap-5 text-xs md:text-sm text-muted-foreground">
+              <span className="flex items-center gap-1.5">
+                <User size={14} className="text-primary" />
+                Banter Team
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Calendar size={14} className="text-primary" />
+                Updated May 7, 2026
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Clock size={14} className="text-primary" />
+                9 min read
+              </span>
+            </div>
+          </header>
+
+          <div className="rounded-2xl overflow-hidden mb-12 border border-border/40">
+            <img
+              src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1600&q=80"
+              alt="Podcast microphone and headphones on a desk in a home recording studio"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-[260px_minmax(0,1fr)] gap-10 lg:gap-14">
+            {/* Sticky ToC */}
+            <aside className="hidden lg:block">
+              <div className="sticky top-28">
+                <p className="text-xs font-semibold tracking-widest uppercase text-foreground/50 mb-4">
+                  On this page
+                </p>
+                <ul className="space-y-2.5">
+                  {studioSections.map((s) => (
+                    <ToCItem key={s.id} id={s.id} label={s.short} />
+                  ))}
+                  <ToCItem id="gear-table" label="Beginner Gear Table" />
+                  <ToCItem id="checklist" label="Setup Checklist" />
+                  <ToCItem id="videos" label="Recommended Videos" />
+                  <ToCItem id="faqs" label="FAQs" />
+                  <ToCItem id="author" label="Author" />
+                </ul>
+              </div>
+            </aside>
+
+            <div className="min-w-0">
+              {/* Mobile ToC */}
+              <div className="lg:hidden mb-10 p-5 rounded-xl border border-border/60 bg-muted/30">
+                <p className="text-xs font-semibold tracking-widest uppercase text-foreground/50 mb-3">
+                  Table of contents
+                </p>
+                <ul className="space-y-2">
+                  {studioSections.map((s) => (
+                    <ToCItem key={s.id} id={s.id} label={s.short} />
+                  ))}
+                  <ToCItem id="gear-table" label="Beginner Gear Table" />
+                  <ToCItem id="checklist" label="Setup Checklist" />
+                  <ToCItem id="videos" label="Recommended Videos" />
+                  <ToCItem id="faqs" label="FAQs" />
+                </ul>
+              </div>
+
+              {/* Intro */}
+              <section className="mb-14">
+                <p className="text-base md:text-lg text-foreground/80 leading-relaxed first-letter:text-5xl first-letter:font-bold first-letter:text-primary first-letter:mr-1 first-letter:float-left first-letter:leading-none first-letter:mt-1">
+                  Setting up your first podcast studio doesn't require a huge budget or a professional recording
+                  facility. What it really requires is a quiet, controlled, comfortable space where your voice
+                  sounds clear and consistent — episode after episode. Most beginners get this backwards. They
+                  obsess over expensive microphones and ignore the room, the workflow and the recording habits
+                  that actually make a podcast sound professional.
+                </p>
+                <p className="text-base md:text-lg text-foreground/80 leading-relaxed mt-5">
+                  This guide walks through every piece of a smart beginner podcast studio setup — from picking
+                  the right room and treating it for sound, to choosing a microphone, headphones, audio
+                  interface and recording software, to building a desk and workflow you'll actually enjoy
+                  using. The goal isn't perfection. It's a setup that sounds great today and can scale with
+                  you tomorrow.
+                </p>
+              </section>
+
+              {/* Sections */}
+              {studioSections.map((s, i) => (
+                <section key={s.id} id={s.id} className="mb-14 scroll-mt-28">
+                  <div className="flex items-start gap-4 mb-5">
+                    <span className="flex-shrink-0 w-11 h-11 rounded-full bg-gradient-to-br from-primary to-[hsl(340_90%_55%)] text-primary-foreground text-base font-bold flex items-center justify-center shadow-[0_8px_20px_-6px_hsl(352_98%_63%/0.5)]">
+                      {i + 1}
+                    </span>
+                    <h2 className="text-2xl md:text-3xl font-bold text-foreground leading-tight pt-1.5">
+                      {s.title}
+                    </h2>
+                  </div>
+
+                  <div className="space-y-5 pl-0 md:pl-[60px]">
+                    {s.paragraphs.map((p, idx) => (
+                      <p key={idx} className="text-base md:text-lg text-foreground/80 leading-relaxed">
+                        {p}
+                      </p>
+                    ))}
+
+                    {s.bullets && (
+                      <ul className="space-y-2.5">
+                        {s.bullets.map((b) => (
+                          <li key={b} className="flex items-start gap-3">
+                            <CheckCircle2 className="flex-shrink-0 w-5 h-5 text-primary mt-0.5" />
+                            <span className="text-base text-foreground/80 leading-relaxed">{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
+                    {/* Inline USB vs XLR comparison table */}
+                    {s.id === "usb-vs-xlr" && (
+                      <div className="rounded-xl border border-border/60 overflow-hidden mt-2">
+                        <Table>
+                          <TableHeader>
+                            <TableRow className="bg-muted/50">
+                              <TableHead className="font-semibold w-[28%]">Feature</TableHead>
+                              <TableHead className="font-semibold w-[36%]">USB Microphone</TableHead>
+                              <TableHead className="font-semibold w-[36%]">XLR Microphone</TableHead>
+                            </TableRow>
+                          </TableHeader>
+                          <TableBody>
+                            <TableRow>
+                              <TableCell className="font-medium align-top">Ease of setup</TableCell>
+                              <TableCell className="align-top text-foreground/75">Plug-and-play into your computer.</TableCell>
+                              <TableCell className="align-top text-foreground/75">Requires an audio interface and cabling.</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell className="font-medium align-top">Audio quality</TableCell>
+                              <TableCell className="align-top text-foreground/75">Very good for solo creators in a treated room.</TableCell>
+                              <TableCell className="align-top text-foreground/75">Excellent and more consistent across setups.</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell className="font-medium align-top">Extra equipment needed</TableCell>
+                              <TableCell className="align-top text-foreground/75">None beyond cable and stand.</TableCell>
+                              <TableCell className="align-top text-foreground/75">Audio interface, XLR cable, sometimes phantom power.</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell className="font-medium align-top">Upgrade flexibility</TableCell>
+                              <TableCell className="align-top text-foreground/75">Limited — usually a full replacement to upgrade.</TableCell>
+                              <TableCell className="align-top text-foreground/75">High — swap mic, interface or cables independently.</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell className="font-medium align-top">Best for</TableCell>
+                              <TableCell className="align-top text-foreground/75">Solo podcasters and quick, simple setups.</TableCell>
+                              <TableCell className="align-top text-foreground/75">Multi-host shows, interviews and long-term setups.</TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell className="font-medium align-top">Budget range</TableCell>
+                              <TableCell className="align-top text-foreground/75">Entry to mid-range.</TableCell>
+                              <TableCell className="align-top text-foreground/75">Mid-range to professional.</TableCell>
+                            </TableRow>
+                          </TableBody>
+                        </Table>
+                      </div>
+                    )}
+
+                    {s.callout && (
+                      <div className={`flex gap-3 p-4 rounded-xl border ${CALLOUT_STYLES[s.callout.kind]}`}>
+                        <Lightbulb className="flex-shrink-0 w-5 h-5 text-primary mt-0.5" />
+                        <p className="text-sm md:text-base text-foreground/85 leading-relaxed">
+                          <span className="font-semibold text-foreground">{s.callout.kind}: </span>
+                          {s.callout.text}
+                        </p>
+                      </div>
+                    )}
+
+                    {s.image && (
+                      <figure className="mt-6 rounded-2xl overflow-hidden border border-border/40 max-w-2xl mx-auto">
+                        <img src={s.image.src} alt={s.image.alt} className="w-full h-auto object-cover" />
+                        <figcaption className="px-4 py-3 text-xs md:text-sm text-foreground/60 bg-muted/40">
+                          {s.image.caption}
+                        </figcaption>
+                      </figure>
+                    )}
+                  </div>
+                </section>
+              ))}
+
+              {/* Gear table */}
+              <section id="gear-table" className="mb-14 scroll-mt-28">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+                  Beginner Podcast Studio Gear Guide
+                </h2>
+                <p className="text-foreground/70 mb-6">
+                  A quick reference table of every piece of gear in a smart beginner podcast studio setup.
+                </p>
+                <div className="rounded-xl border border-border/60 overflow-hidden">
+                  <Table>
+                    <TableHeader>
+                      <TableRow className="bg-muted/50">
+                        <TableHead className="font-semibold w-[22%]">Item</TableHead>
+                        <TableHead className="font-semibold w-[32%]">Why You Need It</TableHead>
+                        <TableHead className="font-semibold w-[32%]">Beginner Tip</TableHead>
+                        <TableHead className="font-semibold w-[14%]">Priority</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {studioGear.map((g) => (
+                        <TableRow key={g.item}>
+                          <TableCell className="font-medium align-top">{g.item}</TableCell>
+                          <TableCell className="align-top text-foreground/75">{g.why}</TableCell>
+                          <TableCell className="align-top text-foreground/75">{g.tip}</TableCell>
+                          <TableCell className="align-top">
+                            <span
+                              className={`inline-block px-2.5 py-1 rounded-full text-xs font-semibold border ${PRIORITY_COLOR[g.priority]}`}
+                            >
+                              {g.priority}
+                            </span>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </div>
+              </section>
+
+              {/* Checklist */}
+              <section id="checklist" className="mb-14 scroll-mt-28">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+                  First Podcast Studio Setup Checklist
+                </h2>
+                <p className="text-foreground/70 mb-6">
+                  Run through this list before recording your first episode. Tick each item as you go.
+                </p>
+                <ul className="grid sm:grid-cols-2 gap-3">
+                  {studioChecklist.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-3 p-4 rounded-xl bg-card border border-border/60 hover:border-primary/40 transition-colors"
+                    >
+                      <CheckCircle2 className="flex-shrink-0 w-5 h-5 text-primary mt-0.5" />
+                      <span className="text-sm md:text-base text-foreground/85">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+
+              {/* Videos */}
+              <section id="videos" className="mb-14 scroll-mt-28">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+                  Recommended Videos for Setting Up Your Podcast Studio
+                </h2>
+
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
+                  How to Build a Home Podcast Studio for Beginners
+                </h3>
+                <div className="aspect-video w-full rounded-2xl overflow-hidden border border-border/60 bg-muted/40 flex items-center justify-center mb-3">
+                  <div className="text-center px-6">
+                    <Youtube className="w-10 h-10 text-primary mx-auto mb-3" />
+                    <p className="text-sm md:text-base text-foreground/70">Add your YouTube tutorial URL here.</p>
+                  </div>
+                </div>
+                <p className="text-xs text-foreground/50 mb-10">
+                  Replace this placeholder with an embedded iframe pointing to your chosen tutorial.
+                </p>
+
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
+                  Podcast Microphone and Audio Setup Tutorial
+                </h3>
+                <div className="aspect-video w-full rounded-2xl overflow-hidden border border-border/60 bg-muted/40 flex items-center justify-center">
+                  <div className="text-center px-6">
+                    <Youtube className="w-10 h-10 text-primary mx-auto mb-3" />
+                    <p className="text-sm md:text-base text-foreground/70">Add your YouTube audio setup URL here.</p>
+                  </div>
+                </div>
+              </section>
+
+              {/* Final image */}
+              <section className="mb-14">
+                <figure className="rounded-2xl overflow-hidden border border-border/40">
+                  <img
+                    src="https://images.unsplash.com/photo-1487014679447-9f8336841d58?w=1600&q=80"
+                    alt="Creator editing podcast audio on a laptop with headphones"
+                    className="w-full h-auto object-cover"
+                  />
+                  <figcaption className="px-4 py-3 text-xs md:text-sm text-foreground/60 bg-muted/40">
+                    Editing is where a beginner studio setup quietly becomes a professional-sounding podcast.
+                  </figcaption>
+                </figure>
+              </section>
+
+              {/* FAQs */}
+              <section id="faqs" className="mb-14 scroll-mt-28">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+                  Frequently Asked Questions
+                </h2>
+                <Accordion type="single" collapsible className="rounded-xl border border-border/60 px-5">
+                  {studioFaqs.map((f, i) => (
+                    <AccordionItem key={i} value={`faq-${i}`} className="last:border-b-0">
+                      <AccordionTrigger className="text-left text-base md:text-lg font-semibold">
+                        {f.q}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-base text-foreground/75 leading-relaxed">
+                        {f.a}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </section>
+
+              {/* Author */}
+              <section id="author" className="mb-14 scroll-mt-28">
+                <div className="flex flex-col sm:flex-row items-start gap-5 p-6 rounded-2xl border border-border/60 bg-muted/30">
+                  <div className="flex-shrink-0 w-20 h-20 rounded-full bg-gradient-to-br from-primary to-[hsl(340_90%_55%)] flex items-center justify-center text-primary-foreground text-2xl font-bold">
+                    BT
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-foreground">Banter Team</h3>
+                    <p className="text-sm text-primary font-medium mb-2">
+                      Podcast Strategist · Audio Content Creator
+                    </p>
+                    <p className="text-sm md:text-base text-foreground/75 leading-relaxed mb-4">
+                      Helping creators build better podcast setups, improve their audio quality and launch
+                      shows with confidence.
+                    </p>
+                    <div className="flex items-center gap-3">
+                      <a
+                        href="#"
+                        aria-label="LinkedIn"
+                        className="w-9 h-9 rounded-full bg-background border border-border/60 flex items-center justify-center text-foreground/60 hover:text-primary hover:border-primary transition-colors"
+                      >
+                        <Linkedin size={16} />
+                      </a>
+                      <a
+                        href="#"
+                        aria-label="YouTube"
+                        className="w-9 h-9 rounded-full bg-background border border-border/60 flex items-center justify-center text-foreground/60 hover:text-primary hover:border-primary transition-colors"
+                      >
+                        <Youtube size={16} />
+                      </a>
+                      <a
+                        href="#"
+                        aria-label="Website"
+                        className="w-9 h-9 rounded-full bg-background border border-border/60 flex items-center justify-center text-foreground/60 hover:text-primary hover:border-primary transition-colors"
+                      >
+                        <Globe size={16} />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              {/* Final CTA */}
+              <section className="relative overflow-hidden rounded-3xl p-8 md:p-12 bg-gradient-to-br from-primary to-[hsl(340_90%_55%)] text-primary-foreground">
+                <div className="relative z-10 max-w-2xl">
+                  <h2 className="text-2xl md:text-4xl font-bold leading-tight mb-4">
+                    Ready to Build a Podcast Studio That Sounds Professional?
+                  </h2>
+                  <p className="text-base md:text-lg text-primary-foreground/90 leading-relaxed mb-7">
+                    Start with the right setup, record with confidence and create a podcast your audience will
+                    want to keep listening to.
+                  </p>
+                  <a
+                    href="/#booking"
+                    onClick={handleCTA}
+                    className="cta-swap group inline-flex items-center gap-3 pl-6 pr-2 py-2 h-auto rounded-full bg-background text-foreground font-semibold transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:shadow-[0_12px_30px_-10px_hsl(0_0%_0%/0.35)] active:translate-y-0 active:scale-[0.98]"
+                  >
+                    <span>Book Your Free Call</span>
+                    <span className="cta-swap__circle relative flex items-center justify-center w-10 h-10 rounded-full bg-primary/15 overflow-hidden">
+                      <ArrowRight className="cta-swap__arrow--main absolute w-4 h-4 text-primary" />
+                      <ArrowRight className="cta-swap__arrow--ghost absolute w-4 h-4 text-primary opacity-0 -translate-x-6" />
+                    </span>
+                  </a>
+                </div>
+                <div className="absolute -right-20 -bottom-20 w-72 h-72 rounded-full bg-white/10 blur-3xl" />
+              </section>
+            </div>
+          </div>
+        </div>
+      </article>
+    </>
+  );
+};
+
 type MistakeSection = {
   id: string;
   short: string;
@@ -604,14 +1313,13 @@ export const blogPosts = [
     slug: "how-to-set-up-your-first-podcast-studio",
     title: "How to Set Up Your First Podcast Studio",
     excerpt:
-      "Discover how podcasting can elevate your brand's reach, build authentic connections and drive engagement.",
+      "A beginner-friendly guide to building a clean, comfortable and professional-sounding podcast studio without overspending.",
     author: "Banter Team",
     date: "Apr 2, 2026",
-    readTime: "5 min read",
+    readTime: "9 min read",
     category: "Guide",
     image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1600&q=80",
-    type: "article" as const,
-    content: firstPostArticle,
+    type: "custom" as const,
   },
   {
     slug: "top-10-podcasting-mistakes-beginners-make",
@@ -667,6 +1375,21 @@ const BlogPost = () => {
         "description",
         "Learn the most common podcasting mistakes beginners make, from poor audio quality to weak branding, inconsistent publishing, and lack of promotion."
       );
+    } else if (post.slug === "how-to-set-up-your-first-podcast-studio") {
+      document.title = "How to Set Up Your First Podcast Studio";
+      const setMeta = (name: string, content: string) => {
+        let el = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement | null;
+        if (!el) {
+          el = document.createElement("meta");
+          el.name = name;
+          document.head.appendChild(el);
+        }
+        el.content = content;
+      };
+      setMeta(
+        "description",
+        "Learn how to set up your first podcast studio with the right room, microphone, headphones, audio interface, recording software, acoustic treatment, and workflow."
+      );
     } else {
       document.title = post.title;
     }
@@ -681,7 +1404,11 @@ const BlogPost = () => {
     return (
       <div className="min-h-screen bg-background text-foreground">
         <Navbar />
-        <MistakesArticle />
+        {post.slug === "how-to-set-up-your-first-podcast-studio" ? (
+          <StudioSetupArticle />
+        ) : (
+          <MistakesArticle />
+        )}
       </div>
     );
   }
