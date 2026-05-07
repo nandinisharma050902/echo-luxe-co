@@ -1792,9 +1792,22 @@ const BrandPodcastArticle = () => {
                     {s.video && (
                       <div className="mt-6">
                         <h3 className="text-lg md:text-xl font-bold text-foreground mb-3">{s.video.title}</h3>
-                        <div className="aspect-video w-full rounded-2xl overflow-hidden border border-dashed border-border/70 bg-muted/40 flex items-center justify-center">
-                          <p className="text-sm text-foreground/60 px-6 text-center">{s.video.placeholder}</p>
-                        </div>
+                        {s.video.url ? (
+                          <div className="aspect-video w-full rounded-2xl overflow-hidden border border-border/60 bg-muted/40">
+                            <iframe
+                              className="w-full h-full"
+                              src={s.video.url}
+                              title={s.video.title}
+                              frameBorder={0}
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                              allowFullScreen
+                            />
+                          </div>
+                        ) : (
+                          <div className="aspect-video w-full rounded-2xl overflow-hidden border border-dashed border-border/70 bg-muted/40 flex items-center justify-center">
+                            <p className="text-sm text-foreground/60 px-6 text-center">{s.video.placeholder}</p>
+                          </div>
+                        )}
                       </div>
                     )}
                   </div>
