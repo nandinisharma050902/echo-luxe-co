@@ -450,28 +450,29 @@ const MistakesArticle = () => {
                 <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
                   Recommended Video: How to Start a Podcast the Right Way
                 </h2>
-                <div className="aspect-video w-full rounded-2xl overflow-hidden border border-border/60 bg-muted/40 flex items-center justify-center mb-3">
-                  <div className="text-center px-6">
-                    <Youtube className="w-10 h-10 text-primary mx-auto mb-3" />
-                    <p className="text-sm md:text-base text-foreground/70">
-                      Add your YouTube tutorial URL here.
-                    </p>
-                  </div>
+                <div className="aspect-video w-full rounded-2xl overflow-hidden border border-border/60 bg-muted/40 mb-10">
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/JeJ-JDU5bqw"
+                    title="How to Start a Podcast the Right Way"
+                    frameBorder={0}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
                 </div>
-                <p className="text-xs text-foreground/50 mb-10">
-                  Replace this placeholder with an embedded iframe pointing to your chosen tutorial.
-                </p>
 
                 <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6">
                   Podcast Audio Setup Tutorial for Beginners
                 </h3>
-                <div className="aspect-video w-full rounded-2xl overflow-hidden border border-border/60 bg-muted/40 flex items-center justify-center">
-                  <div className="text-center px-6">
-                    <Youtube className="w-10 h-10 text-primary mx-auto mb-3" />
-                    <p className="text-sm md:text-base text-foreground/70">
-                      Add your YouTube tutorial URL here.
-                    </p>
-                  </div>
+                <div className="aspect-video w-full rounded-2xl overflow-hidden border border-border/60 bg-muted/40">
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/mwFYiFZO6sI"
+                    title="Podcast Audio Setup Tutorial for Beginners"
+                    frameBorder={0}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
                 </div>
               </section>
 
