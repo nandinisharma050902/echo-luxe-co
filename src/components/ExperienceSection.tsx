@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { Star, CalendarCheck, Film, Sparkles, Send, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import arjunImg from "@/assets/testimonial-ashish.png";
-import priyaImg from "@/assets/testimonial-sameer.png";
-import rohitImg from "@/assets/testimonial-srinivasa.png";
+import arjunImg from "@/assets/testimonial-ashish.jpg";
+import priyaImg from "@/assets/testimonial-sameer.jpg";
+import rohitImg from "@/assets/testimonial-srinivasa.jpg";
 
 const steps = [
   {
@@ -200,14 +200,21 @@ const ExperienceSection = () => {
                 className="card-glass shrink-0 w-[85%] sm:w-[380px] flex flex-col"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <img
-                    src={t.image}
-                    alt={t.name}
-                    width={64}
-                    height={64}
-                    loading="lazy"
-                    className="w-16 h-16 rounded-full object-cover border-2 border-primary/40 shadow-[0_0_20px_hsl(var(--primary)/0.25)]"
-                  />
+                  <div
+                    className="w-16 h-16 rounded-full flex-shrink-0 p-[2px] shadow-[0_0_20px_hsl(var(--primary)/0.25)]"
+                    style={{ background: "hsl(var(--primary) / 0.6)" }}
+                  >
+                    <div className="w-full h-full rounded-full overflow-hidden bg-transparent">
+                      <img
+                        src={t.image}
+                        alt={t.name}
+                        width={64}
+                        height={64}
+                        loading="lazy"
+                        className="w-full h-full object-cover block rounded-full"
+                      />
+                    </div>
+                  </div>
                   <div>
                     <p className="font-heading text-base font-bold text-foreground">{t.name}</p>
                     <p className="text-xs text-muted-foreground font-body">{t.role}</p>
