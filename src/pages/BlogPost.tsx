@@ -2040,14 +2040,13 @@ export const blogPosts = [
     slug: "why-every-brand-needs-a-podcast-in-2026",
     title: "Why Every Brand Needs a Podcast in 2026",
     excerpt:
-      "Discover how podcasting can elevate your brand's reach, build authentic connections, and drive engagement.",
+      "Discover why every brand needs a podcast in 2026 and how podcasting builds trust, authority, audience relationships and long-term brand growth.",
     author: "Banter Team",
     date: "Mar 18, 2026",
-    readTime: "6 min read",
-    category: "Industry",
+    readTime: "9 min read",
+    category: "Podcast Marketing",
     image: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1600&q=80",
-    type: "article" as const,
-    content: thirdPostArticle,
+    type: "custom" as const,
   },
 ];
 
@@ -2093,6 +2092,21 @@ const BlogPost = () => {
         "description",
         "Learn how to set up your first podcast studio with the right room, microphone, headphones, audio interface, recording software, acoustic treatment, and workflow."
       );
+    } else if (post.slug === "why-every-brand-needs-a-podcast-in-2026") {
+      document.title = "Why Every Brand Needs a Podcast in 2026";
+      const setMeta = (name: string, content: string) => {
+        let el = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement | null;
+        if (!el) {
+          el = document.createElement("meta");
+          el.name = name;
+          document.head.appendChild(el);
+        }
+        el.content = content;
+      };
+      setMeta(
+        "description",
+        "Discover why every brand needs a podcast in 2026 and how podcasting helps build trust, authority, audience relationships, thought leadership, and long-term brand growth."
+      );
     } else {
       document.title = post.title;
     }
@@ -2109,6 +2123,8 @@ const BlogPost = () => {
         <Navbar />
         {post.slug === "how-to-set-up-your-first-podcast-studio" ? (
           <StudioSetupArticle />
+        ) : post.slug === "why-every-brand-needs-a-podcast-in-2026" ? (
+          <BrandPodcastArticle />
         ) : (
           <MistakesArticle />
         )}
