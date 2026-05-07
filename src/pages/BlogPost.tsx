@@ -100,13 +100,13 @@ const studioSections: StudioSection[] = [
     short: "Choose the Right Microphone",
     title: "Choose the Right Microphone",
     paragraphs: [
-      "Your microphone is one of the most important pieces of podcasting gear because voice clarity directly affects how long listeners stay with each episode. But the most expensive mic isn't automatically the right one — the best mic for you depends on your room, your workflow and your budget.",
+      "Most beginner episodes are released with avoidable problems, a buzzing fan, a clipped intro, one speaker twice as loud as the other, that a 60 second test would have caught. A small testing habit before each session is one of the highest-leverage things you can do.",
       "Two main mic types matter for beginners. Dynamic microphones reject more background noise and tend to sound great in untreated rooms. Condenser microphones capture more detail and warmth, but they also pick up much more of the room around you, including fans, traffic and echo.",
     ],
     bullets: [
       "Dynamic mics are usually the safer choice for untreated home rooms.",
       "Condenser mics shine in well-treated, quiet recording spaces.",
-      "USB mics are simple, affordable and beginner-friendly.",
+      "Place the camera at eye level , never below, looking up at you.",
       "XLR mics offer more control, better sound and a longer upgrade path.",
       "Skip the most expensive option until your room and habits are dialled in.",
     ],
@@ -126,8 +126,8 @@ const studioSections: StudioSection[] = [
   },
   {
     id: "headphones",
-    short: "Use Closed-Back Headphones",
-    title: "Use Closed-Back Headphones",
+    short: "Use Closed Back Headphones",
+    title: "Use Closed Back Headphones",
     paragraphs: [
       "Headphones aren't a luxury in podcasting — they're essential. They let you monitor your audio in real time so you can hear background noise, mouth clicks, clipping or volume issues as they happen, instead of discovering them in the edit when it's too late to fix.",
       "Closed-back headphones are the right choice for recording. Open-back models leak sound, which your microphone will happily pick up and bake into your recording. Regular speakers should never be used while recording for the same reason.",
@@ -437,12 +437,12 @@ const StudioSetupArticle = () => {
                 <p className="text-base md:text-lg text-foreground/80 leading-relaxed first-letter:text-5xl first-letter:font-bold first-letter:text-primary first-letter:mr-1 first-letter:float-left first-letter:leading-none first-letter:mt-1">
                   Setting up your first podcast studio doesn't require a huge budget or a professional recording
                   facility. What it really requires is a quiet, controlled, comfortable space where your voice
-                  sounds clear and consistent — episode after episode. Most beginners get this backwards. They
+                  sounds clear and consistent episode after episode. Most beginners get this backwards. They
                   obsess over expensive microphones and ignore the room, the workflow and the recording habits
                   that actually make a podcast sound professional.
                 </p>
                 <p className="text-base md:text-lg text-foreground/80 leading-relaxed mt-5">
-                  This guide walks through every piece of a smart beginner podcast studio setup — from picking
+                  This guide walks through every piece of a smart beginner podcast studio setup from picking
                   the right room and treating it for sound, to choosing a microphone, headphones, audio
                   interface and recording software, to building a desk and workflow you'll actually enjoy
                   using. The goal isn't perfection. It's a setup that sounds great today and can scale with
@@ -509,8 +509,8 @@ const StudioSetupArticle = () => {
                             </TableRow>
                             <TableRow>
                               <TableCell className="font-medium align-top">Upgrade flexibility</TableCell>
-                              <TableCell className="align-top text-foreground/75">Limited — usually a full replacement to upgrade.</TableCell>
-                              <TableCell className="align-top text-foreground/75">High — swap mic, interface or cables independently.</TableCell>
+                              <TableCell className="align-top text-foreground/75">Limited: usually a full replacement to upgrade.</TableCell>
+                              <TableCell className="align-top text-foreground/75">High: swap mic, interface or cables independently.</TableCell>
                             </TableRow>
                             <TableRow>
                               <TableCell className="font-medium align-top">Best for</TableCell>
@@ -618,7 +618,7 @@ const StudioSetupArticle = () => {
                   Recommended Video: Home Podcast Studio Setup for Beginners
                 </h3>
                 <p className="text-foreground/75 mb-4">
-                  A practical walkthrough of turning any spare room into a clean, content-ready podcast studio — covering layout, lighting and budget gear choices.
+                  A practical walkthrough of turning any spare room into a clean, content-ready podcast studio covering layout, lighting and budget gear choices.
                 </p>
                 <div className="rounded-2xl bg-card border border-border/60 shadow-sm p-3 md:p-4 mb-10">
                   <div className="aspect-video w-full rounded-xl overflow-hidden bg-black">
@@ -641,7 +641,7 @@ const StudioSetupArticle = () => {
                   Recommended Video: Podcast Microphone and Audio Setup Tutorial
                 </h3>
                 <p className="text-foreground/75 mb-4">
-                  See how to position your mic, set gain correctly and dial in a professional vocal sound — even with an entry-level USB or XLR setup.
+                  See how to position your mic, set gain correctly and dial in a professional vocal sound even with an entry-level USB or XLR setup.
                 </p>
                 <div className="rounded-2xl bg-card border border-border/60 shadow-sm p-3 md:p-4">
                   <div className="aspect-video w-full rounded-xl overflow-hidden bg-black">
