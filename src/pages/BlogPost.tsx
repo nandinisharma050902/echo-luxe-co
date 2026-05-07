@@ -306,6 +306,8 @@ const studioFaqs = [
 
 const PRIORITY_COLOR: Record<string, string> = {
   Essential: "bg-primary/10 text-primary border-primary/30",
+  High: "bg-amber-500/10 text-amber-600 border-amber-500/30",
+  Medium: "bg-muted text-foreground/70 border-border",
   Recommended: "bg-amber-500/10 text-amber-600 border-amber-500/30",
   Optional: "bg-muted text-foreground/60 border-border",
 };
@@ -1308,6 +1310,707 @@ const MistakesArticle = () => {
   );
 };
 
+// =====================================================================
+// "Why Every Brand Needs a Podcast in 2026" — long-form article data
+// =====================================================================
+
+type BrandSection = {
+  id: string;
+  short: string;
+  title: string;
+  paragraphs: string[];
+  bullets?: string[];
+  callout?: { kind: "Brand Strategy Tip" | "Common Mistake" | "Pro Tip" | "Budget Tip"; text: string };
+  image?: { src: string; alt: string; caption: string };
+  video?: { title: string; placeholder: string };
+};
+
+const BRAND_CALLOUT_STYLES: Record<NonNullable<BrandSection["callout"]>["kind"], string> = {
+  "Brand Strategy Tip": "bg-[hsl(210_100%_98%)] border-[hsl(210_90%_88%)]/70",
+  "Common Mistake": "bg-[hsl(0_100%_98%)] border-[hsl(0_90%_88%)]/70",
+  "Pro Tip": "bg-[hsl(150_60%_97%)] border-[hsl(150_50%_85%)]/70",
+  "Budget Tip": "bg-[hsl(45_100%_97%)] border-[hsl(45_90%_85%)]/70",
+};
+
+const brandSections: BrandSection[] = [
+  {
+    id: "deeper-trust",
+    short: "Podcasting Builds Deeper Trust",
+    title: "Podcasting Builds Deeper Trust Than Short-Form Content",
+    paragraphs: [
+      "Short-form video is excellent at capturing attention, but it rarely captures belief. A scroll past a fifteen-second clip is a moment. A listener spending twenty, thirty or forty-five minutes inside your brand's conversation is a relationship. That difference is everything in 2026, when audiences are skeptical of polished marketing and increasingly drawn to formats that feel honest.",
+      "Voice does something visuals can't. The cadence, pauses and warmth of a real conversation create intimacy that's almost impossible to fake. Over time, your audience starts to recognize voices, anticipate the show and treat your brand less like an advertiser and more like a trusted regular in their week.",
+    ],
+    bullets: [
+      "Voice creates a sense of intimacy and familiarity that visuals alone can't.",
+      "Long-form conversations leave room for nuance, context and real expertise.",
+      "Repeated listening compounds trust the way no single ad can.",
+      "Podcasts make a brand feel human first, transactional second.",
+    ],
+    callout: {
+      kind: "Brand Strategy Tip",
+      text: "Think of your podcast as a relationship-building channel, not just another content format.",
+    },
+  },
+  {
+    id: "owned-media",
+    short: "Brands Need Owned Media Channels",
+    title: "Brands Need Owned Media Channels",
+    paragraphs: [
+      "Building an entire brand on rented platforms is one of the riskiest strategies in modern marketing. Algorithms shift overnight, ad costs climb every quarter, and organic reach has been quietly declining for years. The brands that will compound an audience in 2026 are the ones that own a direct, durable line to their listeners.",
+      "A podcast is one of the strongest owned media assets a brand can build. Episodes live on the brand's website, every major podcast app, YouTube and inside email — all distribution channels you actually control. That makes the show a long-term content asset, not a campaign.",
+    ],
+    bullets: [
+      "A podcast becomes a durable content asset that doesn't disappear with the next algorithm change.",
+      "Episodes can live on your website, podcast platforms, YouTube and your newsletter.",
+      "It gives your brand a repeatable, expected reason to show up for the audience.",
+      "It supports a long-term content ecosystem instead of one-off bursts.",
+    ],
+    image: {
+      src: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&q=80",
+      alt: "Brand team planning a podcast content strategy",
+      caption: "Marketing team planning a branded podcast content calendar.",
+    },
+  },
+  {
+    id: "humanize-brand",
+    short: "Podcasts Humanize Your Brand",
+    title: "Podcasts Humanize Your Brand",
+    paragraphs: [
+      "People connect with people, not logos. A podcast is one of the few formats that lets your audience hear the actual humans behind the brand — their thinking, their humor, their convictions and their uncertainty. That kind of access is hard to manufacture in a campaign and almost impossible to fake on social.",
+      "The strongest brand podcasts borrow their warmth from the people in front of the mic. Founders, executives, customers and team members each unlock a different layer of trust your marketing copy simply can't reach.",
+    ],
+    bullets: [
+      "Founder-led episodes build personal trust and clarify brand point of view.",
+      "Customer stories add lived-in authenticity that case studies often lack.",
+      "Behind-the-scenes conversations make the brand feel approachable and real.",
+      "Expert interviews position your brand as generous and useful, not just commercial.",
+    ],
+  },
+  {
+    id: "long-form-authority",
+    short: "Long-Form Content Creates Authority",
+    title: "Long-Form Content Creates Authority",
+    paragraphs: [
+      "Authority is not a tagline. It's earned slowly, by repeatedly helping your audience understand something better than they did before. Short posts can introduce ideas, but only long-form formats give you enough room to actually develop them — to walk through frameworks, reasoning and trade-offs in a way that sticks.",
+      "A podcast is one of the most efficient long-form formats a brand can run, because conversation is naturally generative. Each guest, question and tangent adds a new angle of expertise the brand can stand on.",
+    ],
+    bullets: [
+      "Educational episodes help customers make better, more informed decisions.",
+      "Industry analysis shows the brand has a real point of view, not just opinions.",
+      "Interviews with respected experts strengthen your credibility by association.",
+      "Consistency across dozens of episodes compounds authority no campaign can match.",
+    ],
+    callout: {
+      kind: "Pro Tip",
+      text: "Authority is not built by saying you are an expert. It is built by repeatedly helping your audience understand something better.",
+    },
+  },
+  {
+    id: "multi-platform-content",
+    short: "Episodes Become Multi-Platform Content",
+    title: "Podcast Episodes Become Multi-Platform Content",
+    paragraphs: [
+      "A single, well-planned podcast episode is rarely just an episode. With a smart workflow, one recording can become the backbone of a full week of marketing across nearly every channel your brand uses. That's why mature content teams treat the podcast as a content engine, not an audio show.",
+      "Done well, this turns the podcast into the most efficient piece of content your brand creates each week — one production cycle, many touchpoints.",
+    ],
+    bullets: [
+      "Full podcast episode published on Apple, Spotify and other apps",
+      "YouTube video version of the same conversation",
+      "Short-form video clips for Reels, Shorts and TikTok",
+      "Quote graphics for social feeds",
+      "A blog article based on the episode",
+      "A featured section in your newsletter",
+      "LinkedIn posts breaking down the best ideas",
+      "Instagram carousels summarizing key takeaways",
+      "X/Twitter threads pulling out frameworks and quotes",
+      "Sales enablement content for your team",
+      "Resource pages on your brand website",
+    ],
+    image: {
+      src: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1600&q=80",
+      alt: "Podcast episode repurposed into multiple content formats",
+      caption: "One episode becomes social clips, blog posts, newsletter sections and YouTube content.",
+    },
+  },
+  {
+    id: "audio-habits",
+    short: "Audio Builds Stronger Audience Habits",
+    title: "Audio Builds Stronger Audience Habits",
+    paragraphs: [
+      "Audio fits into pockets of attention that other content formats simply can't reach. People listen while commuting, walking, exercising, cooking and working — moments where reading a blog post or watching a video isn't possible, but a familiar voice in their ears is.",
+      "Those small, recurring moments are exactly where audience habits are built. The more often your show shows up in someone's week, the more naturally your brand becomes part of how they think about your category.",
+    ],
+    bullets: [
+      "Listeners can engage during commutes, workouts, chores and downtime.",
+      "Regular publishing creates predictable, repeat touchpoints with your audience.",
+      "Consistency trains listeners to come back without you constantly reminding them.",
+      "Familiar voices and recurring formats build genuine loyalty over time.",
+    ],
+  },
+  {
+    id: "thought-leadership",
+    short: "Podcasts Support Thought Leadership",
+    title: "Podcasts Support Thought Leadership",
+    paragraphs: [
+      "Real thought leadership isn't about volume of opinions — it's about owning a clear point of view and creating useful conversations around it. A podcast is one of the few formats that gives a brand both the space and the credibility to do that consistently.",
+      "When a brand becomes the host of the conversation in its category, the dynamic shifts. You're no longer one of many voices competing for attention — you're the one bringing the room together.",
+    ],
+    bullets: [
+      "Lead industry conversations instead of just participating in them.",
+      "Spotlight partners, clients and respected experts on your platform.",
+      "Explore trends, challenges and predictions with depth and nuance.",
+      "Use the show as a platform for your brand's category perspective.",
+    ],
+    video: {
+      title: "Recommended Video: How Brands Can Use Podcasts for Thought Leadership",
+      placeholder: "Add your YouTube video URL here.",
+    },
+  },
+  {
+    id: "community",
+    short: "Improves Community and Customer Relationships",
+    title: "Podcasting Improves Community and Customer Relationships",
+    paragraphs: [
+      "A brand podcast is one of the most underused tools for deepening relationships with the people you already work with — customers, prospects, partners and even internal teams. Inviting someone onto your show changes the relationship; they're no longer just a transaction, they're part of the story.",
+      "Some of the best episodes a brand will ever publish are built on insights they already have access to but rarely treat as content.",
+    ],
+    bullets: [
+      "Invite real customers as guests and let them share their experience.",
+      "Feature partner stories that strengthen mutual relationships.",
+      "Answer the questions your audience is actually asking on every channel.",
+      "Turn customer insights and use cases into recurring episode topics.",
+      "Use episodes to support onboarding, education and retention.",
+    ],
+    callout: {
+      kind: "Pro Tip",
+      text: "Your best podcast topics are often hidden inside sales calls, customer support conversations and frequently asked questions.",
+    },
+  },
+  {
+    id: "affordable",
+    short: "Brand Podcasts Are More Affordable Than Ever",
+    title: "Starting a Brand Podcast Is More Affordable Than Ever",
+    paragraphs: [
+      "Starting a brand podcast in 2026 doesn't require a flagship studio, a full production crew or a six-figure budget. Affordable microphones, beginner-friendly recording tools, polished remote interview platforms, modern editing software and AI-assisted workflows have made podcast production more accessible than at any point in the medium's history.",
+      "What separates the brand podcasts that work from the ones that quietly disappear isn't budget — it's clarity, consistency and usefulness. A focused show recorded with a modest setup will outperform an over-engineered production with no point of view, every single time.",
+    ],
+    bullets: [
+      "The goal is not perfection — it is clarity, consistency and usefulness.",
+      "Start with a focused format and improve it over time.",
+      "A basic but thoughtful setup can sound genuinely professional.",
+      "Avoid overcomplicating the launch — most brand podcasts fail from over-planning, not under-investing.",
+    ],
+    callout: {
+      kind: "Budget Tip",
+      text: "Podcasting success does not come from having the most expensive setup. It comes from showing up consistently with a clear message and valuable conversations your audience wants to hear.",
+    },
+  },
+  {
+    id: "launch-framework",
+    short: "How to Launch a Brand Podcast in 2026",
+    title: "How to Launch a Brand Podcast in 2026",
+    paragraphs: [
+      "Most failed brand podcasts share the same root cause: they launched without a real strategy. The framework below is the same one we use with founders and marketing teams to give a new show the best possible chance of becoming a long-term asset rather than a short-lived experiment.",
+    ],
+    bullets: [
+      "Define your audience and the business goal the podcast supports.",
+      "Choose a clear, specific positioning statement for the show.",
+      "Pick a format: solo, interview, panel, customer stories, education series, or founder-led conversations.",
+      "Plan the first ten episode topics before recording episode one.",
+      "Create show branding: name, cover art, description, intro, outro and visual style.",
+      "Set up a basic but reliable recording environment.",
+      "Commit to a publishing schedule you can actually sustain.",
+      "Build a promotion and repurposing workflow from day one.",
+      "Track performance, listener feedback and qualitative signals.",
+      "Improve one specific thing every single episode.",
+    ],
+    image: {
+      src: "https://images.unsplash.com/photo-1581368135153-a506cf13b1e1?w=1600&q=80",
+      alt: "Founder recording a branded business podcast",
+      caption: "A founder recording a brand podcast in a clean, simple home studio.",
+    },
+  },
+];
+
+const brandStrategyTable = [
+  { goal: "Build trust", help: "Long-form conversations let audiences spend real time with your brand.", example: "Series on real customer journeys and outcomes.", priority: "Essential" as const },
+  { goal: "Generate authority", help: "Recurring expert episodes establish your brand's point of view.", example: "Monthly category deep-dives with industry experts.", priority: "Essential" as const },
+  { goal: "Educate customers", help: "Episodes can unpack complex products and use cases in plain language.", example: "How-to episodes for your top customer questions.", priority: "Essential" as const },
+  { goal: "Support sales", help: "Episodes become high-trust assets your sales team can share.", example: "Use case episodes mapped to specific buyer personas.", priority: "High" as const },
+  { goal: "Strengthen community", help: "Featuring customers and partners deepens existing relationships.", example: "Quarterly community spotlight episodes.", priority: "High" as const },
+  { goal: "Repurpose content", help: "One episode powers blogs, social, video clips and newsletters.", example: "Weekly clip + blog + newsletter from each episode.", priority: "Essential" as const },
+  { goal: "Improve retention", help: "Recurring episodes give existing customers a reason to stay engaged.", example: "Insider episodes for current customers and users.", priority: "Medium" as const },
+  { goal: "Build partnerships", help: "Inviting partners on the show creates genuine, lasting relationships.", example: "Partner-led conversations on shared customer wins.", priority: "High" as const },
+  { goal: "Humanize leadership", help: "Founder and executive voices add personality and conviction.", example: "Founder series on the brand's vision and bets.", priority: "High" as const },
+  { goal: "Create owned media", help: "An episode catalogue is a long-term asset you fully control.", example: "An on-site podcast hub indexed for search and SEO.", priority: "Essential" as const },
+];
+
+const contentTypeTable = [
+  { type: "Blog posts", strength: "Strong for SEO and evergreen long-tail discovery.", limit: "Lower emotional connection; easy to skim.", best: "Driving organic search traffic and ranking on intent." },
+  { type: "Social media posts", strength: "Excellent for reach, awareness and quick distribution.", limit: "Short attention windows; algorithm-dependent.", best: "Top-of-funnel awareness and audience nurturing." },
+  { type: "Paid ads", strength: "Predictable, scalable distribution to targeted audiences.", limit: "Stops working the moment you stop paying.", best: "Demand capture and direct-response campaigns." },
+  { type: "Email newsletters", strength: "Owned audience with high attention and trust.", limit: "Requires consistent writing and a growing list.", best: "Recurring direct relationships with engaged readers." },
+  { type: "Webinars", strength: "Deep, interactive engagement and strong lead capture.", limit: "Time-intensive; lower frequency of publishing.", best: "Mid-funnel education and qualified pipeline." },
+  { type: "Podcasts", strength: "Long-form trust, intimacy, authority and content fuel.", limit: "Slower initial growth; needs consistent publishing.", best: "Trust, thought leadership and long-term audience building." },
+  { type: "YouTube videos", strength: "Massive discoverability and long shelf life.", limit: "High production effort per asset.", best: "Visual storytelling, tutorials and discovery." },
+];
+
+const brandChecklist = [
+  "Define the audience your show is built for",
+  "Define the business goal the podcast supports",
+  "Choose the podcast format that fits your team",
+  "Create a clear show promise in one sentence",
+  "Pick a memorable, search-friendly podcast name",
+  "Design clean, recognizable cover art",
+  "Write a keyword-friendly show description",
+  "Plan the first ten episodes before launch",
+  "Set up reliable recording equipment",
+  "Choose recording and editing software you'll actually use",
+  "Create a consistent intro and outro",
+  "Build a realistic publishing schedule",
+  "Document a promotion checklist for every episode",
+  "Repurpose every episode into smaller assets",
+  "Track performance metrics monthly",
+  "Collect listener feedback and act on it",
+];
+
+const brandFaqs = [
+  {
+    q: "Why should a brand start a podcast in 2026?",
+    a: "Because podcasts give brands something most content formats can't: long-form attention from a self-selected audience. They build trust, establish authority, create deep audience relationships and produce a content engine that fuels social, email, blog and video — all from one weekly recording.",
+  },
+  {
+    q: "Is podcasting still worth it for businesses?",
+    a: "Yes — especially for businesses that have a clear point of view, a target audience and a willingness to publish consistently. The brands that win in podcasting aren't necessarily the biggest; they're the ones with sharp positioning, a reliable cadence and a real promotion strategy.",
+  },
+  {
+    q: "What type of brand should start a podcast?",
+    a: "Brands with deep expertise, customer education needs, founder stories worth telling, community-building goals, industry-shaping perspectives, or complex products that benefit from explanation. If your audience asks the same questions repeatedly, you almost certainly have a podcast in your business.",
+  },
+  {
+    q: "How often should a brand publish podcast episodes?",
+    a: "Pick a cadence you can realistically sustain for at least six months. Weekly is ideal for growth, biweekly is a strong middle ground, and monthly is fine if it lets you protect quality. Consistency matters far more than frequency.",
+  },
+  {
+    q: "Does a brand podcast need video?",
+    a: "Video isn't required, but it's increasingly valuable. A video version unlocks YouTube discovery, short-form clips for social, and added trust through visible faces. Many brands start audio-only and add video once the workflow is dialled in.",
+  },
+  {
+    q: "How long should brand podcast episodes be?",
+    a: "Episode length should match the value of the conversation, not a fixed target. Most brand podcasts work well between 20 and 45 minutes, but tight 10–15 minute educational episodes can be just as effective when the content is sharp.",
+  },
+  {
+    q: "How do you measure brand podcast success?",
+    a: "Look beyond downloads. Track watch time, listener retention, website traffic from episodes, newsletter signups, lead quality, customer feedback, guest relationships built and how well your repurposed content performs across channels.",
+  },
+  {
+    q: "What is the biggest mistake brands make with podcasting?",
+    a: "Starting without a clear strategy. Most underperforming brand podcasts launch with no defined audience, no specific format, no promotion plan and no commitment to consistency. Strategy first, recording second.",
+  },
+];
+
+const BrandPodcastArticle = () => {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const h = document.documentElement;
+      const total = h.scrollHeight - h.clientHeight;
+      setProgress(total > 0 ? (h.scrollTop / total) * 100 : 0);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const handleCTA = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const el = document.getElementById("booking");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+    else window.location.href = "/#booking";
+  };
+
+  return (
+    <>
+      <div className="fixed top-0 left-0 right-0 h-1 z-50 bg-transparent">
+        <div
+          className="h-full bg-gradient-to-r from-primary to-[hsl(340_90%_55%)] transition-[width] duration-150"
+          style={{ width: `${progress}%` }}
+        />
+      </div>
+
+      <article className="pt-28 pb-20 md:pt-32 md:pb-28 scroll-smooth">
+        <div className="max-w-6xl mx-auto px-6">
+          <Link
+            to="/#blog"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all duration-300 mb-8"
+          >
+            <ArrowLeft size={16} />
+            Back to Blog
+          </Link>
+
+          <header className="mb-10">
+            <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold tracking-wide uppercase mb-5">
+              Podcast Marketing
+            </span>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-5">
+              Why Every Brand Needs a Podcast in 2026
+            </h1>
+            <p className="text-lg md:text-xl text-foreground/70 leading-relaxed mb-7 max-w-3xl">
+              Podcasting is no longer just a creator trend. It is becoming one of the most powerful ways for
+              brands to build trust, authority and long-term audience relationships.
+            </p>
+            <div className="flex flex-wrap items-center gap-5 text-xs md:text-sm text-muted-foreground">
+              <span className="flex items-center gap-1.5">
+                <User size={14} className="text-primary" />
+                Banter Team
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Calendar size={14} className="text-primary" />
+                Updated May 7, 2026
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Clock size={14} className="text-primary" />
+                9 min read
+              </span>
+            </div>
+          </header>
+
+          <div className="rounded-2xl overflow-hidden mb-12 border border-border/40">
+            <img
+              src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1600&q=80"
+              alt="Founder recording a branded podcast in a modern studio"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-[260px_minmax(0,1fr)] gap-10 lg:gap-14">
+            <aside className="hidden lg:block">
+              <div className="sticky top-28">
+                <p className="text-xs font-semibold tracking-widest uppercase text-foreground/50 mb-4">
+                  On this page
+                </p>
+                <ul className="space-y-2.5">
+                  {brandSections.map((s) => (
+                    <ToCItem key={s.id} id={s.id} label={s.short} />
+                  ))}
+                  <ToCItem id="strategy-table" label="Brand Podcast Strategy Table" />
+                  <ToCItem id="vs-traditional" label="Podcast vs Traditional Content" />
+                  <ToCItem id="checklist" label="Launch Checklist" />
+                  <ToCItem id="videos" label="Recommended Videos" />
+                  <ToCItem id="faqs" label="FAQs" />
+                  <ToCItem id="author" label="Author" />
+                </ul>
+              </div>
+            </aside>
+
+            <div className="min-w-0">
+              <div className="lg:hidden mb-10 p-5 rounded-xl border border-border/60 bg-muted/30">
+                <p className="text-xs font-semibold tracking-widest uppercase text-foreground/50 mb-3">
+                  Table of contents
+                </p>
+                <ul className="space-y-2">
+                  {brandSections.map((s) => (
+                    <ToCItem key={s.id} id={s.id} label={s.short} />
+                  ))}
+                  <ToCItem id="strategy-table" label="Brand Podcast Strategy Table" />
+                  <ToCItem id="vs-traditional" label="Podcast vs Traditional Content" />
+                  <ToCItem id="checklist" label="Launch Checklist" />
+                  <ToCItem id="videos" label="Recommended Videos" />
+                  <ToCItem id="faqs" label="FAQs" />
+                </ul>
+              </div>
+
+              {/* Intro */}
+              <section className="mb-14">
+                <p className="text-base md:text-lg text-foreground/80 leading-relaxed first-letter:text-5xl first-letter:font-bold first-letter:text-primary first-letter:mr-1 first-letter:float-left first-letter:leading-none first-letter:mt-1">
+                  Attention is harder to earn than it has ever been, and audiences are more skeptical of polished
+                  marketing than at any point in the last decade. Banner blindness has become content blindness —
+                  feeds full of ads, sponsored posts and algorithm-optimized content that all blend together. In
+                  that environment, brands that want to actually be remembered need a content channel that is
+                  human, direct and high-retention. That channel, increasingly, is podcasting.
+                </p>
+                <p className="text-base md:text-lg text-foreground/80 leading-relaxed mt-5">
+                  This guide is for founders, marketers, agencies, consultants and creators who are wondering
+                  whether a brand podcast is worth the investment in 2026. Short answer: yes — but only if it's
+                  built like a long-term media asset, not a campaign. The pages below break down exactly why
+                  podcasting works for brands, how it compounds, and how to launch a show that earns trust,
+                  authority and audience for years.
+                </p>
+              </section>
+
+              {/* Sections */}
+              {brandSections.map((s, i) => (
+                <section key={s.id} id={s.id} className="mb-14 scroll-mt-28">
+                  <div className="flex items-start gap-4 mb-5">
+                    <span className="flex-shrink-0 w-11 h-11 rounded-full bg-gradient-to-br from-primary to-[hsl(340_90%_55%)] text-primary-foreground text-base font-bold flex items-center justify-center shadow-[0_8px_20px_-6px_hsl(352_98%_63%/0.5)]">
+                      {i + 1}
+                    </span>
+                    <h2 className="text-2xl md:text-3xl font-bold text-foreground leading-tight pt-1.5">
+                      {s.title}
+                    </h2>
+                  </div>
+
+                  <div className="space-y-5 pl-0 md:pl-[60px]">
+                    {s.paragraphs.map((p, idx) => (
+                      <p key={idx} className="text-base md:text-lg text-foreground/80 leading-relaxed">
+                        {p}
+                      </p>
+                    ))}
+
+                    {s.bullets && (
+                      <ul className="space-y-2.5">
+                        {s.bullets.map((b) => (
+                          <li key={b} className="flex items-start gap-3">
+                            <CheckCircle2 className="flex-shrink-0 w-5 h-5 text-primary mt-0.5" />
+                            <span className="text-base text-foreground/80 leading-relaxed">{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
+                    {s.callout && (
+                      <div className={`flex gap-3 p-4 rounded-xl border ${BRAND_CALLOUT_STYLES[s.callout.kind]}`}>
+                        <Lightbulb className="flex-shrink-0 w-5 h-5 text-primary mt-0.5" />
+                        <p className="text-sm md:text-base text-foreground/85 leading-relaxed">
+                          <span className="font-semibold text-foreground">{s.callout.kind}: </span>
+                          {s.callout.text}
+                        </p>
+                      </div>
+                    )}
+
+                    {s.image && (
+                      <figure className="mt-6 rounded-2xl overflow-hidden border border-border/40 max-w-2xl mx-auto">
+                        <img src={s.image.src} alt={s.image.alt} className="w-full h-auto object-cover" />
+                        <figcaption className="px-4 py-3 text-xs md:text-sm text-foreground/60 bg-muted/40">
+                          {s.image.caption}
+                        </figcaption>
+                      </figure>
+                    )}
+
+                    {s.video && (
+                      <div className="mt-6">
+                        <h3 className="text-lg md:text-xl font-bold text-foreground mb-3">{s.video.title}</h3>
+                        <div className="aspect-video w-full rounded-2xl overflow-hidden border border-dashed border-border/70 bg-muted/40 flex items-center justify-center">
+                          <p className="text-sm text-foreground/60 px-6 text-center">{s.video.placeholder}</p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </section>
+              ))}
+
+              {/* Strategy table */}
+              <section id="strategy-table" className="mb-14 scroll-mt-28">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+                  Why Brands Should Invest in Podcasting in 2026
+                </h2>
+                <p className="text-foreground/70 mb-6">
+                  A quick reference for matching brand goals to podcast formats and episode ideas.
+                </p>
+                <div className="rounded-xl border border-border/60 overflow-hidden">
+                  <Table>
+                    <TableHeader>
+                      <TableRow className="bg-muted/50">
+                        <TableHead className="font-semibold w-[20%]">Brand Goal</TableHead>
+                        <TableHead className="font-semibold w-[34%]">How a Podcast Helps</TableHead>
+                        <TableHead className="font-semibold w-[32%]">Example Episode Idea</TableHead>
+                        <TableHead className="font-semibold w-[14%]">Priority</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {brandStrategyTable.map((g) => (
+                        <TableRow key={g.goal}>
+                          <TableCell className="font-medium align-top">{g.goal}</TableCell>
+                          <TableCell className="align-top text-foreground/75">{g.help}</TableCell>
+                          <TableCell className="align-top text-foreground/75">{g.example}</TableCell>
+                          <TableCell className="align-top">
+                            <span
+                              className={`inline-block px-2.5 py-1 rounded-full text-xs font-semibold border ${PRIORITY_COLOR[g.priority]}`}
+                            >
+                              {g.priority}
+                            </span>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </div>
+              </section>
+
+              {/* Podcast vs Traditional table */}
+              <section id="vs-traditional" className="mb-14 scroll-mt-28">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+                  Podcasting vs Traditional Brand Content
+                </h2>
+                <p className="text-foreground/70 mb-6">
+                  Podcasting doesn't replace your existing content — it works best as part of a larger content
+                  ecosystem. Here's how the major formats compare.
+                </p>
+                <div className="rounded-xl border border-border/60 overflow-hidden">
+                  <Table>
+                    <TableHeader>
+                      <TableRow className="bg-muted/50">
+                        <TableHead className="font-semibold w-[18%]">Content Type</TableHead>
+                        <TableHead className="font-semibold w-[28%]">Strength</TableHead>
+                        <TableHead className="font-semibold w-[27%]">Limitation</TableHead>
+                        <TableHead className="font-semibold w-[27%]">Best Use Case</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {contentTypeTable.map((c) => (
+                        <TableRow key={c.type}>
+                          <TableCell className="font-medium align-top">{c.type}</TableCell>
+                          <TableCell className="align-top text-foreground/75">{c.strength}</TableCell>
+                          <TableCell className="align-top text-foreground/75">{c.limit}</TableCell>
+                          <TableCell className="align-top text-foreground/75">{c.best}</TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </div>
+              </section>
+
+              {/* Checklist */}
+              <section id="checklist" className="mb-14 scroll-mt-28">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+                  Brand Podcast Launch Checklist
+                </h2>
+                <p className="text-foreground/70 mb-6">
+                  Use this as your single source of truth before publishing your first episode.
+                </p>
+                <ul className="grid sm:grid-cols-2 gap-3">
+                  {brandChecklist.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-3 p-4 rounded-xl bg-card border border-border/60 hover:border-primary/40 transition-colors"
+                    >
+                      <CheckCircle2 className="flex-shrink-0 w-5 h-5 text-primary mt-0.5" />
+                      <span className="text-sm md:text-base text-foreground/85">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+
+              {/* Videos */}
+              <section id="videos" className="mb-14 scroll-mt-28">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+                  Recommended Videos for Brand Podcasting
+                </h2>
+
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
+                  How to Start a Branded Podcast for Your Business
+                </h3>
+                <div className="aspect-video w-full rounded-2xl overflow-hidden border border-dashed border-border/70 bg-muted/40 mb-10 flex items-center justify-center">
+                  <p className="text-sm text-foreground/60 px-6 text-center">
+                    Add your YouTube tutorial URL here.
+                  </p>
+                </div>
+
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
+                  Podcast Marketing Strategy for Brands in 2026
+                </h3>
+                <div className="aspect-video w-full rounded-2xl overflow-hidden border border-dashed border-border/70 bg-muted/40 flex items-center justify-center">
+                  <p className="text-sm text-foreground/60 px-6 text-center">
+                    Add your podcast marketing video URL here.
+                  </p>
+                </div>
+              </section>
+
+              {/* FAQs */}
+              <section id="faqs" className="mb-14 scroll-mt-28">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+                  Frequently Asked Questions
+                </h2>
+                <Accordion type="single" collapsible className="rounded-xl border border-border/60 px-5">
+                  {brandFaqs.map((f, i) => (
+                    <AccordionItem key={i} value={`brand-faq-${i}`} className="last:border-b-0">
+                      <AccordionTrigger className="text-left text-base md:text-lg font-semibold">
+                        {f.q}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-base text-foreground/75 leading-relaxed">
+                        {f.a}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </section>
+
+              {/* Author */}
+              <section id="author" className="mb-14">
+                <div className="flex flex-col sm:flex-row items-start gap-5 p-6 rounded-2xl border border-border/60 bg-muted/30">
+                  <div className="flex-shrink-0 w-20 h-20 rounded-full bg-gradient-to-br from-primary to-[hsl(340_90%_55%)] flex items-center justify-center text-primary-foreground text-2xl font-bold">
+                    BT
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-foreground">Banter Team</h3>
+                    <p className="text-sm text-primary font-medium mb-2">
+                      Brand Podcast Strategist · Content Marketing Specialist
+                    </p>
+                    <p className="text-sm md:text-base text-foreground/75 leading-relaxed mb-4">
+                      Helping brands turn expertise, conversations and customer insights into podcasts that build
+                      trust, authority and long-term audience relationships.
+                    </p>
+                    <div className="flex items-center gap-3">
+                      <a
+                        href="#"
+                        aria-label="LinkedIn"
+                        className="w-9 h-9 rounded-full bg-background border border-border/60 flex items-center justify-center text-foreground/60 hover:text-primary hover:border-primary transition-colors"
+                      >
+                        <Linkedin size={16} />
+                      </a>
+                      <a
+                        href="#"
+                        aria-label="YouTube"
+                        className="w-9 h-9 rounded-full bg-background border border-border/60 flex items-center justify-center text-foreground/60 hover:text-primary hover:border-primary transition-colors"
+                      >
+                        <Youtube size={16} />
+                      </a>
+                      <a
+                        href="#"
+                        aria-label="Website"
+                        className="w-9 h-9 rounded-full bg-background border border-border/60 flex items-center justify-center text-foreground/60 hover:text-primary hover:border-primary transition-colors"
+                      >
+                        <Globe size={16} />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              {/* Final CTA */}
+              <section className="relative overflow-hidden rounded-3xl p-8 md:p-12 bg-gradient-to-br from-primary to-[hsl(340_90%_55%)] text-primary-foreground">
+                <div className="relative z-10 max-w-2xl">
+                  <h2 className="text-2xl md:text-4xl font-bold leading-tight mb-4">
+                    Ready to Turn Your Brand Voice Into a Podcast?
+                  </h2>
+                  <p className="text-base md:text-lg text-primary-foreground/90 leading-relaxed mb-7">
+                    Build trust, educate your audience and create a content engine that works across every
+                    platform.
+                  </p>
+                  <a
+                    href="/#booking"
+                    onClick={handleCTA}
+                    className="cta-swap group inline-flex items-center gap-3 pl-6 pr-2 py-2 h-auto rounded-full bg-background text-foreground font-semibold transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:shadow-[0_12px_30px_-10px_hsl(0_0%_0%/0.35)] active:translate-y-0 active:scale-[0.98]"
+                  >
+                    <span>Book Your Free Call</span>
+                    <span className="cta-swap__circle relative flex items-center justify-center w-10 h-10 rounded-full bg-primary/15 overflow-hidden">
+                      <ArrowRight className="cta-swap__arrow--main absolute w-4 h-4 text-primary" />
+                      <ArrowRight className="cta-swap__arrow--ghost absolute w-4 h-4 text-primary opacity-0 -translate-x-6" />
+                    </span>
+                  </a>
+                </div>
+                <div className="absolute -right-20 -bottom-20 w-72 h-72 rounded-full bg-white/10 blur-3xl" />
+              </section>
+            </div>
+          </div>
+        </div>
+      </article>
+    </>
+  );
+};
+
 export const blogPosts = [
   {
     slug: "how-to-set-up-your-first-podcast-studio",
@@ -1337,14 +2040,13 @@ export const blogPosts = [
     slug: "why-every-brand-needs-a-podcast-in-2026",
     title: "Why Every Brand Needs a Podcast in 2026",
     excerpt:
-      "Discover how podcasting can elevate your brand's reach, build authentic connections, and drive engagement.",
+      "Discover why every brand needs a podcast in 2026 and how podcasting builds trust, authority, audience relationships and long-term brand growth.",
     author: "Banter Team",
     date: "Mar 18, 2026",
-    readTime: "6 min read",
-    category: "Industry",
+    readTime: "9 min read",
+    category: "Podcast Marketing",
     image: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=1600&q=80",
-    type: "article" as const,
-    content: thirdPostArticle,
+    type: "custom" as const,
   },
 ];
 
@@ -1390,6 +2092,21 @@ const BlogPost = () => {
         "description",
         "Learn how to set up your first podcast studio with the right room, microphone, headphones, audio interface, recording software, acoustic treatment, and workflow."
       );
+    } else if (post.slug === "why-every-brand-needs-a-podcast-in-2026") {
+      document.title = "Why Every Brand Needs a Podcast in 2026";
+      const setMeta = (name: string, content: string) => {
+        let el = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement | null;
+        if (!el) {
+          el = document.createElement("meta");
+          el.name = name;
+          document.head.appendChild(el);
+        }
+        el.content = content;
+      };
+      setMeta(
+        "description",
+        "Discover why every brand needs a podcast in 2026 and how podcasting helps build trust, authority, audience relationships, thought leadership, and long-term brand growth."
+      );
     } else {
       document.title = post.title;
     }
@@ -1406,6 +2123,8 @@ const BlogPost = () => {
         <Navbar />
         {post.slug === "how-to-set-up-your-first-podcast-studio" ? (
           <StudioSetupArticle />
+        ) : post.slug === "why-every-brand-needs-a-podcast-in-2026" ? (
+          <BrandPodcastArticle />
         ) : (
           <MistakesArticle />
         )}
@@ -1448,18 +2167,6 @@ const BlogPost = () => {
             <img src={post.image} alt={post.title} className="w-full h-auto object-cover" />
           </div>
 
-          {post.type === "article" && (
-            <div className="space-y-5">
-              {post.content!.split("\n\n").map((p, i) => (
-                <p
-                  key={i}
-                  className="text-base md:text-lg text-foreground/80 leading-relaxed first:first-letter:text-5xl first:first-letter:font-bold first:first-letter:text-primary first:first-letter:mr-1 first:first-letter:float-left first:first-letter:leading-none first:first-letter:mt-1"
-                >
-                  {p}
-                </p>
-              ))}
-            </div>
-          )}
         </div>
       </article>
     </div>
