@@ -25,6 +25,9 @@ const FeaturesSection = () => {
           <h2 className="font-heading text-3xl md:text-5xl font-extrabold text-foreground mb-4">
             Why Choose Us
           </h2>
+          <a href="#booking" className="btn-primary inline-flex mt-4">
+            Book Your Studio
+          </a>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
