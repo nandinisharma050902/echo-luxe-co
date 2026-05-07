@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Sun, Camera, ShieldCheck, Zap, Share2, Headphones } from "lucide-react";
+import { Sun, Camera, ShieldCheck, Zap, Share2, Headphones, ArrowRight } from "lucide-react";
 
 const features = [
   { icon: Sun, title: "Cinematic Lighting", desc: "Fully acoustically treated rooms for crystal clear audio" },
@@ -25,8 +25,19 @@ const FeaturesSection = () => {
           <h2 className="font-heading text-3xl md:text-5xl font-extrabold text-foreground mb-4">
             Why Choose Us
           </h2>
-          <a href="#booking" className="btn-primary inline-flex mt-4">
-            Book Your Studio
+          <a
+            href="#booking"
+            className="btn-primary group text-base !px-10 !py-4 inline-flex items-center gap-3 mt-4 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-12px_hsl(var(--primary)/0.45)] active:scale-[0.97] [transition:all_400ms_cubic-bezier(0.22,1,0.36,1)]"
+          >
+            <span>Book Your Studio</span>
+            <span className="relative inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/15 overflow-hidden backdrop-blur-sm">
+              <ArrowRight
+                className="w-4 h-4 absolute transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] translate-x-0 opacity-100 group-hover:translate-x-6 group-hover:opacity-0"
+              />
+              <ArrowRight
+                className="w-4 h-4 absolute transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] -translate-x-6 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
+              />
+            </span>
           </a>
         </motion.div>
 
