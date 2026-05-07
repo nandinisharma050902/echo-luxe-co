@@ -100,13 +100,13 @@ const studioSections: StudioSection[] = [
     short: "Choose the Right Microphone",
     title: "Choose the Right Microphone",
     paragraphs: [
-      "Your microphone is one of the most important pieces of podcasting gear because voice clarity directly affects how long listeners stay with each episode. But the most expensive mic isn't automatically the right one — the best mic for you depends on your room, your workflow and your budget.",
+      "Most beginner episodes are released with avoidable problems, a buzzing fan, a clipped intro, one speaker twice as loud as the other, that a 60 second test would have caught. A small testing habit before each session is one of the highest-leverage things you can do.",
       "Two main mic types matter for beginners. Dynamic microphones reject more background noise and tend to sound great in untreated rooms. Condenser microphones capture more detail and warmth, but they also pick up much more of the room around you, including fans, traffic and echo.",
     ],
     bullets: [
       "Dynamic mics are usually the safer choice for untreated home rooms.",
       "Condenser mics shine in well-treated, quiet recording spaces.",
-      "USB mics are simple, affordable and beginner-friendly.",
+      "Place the camera at eye level , never below, looking up at you.",
       "XLR mics offer more control, better sound and a longer upgrade path.",
       "Skip the most expensive option until your room and habits are dialled in.",
     ],
@@ -126,8 +126,8 @@ const studioSections: StudioSection[] = [
   },
   {
     id: "headphones",
-    short: "Use Closed-Back Headphones",
-    title: "Use Closed-Back Headphones",
+    short: "Use Closed Back Headphones",
+    title: "Use Closed Back Headphones",
     paragraphs: [
       "Headphones aren't a luxury in podcasting — they're essential. They let you monitor your audio in real time so you can hear background noise, mouth clicks, clipping or volume issues as they happen, instead of discovering them in the edit when it's too late to fix.",
       "Closed-back headphones are the right choice for recording. Open-back models leak sound, which your microphone will happily pick up and bake into your recording. Regular speakers should never be used while recording for the same reason.",
