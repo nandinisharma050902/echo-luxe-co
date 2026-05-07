@@ -368,8 +368,7 @@ const StudioSetupArticle = () => {
               How to Set Up Your First Podcast Studio
             </h1>
             <p className="text-lg md:text-xl text-foreground/70 leading-relaxed mb-7 max-w-3xl">
-              A beginner-friendly guide to building a clean, comfortable and professional-sounding podcast
-              setup — without overspending on gear you don't actually need.
+              A beginner-friendly guide to building a clean, comfortable and professional sounding podcast setup without overspending on gear you don't actually need.
             </p>
             <div className="flex flex-wrap items-center gap-5 text-xs md:text-sm text-muted-foreground">
               <span className="flex items-center gap-1.5">
