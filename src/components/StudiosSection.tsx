@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useRef } from "react";
+import { ArrowRight } from "lucide-react";
 
 import studio1v1 from "@/assets/studio1-v1.png";
 import studio1v2 from "@/assets/studio1-v2.png";
@@ -136,9 +137,14 @@ const StudioCard = ({ studio, index }: { studio: StudioData; index: number }) =>
 
       <a
         href="#booking"
-        className="inline-block text-xs uppercase tracking-wider text-primary font-body font-semibold hover:translate-x-1 transition-transform duration-300"
+        aria-label="Book this studio"
+        className="btn-primary group text-sm !px-6 !py-2.5 inline-flex items-center gap-2.5 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-12px_hsl(var(--primary)/0.45)] active:scale-[0.97] [transition:all_400ms_cubic-bezier(0.22,1,0.36,1)] cursor-pointer"
       >
-        Book This Studio →
+        <span>Book Your Studio</span>
+        <span className="relative inline-flex items-center justify-center w-7 h-7 rounded-full bg-white/15 overflow-hidden backdrop-blur-sm">
+          <ArrowRight className="w-3.5 h-3.5 absolute transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] translate-x-0 opacity-100 group-hover:translate-x-5 group-hover:opacity-0" />
+          <ArrowRight className="w-3.5 h-3.5 absolute transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] -translate-x-5 opacity-0 group-hover:translate-x-0 group-hover:opacity-100" />
+        </span>
       </a>
     </motion.div>
   );
