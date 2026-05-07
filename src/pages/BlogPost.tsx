@@ -306,6 +306,8 @@ const studioFaqs = [
 
 const PRIORITY_COLOR: Record<string, string> = {
   Essential: "bg-primary/10 text-primary border-primary/30",
+  High: "bg-amber-500/10 text-amber-600 border-amber-500/30",
+  Medium: "bg-muted text-foreground/70 border-border",
   Recommended: "bg-amber-500/10 text-amber-600 border-amber-500/30",
   Optional: "bg-muted text-foreground/60 border-border",
 };
