@@ -1322,7 +1322,7 @@ type BrandSection = {
   bullets?: string[];
   callout?: { kind: "Brand Strategy Tip" | "Common Mistake" | "Pro Tip" | "Budget Tip"; text: string };
   image?: { src: string; alt: string; caption: string };
-  video?: { title: string; placeholder: string };
+  video?: { title: string; placeholder: string; url?: string };
 };
 
 const BRAND_CALLOUT_STYLES: Record<NonNullable<BrandSection["callout"]>["kind"], string> = {
@@ -1465,6 +1465,7 @@ const brandSections: BrandSection[] = [
     video: {
       title: "Recommended Video: How Brands Can Use Podcasts for Thought Leadership",
       placeholder: "Add your YouTube video URL here.",
+      url: "https://www.youtube.com/embed/5I_ifG3h_B8",
     },
   },
   {
@@ -1792,9 +1793,22 @@ const BrandPodcastArticle = () => {
                     {s.video && (
                       <div className="mt-6">
                         <h3 className="text-lg md:text-xl font-bold text-foreground mb-3">{s.video.title}</h3>
-                        <div className="aspect-video w-full rounded-2xl overflow-hidden border border-dashed border-border/70 bg-muted/40 flex items-center justify-center">
-                          <p className="text-sm text-foreground/60 px-6 text-center">{s.video.placeholder}</p>
-                        </div>
+                        {s.video.url ? (
+                          <div className="aspect-video w-full rounded-2xl overflow-hidden border border-border/60 bg-muted/40">
+                            <iframe
+                              className="w-full h-full"
+                              src={s.video.url}
+                              title={s.video.title}
+                              frameBorder={0}
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                              allowFullScreen
+                            />
+                          </div>
+                        ) : (
+                          <div className="aspect-video w-full rounded-2xl overflow-hidden border border-dashed border-border/70 bg-muted/40 flex items-center justify-center">
+                            <p className="text-sm text-foreground/60 px-6 text-center">{s.video.placeholder}</p>
+                          </div>
+                        )}
                       </div>
                     )}
                   </div>
