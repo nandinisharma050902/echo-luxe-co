@@ -160,4 +160,12 @@
     height: 1px;
     background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.2), hsl(var(--brand-blue) / 0.2), transparent);
   }
+
+  /* Premium swap-arrow CTA */
+  .cta-swap .cta-swap__arrow--main { transform: translateX(0); opacity: 1; }
+  .cta-swap .cta-swap__arrow--ghost { transform: translateX(-1.5rem); opacity: 0; }
+  .cta-swap:hover .cta-swap__arrow--main,
+  .cta-swap:focus-visible .cta-swap__arrow--main { transform: translateX(1.5rem); opacity: 0; }
+  .cta-swap:hover .cta-swap__arrow--ghost,
+  .cta-swap:focus-visible .cta-swap__arrow--ghost { transform: translateX(0); opacity: 1; }
 }
