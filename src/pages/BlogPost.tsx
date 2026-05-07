@@ -2167,18 +2167,6 @@ const BlogPost = () => {
             <img src={post.image} alt={post.title} className="w-full h-auto object-cover" />
           </div>
 
-          {post.type === "article" && (
-            <div className="space-y-5">
-              {post.content!.split("\n\n").map((p, i) => (
-                <p
-                  key={i}
-                  className="text-base md:text-lg text-foreground/80 leading-relaxed first:first-letter:text-5xl first:first-letter:font-bold first:first-letter:text-primary first:first-letter:mr-1 first:first-letter:float-left first:first-letter:leading-none first:first-letter:mt-1"
-                >
-                  {p}
-                </p>
-              ))}
-            </div>
-          )}
         </div>
       </article>
     </div>
