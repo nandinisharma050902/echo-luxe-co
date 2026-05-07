@@ -643,10 +643,9 @@ const BlogPost = () => {
     window.scrollTo(0, 0);
   }, [slug]);
 
-  if (!post) return <Navigate to="/" replace />;
-
   // SEO meta
   useEffect(() => {
+    if (!post) return;
     const prevTitle = document.title;
     if (post.slug === "top-10-podcasting-mistakes-beginners-make") {
       document.title = "Top 10 Podcasting Mistakes Beginners Make";
@@ -670,6 +669,8 @@ const BlogPost = () => {
       document.title = prevTitle;
     };
   }, [post]);
+
+  if (!post) return <Navigate to="/" replace />;
 
   if (post.type === "custom") {
     return (
