@@ -383,7 +383,11 @@ const MistakesArticle = () => {
                     </div>
 
                     {m.image && (
-                      <figure className="mt-6 rounded-2xl overflow-hidden border border-border/40">
+                      <figure
+                        className={`mt-6 rounded-2xl overflow-hidden border border-border/40 ${
+                          m.id === "recording-environment" ? "max-w-md mx-auto" : ""
+                        }`}
+                      >
                         <img src={m.image.src} alt={m.image.alt} className="w-full h-auto object-cover" />
                         <figcaption className="px-4 py-3 text-xs md:text-sm text-foreground/60 bg-muted/40">
                           {m.image.caption}
