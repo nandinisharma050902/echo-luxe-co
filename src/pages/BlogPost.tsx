@@ -810,8 +810,8 @@ const mistakes: MistakeSection[] = [
     title: "Overinvesting in Equipment Instead of Content",
     problem:
       "Many beginners spend weeks comparing microphones, mixers and software while their actual show idea stays vague. Expensive gear feels productive, but it can't rescue a podcast that has no clear angle, no strong guests and nothing memorable to say.",
-    why: "Audiences subscribe for ideas, stories and insight, not specs. A premium setup attached to a generic concept will always lose to a focused show recorded on a single USB mic.",
-    fix: "Start with the simplest reliable setup that gets you to publish, then upgrade only when you've identified a specific limitation. Spend the time you saved on defining your niche, planning episodes and lining up your first ten guests or topics.",
+    why: "Most podcasts are abandoned before episode ten, right around the point where shows usually start finding their voice and audience. Slow early numbers feel like failure, but they're almost always normal.",
+    fix: "Editing is where amateur recordings become professional shows. It tightens pacing, removes distractions and makes hosts and guests sound their best which directly improves retention and reviews.",
     tip: "Set a hard equipment budget for episodes 1–20. Reinvest in better gear only after you've proven you can publish consistently.",
   },
   {
@@ -820,8 +820,8 @@ const mistakes: MistakeSection[] = [
     title: "Inconsistent Publishing Schedule",
     problem:
       "Disappearing for a month, then dropping three episodes at once, breaks the listener habit you're trying to create. Podcast audiences are built on rhythm — they expect your show in their feed at the same time each week.",
-    why: "Algorithms on Apple Podcasts, Spotify and YouTube reward consistency. So do humans. A reliable schedule signals professionalism and respect for your listeners' time.",
-    fix: "Pick a realistic cadence — weekly, biweekly or monthly — and protect it like a deadline. Batch-record two or three episodes ahead, build a simple content calendar and schedule episodes in advance through your hosting platform.",
+    why: "Discovery on podcast platforms is limited. Most growth comes from external channels clips on social media, mentions in newsletters, shares from guests and recommendations from listeners.",
+    fix: "Treat your launch like a product launch. Invest in clean, readable cover art, write a benefit led title, choose the right primary category and craft a keyword rich description that clearly states who the show is for and what they'll learn.",
     tip: "Choose the slowest cadence you can absolutely commit to for six months. It's better to publish monthly forever than weekly for three weeks.",
   },
   {
