@@ -7,13 +7,12 @@ const firstPostArticle = `Setting up your first podcast studio doesn't require a
 
 Finally, think about workflow and comfort. Arrange your equipment so everything is within reach, keep cables organized and ensure your seating supports long recording sessions. Test your setup before publishing your first episode, paying attention to background noise, volume levels and clarity. With a thoughtful approach and a focus on fundamentals, you can create a podcast studio that sounds professional, feels comfortable and scales with your ambitions turning your ideas into a listening experience people will want to come back to.`;
 
-const secondPostIntro = `Launching a podcast is one of the most rewarding creative pursuits you can take on, but the early days are also where most new podcasters quietly sabotage their own growth. The mistakes are rarely dramatic. They're small, easy to overlook and almost always rooted in enthusiasm outpacing preparation. The good news is that every one of them is fixable, and most can be avoided entirely if you know what to watch for before you hit record. Below are the ten most common pitfalls we see beginners fall into, along with what to do instead.`;
+const secondPostIntro = `\n`;
 
 const secondPostMistakes = [
   {
     title: "Poor audio quality that drives listeners away",
-    description:
-      "Listeners will forgive an average host, a rough edit, even a confusing intro, but they will not forgive bad audio. Hissing, echo, muffled vocals or inconsistent volume levels cause people to drop off within seconds. Invest in a decent microphone, record in a treated space and always monitor with headphones while recording.",
+    description: "Your cover art, title and description are the storefront of your show. Generic artwork, vague titles and one line descriptions make it nearly impossible to stand out in a crowded directory. Treat your branding like a product launch, because that's exactly what it is.",
   },
   {
     title: "Ignoring recording environment and acoustics",
