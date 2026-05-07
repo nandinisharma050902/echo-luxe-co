@@ -1322,7 +1322,7 @@ type BrandSection = {
   bullets?: string[];
   callout?: { kind: "Brand Strategy Tip" | "Common Mistake" | "Pro Tip" | "Budget Tip"; text: string };
   image?: { src: string; alt: string; caption: string };
-  video?: { title: string; placeholder: string };
+  video?: { title: string; placeholder: string; url?: string };
 };
 
 const BRAND_CALLOUT_STYLES: Record<NonNullable<BrandSection["callout"]>["kind"], string> = {
@@ -1465,6 +1465,7 @@ const brandSections: BrandSection[] = [
     video: {
       title: "Recommended Video: How Brands Can Use Podcasts for Thought Leadership",
       placeholder: "Add your YouTube video URL here.",
+      url: "https://www.youtube.com/embed/5I_ifG3h_B8",
     },
   },
   {
