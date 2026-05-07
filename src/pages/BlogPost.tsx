@@ -618,7 +618,7 @@ const StudioSetupArticle = () => {
                   Recommended Video: Home Podcast Studio Setup for Beginners
                 </h3>
                 <p className="text-foreground/75 mb-4">
-                  A practical walkthrough of turning any spare room into a clean, content-ready podcast studio — covering layout, lighting and budget gear choices.
+                  A practical walkthrough of turning any spare room into a clean, content-ready podcast studio covering layout, lighting and budget gear choices.
                 </p>
                 <div className="rounded-2xl bg-card border border-border/60 shadow-sm p-3 md:p-4 mb-10">
                   <div className="aspect-video w-full rounded-xl overflow-hidden bg-black">
@@ -641,7 +641,7 @@ const StudioSetupArticle = () => {
                   Recommended Video: Podcast Microphone and Audio Setup Tutorial
                 </h3>
                 <p className="text-foreground/75 mb-4">
-                  See how to position your mic, set gain correctly and dial in a professional vocal sound — even with an entry-level USB or XLR setup.
+                  See how to position your mic, set gain correctly and dial in a professional vocal sound even with an entry-level USB or XLR setup.
                 </p>
                 <div className="rounded-2xl bg-card border border-border/60 shadow-sm p-3 md:p-4">
                   <div className="aspect-video w-full rounded-xl overflow-hidden bg-black">
