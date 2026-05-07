@@ -74,9 +74,19 @@ const HeroSection = () => {
         </p>
 
         <div className="animate-fade-in">
-          <a href="#booking" className="btn-primary text-base !px-10 !py-4 inline-flex items-center gap-2">
-            Book Your Studio @ ₹3,999
-            <ArrowRight className="w-5 h-5" />
+          <a
+            href="#booking"
+            className="btn-primary group text-base !px-10 !py-4 inline-flex items-center gap-3 active:scale-[0.97] [transition:all_400ms_cubic-bezier(0.22,1,0.36,1)]"
+          >
+            <span>Book Your Studio @ ₹3,999</span>
+            <span className="relative inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/15 overflow-hidden backdrop-blur-sm">
+              <ArrowRight
+                className="w-4 h-4 absolute transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] translate-x-0 opacity-100 group-hover:translate-x-6 group-hover:opacity-0"
+              />
+              <ArrowRight
+                className="w-4 h-4 absolute transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] -translate-x-6 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
+              />
+            </span>
           </a>
         </div>
       </div>
