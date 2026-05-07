@@ -810,8 +810,8 @@ const mistakes: MistakeSection[] = [
     title: "Overinvesting in Equipment Instead of Content",
     problem:
       "Many beginners spend weeks comparing microphones, mixers and software while their actual show idea stays vague. Expensive gear feels productive, but it can't rescue a podcast that has no clear angle, no strong guests and nothing memorable to say.",
-    why: "Audiences subscribe for ideas, stories and insight, not specs. A premium setup attached to a generic concept will always lose to a focused show recorded on a single USB mic.",
-    fix: "Start with the simplest reliable setup that gets you to publish, then upgrade only when you've identified a specific limitation. Spend the time you saved on defining your niche, planning episodes and lining up your first ten guests or topics.",
+    why: "Most podcasts are abandoned before episode ten, right around the point where shows usually start finding their voice and audience. Slow early numbers feel like failure, but they're almost always normal.",
+    fix: "Editing is where amateur recordings become professional shows. It tightens pacing, removes distractions and makes hosts and guests sound their best which directly improves retention and reviews.",
     tip: "Set a hard equipment budget for episodes 1–20. Reinvest in better gear only after you've proven you can publish consistently.",
   },
   {
@@ -820,8 +820,8 @@ const mistakes: MistakeSection[] = [
     title: "Inconsistent Publishing Schedule",
     problem:
       "Disappearing for a month, then dropping three episodes at once, breaks the listener habit you're trying to create. Podcast audiences are built on rhythm — they expect your show in their feed at the same time each week.",
-    why: "Algorithms on Apple Podcasts, Spotify and YouTube reward consistency. So do humans. A reliable schedule signals professionalism and respect for your listeners' time.",
-    fix: "Pick a realistic cadence — weekly, biweekly or monthly — and protect it like a deadline. Batch-record two or three episodes ahead, build a simple content calendar and schedule episodes in advance through your hosting platform.",
+    why: "Discovery on podcast platforms is limited. Most growth comes from external channels clips on social media, mentions in newsletters, shares from guests and recommendations from listeners.",
+    fix: "Treat your launch like a product launch. Invest in clean, readable cover art, write a benefit led title, choose the right primary category and craft a keyword rich description that clearly states who the show is for and what they'll learn.",
     tip: "Choose the slowest cadence you can absolutely commit to for six months. It's better to publish monthly forever than weekly for three weeks.",
   },
   {
@@ -846,7 +846,7 @@ const mistakes: MistakeSection[] = [
     problem:
       "Hitting record without a plan rarely produces the spontaneous magic beginners hope for. More often it produces rambling, repetition, lost threads and episodes that feel twice as long as they should.",
     why: "Listeners give you about 30 seconds to prove an episode is worth their time. Without a strong hook and a clear shape, even good content gets abandoned.",
-    fix: "Use a simple repeatable structure: hook, intro, main points, story or example, takeaway, call to action. A one-page outline is enough — it keeps the conversation natural while making sure every episode lands.",
+    fix: "Use a simple repeatable structure: hook, intro, main points, story or example, takeaway, call to action. A one-page outline is enough, it keeps the conversation natural while making sure every episode lands.",
     tip: "Open every episode with the single most interesting sentence from the conversation. Earn the next 30 seconds, then the next.",
   },
   {
@@ -1000,8 +1000,7 @@ const MistakesArticle = () => {
               Top 10 Podcasting Mistakes Beginners Make
             </h1>
             <p className="text-lg md:text-xl text-foreground/70 leading-relaxed mb-7 max-w-3xl">
-              New podcasters often struggle with audio quality, consistency, branding, planning and promotion.
-              Here are the ten most common mistakes — and exactly how to fix each one before they slow your show down.
+              New podcasters often struggle with audio quality, consistency, branding, planning and promotion. Here are the ten most common mistakes and exactly how to fix each one before they slow your show down.
             </p>
             <div className="flex flex-wrap items-center gap-5 text-xs md:text-sm text-muted-foreground">
               <span className="flex items-center gap-1.5">
@@ -1066,9 +1065,7 @@ const MistakesArticle = () => {
               {/* Intro */}
               <section className="mb-14">
                 <p className="text-base md:text-lg text-foreground/80 leading-relaxed first-letter:text-5xl first-letter:font-bold first-letter:text-primary first-letter:mr-1 first-letter:float-left first-letter:leading-none first-letter:mt-1">
-                  Starting a podcast is one of the most exciting creative pursuits you can take on — and one of
-                  the easiest to quietly sabotage in the first few months. Most beginner mistakes aren't dramatic.
-                  They're small, easy to overlook and almost always rooted in enthusiasm outpacing preparation.
+                  Starting a podcast is one of the most exciting creative pursuits you can take on and one of the easiest to quietly sabotage in the first few months. Most beginner mistakes aren't dramatic. They're small, easy to overlook and almost always rooted in enthusiasm outpacing preparation.
                 </p>
                 <p className="text-base md:text-lg text-foreground/80 leading-relaxed mt-5">
                   The good news is that every one of them is fixable. Once you understand the fundamentals of audio,
@@ -1249,10 +1246,7 @@ const MistakesArticle = () => {
                   </figcaption>
                 </figure>
                 <p className="text-base md:text-lg text-foreground/80 leading-relaxed mb-4">
-                  None of these ten mistakes are fatal on their own. What separates podcasts that grow from
-                  podcasts that fade is the willingness to address them honestly — to listen back to your own
-                  episodes with fresh ears, to upgrade one weak link at a time and to keep showing up after the
-                  early excitement wears off.
+                  None of these ten mistakes are fatal on their own. What separates podcasts that grow from podcasts that fade is the willingness to address them honestly to listen back to your own episodes with fresh ears, to upgrade one weak link at a time and to keep showing up after the early excitement wears off.
                 </p>
                 <p className="text-base md:text-lg text-foreground/80 leading-relaxed">
                   Focus on clear audio, a sharp audience, a structure you can repeat, branding that earns the
