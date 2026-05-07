@@ -149,10 +149,16 @@ const ExperienceSection = () => {
                 <Button
                   size="lg"
                   onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })}
-                  className="w-full sm:w-auto group transition-transform duration-200 hover:scale-[1.03]"
+                  className="cta-swap group w-full sm:w-auto pl-6 pr-2 py-2 h-auto rounded-full inline-flex items-center gap-3 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:shadow-[0_12px_30px_-10px_hsl(var(--primary)/0.55)] active:translate-y-0 active:scale-[0.98]"
                 >
-                  Book Your Session @ ₹3,999
-                  <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-0.5" />
+                  <span>Book Your Session @ ₹3,999</span>
+                  <span
+                    aria-hidden="true"
+                    className="cta-swap__circle relative inline-flex items-center justify-center w-9 h-9 rounded-full bg-primary-foreground/15 overflow-hidden"
+                  >
+                    <ArrowRight className="cta-swap__arrow cta-swap__arrow--main w-4 h-4 absolute transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]" />
+                    <ArrowRight className="cta-swap__arrow cta-swap__arrow--ghost w-4 h-4 absolute -translate-x-6 opacity-0 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]" />
+                  </span>
                 </Button>
                 <Button
                   size="lg"
