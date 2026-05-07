@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { ArrowRight } from "lucide-react";
 import heroSlide1 from "@/assets/hero-slide-1.webp";
 import heroSlide2 from "@/assets/hero-slide-2.webp";
 import heroSlide3 from "@/assets/hero-slide-3.webp";
@@ -73,8 +74,9 @@ const HeroSection = () => {
         </p>
 
         <div className="animate-fade-in">
-          <a href="#booking" className="btn-primary text-base !px-10 !py-4">
+          <a href="#booking" className="btn-primary text-base !px-10 !py-4 inline-flex items-center gap-2">
             Book Your Studio @ ₹3,999
+            <ArrowRight className="w-5 h-5" />
           </a>
         </div>
       </div>
