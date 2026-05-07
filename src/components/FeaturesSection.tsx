@@ -25,20 +25,6 @@ const FeaturesSection = () => {
           <h2 className="font-heading text-3xl md:text-5xl font-extrabold text-foreground mb-4">
             Why Choose Us
           </h2>
-          <a
-            href="#booking"
-            className="btn-primary group text-base !px-10 !py-4 inline-flex items-center gap-3 mt-4 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-12px_hsl(var(--primary)/0.45)] active:scale-[0.97] [transition:all_400ms_cubic-bezier(0.22,1,0.36,1)]"
-          >
-            <span>Book Your Studio</span>
-            <span className="relative inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/15 overflow-hidden backdrop-blur-sm">
-              <ArrowRight
-                className="w-4 h-4 absolute transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] translate-x-0 opacity-100 group-hover:translate-x-6 group-hover:opacity-0"
-              />
-              <ArrowRight
-                className="w-4 h-4 absolute transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] -translate-x-6 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
-              />
-            </span>
-          </a>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -60,6 +46,28 @@ const FeaturesSection = () => {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mt-12"
+        >
+          <a
+            href="#booking"
+            className="btn-primary group text-base !px-10 !py-4 inline-flex items-center gap-3 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-12px_hsl(var(--primary)/0.45)] active:scale-[0.97] [transition:all_400ms_cubic-bezier(0.22,1,0.36,1)]"
+          >
+            <span>Book Your Studio</span>
+            <span className="relative inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/15 overflow-hidden backdrop-blur-sm">
+              <ArrowRight
+                className="w-4 h-4 absolute transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] translate-x-0 opacity-100 group-hover:translate-x-6 group-hover:opacity-0"
+              />
+              <ArrowRight
+                className="w-4 h-4 absolute transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] -translate-x-6 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
+              />
+            </span>
+          </a>
+        </motion.div>
       </div>
     </section>
   );
