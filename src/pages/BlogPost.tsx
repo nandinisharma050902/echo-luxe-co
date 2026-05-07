@@ -1376,7 +1376,7 @@ const brandSections: BrandSection[] = [
     short: "Podcasting Builds Deeper Trust",
     title: "Podcasting Builds Deeper Trust Than Short-Form Content",
     paragraphs: [
-      "Short-form video is excellent at capturing attention, but it rarely captures belief. A scroll past a fifteen-second clip is a moment. A listener spending twenty, thirty or forty-five minutes inside your brand's conversation is a relationship. That difference is everything in 2026, when audiences are skeptical of polished marketing and increasingly drawn to formats that feel honest.",
+      "What separates the brand podcasts that work from the ones that quietly disappear isn't budget, it's clarity, consistency and usefulness. A focused show recorded with a modest setup will outperform an over-engineered production with no point of view, every single time.",
       "Voice does something visuals can't. The cadence, pauses and warmth of a real conversation create intimacy that's almost impossible to fake. Over time, your audience starts to recognize voices, anticipate the show and treat your brand less like an advertiser and more like a trusted regular in their week.",
     ],
     bullets: [
@@ -1402,7 +1402,7 @@ const brandSections: BrandSection[] = [
       "A podcast becomes a durable content asset that doesn't disappear with the next algorithm change.",
       "Episodes can live on your website, podcast platforms, YouTube and your newsletter.",
       "It gives your brand a repeatable, expected reason to show up for the audience.",
-      "It supports a long-term content ecosystem instead of one-off bursts.",
+      "The goal is not perfection, it is clarity, consistency and usefulness.",
     ],
     image: {
       src: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&q=80",
@@ -1897,7 +1897,7 @@ const BrandPodcastArticle = () => {
                   Podcasting vs Traditional Brand Content
                 </h2>
                 <p className="text-foreground/70 mb-6">
-                  Podcasting doesn't replace your existing content — it works best as part of a larger content
+                  Podcasting doesn't replace your existing content, it works best as part of a larger content
                   ecosystem. Here's how the major formats compare.
                 </p>
                 <div className="rounded-xl border border-border/60 overflow-hidden">
@@ -1955,7 +1955,7 @@ const BrandPodcastArticle = () => {
                   Recommended Video: Why Businesses Should Use Podcasting
                 </h3>
                 <p className="text-foreground/75 mb-4">
-                  A clear breakdown of why podcasting has become a core trust-building and owned-media channel for modern brands — and how to think about it strategically.
+                  A clear breakdown of why podcasting has become a core trust-building and owned-media channel for modern brands and how to think about it strategically.
                 </p>
                 <div className="rounded-2xl bg-card border border-border/60 shadow-sm p-3 md:p-4 mb-10">
                   <div className="aspect-video w-full rounded-xl overflow-hidden bg-black">
