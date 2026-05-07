@@ -1199,7 +1199,7 @@ const MistakesArticle = () => {
                   <div className="aspect-video w-full rounded-xl overflow-hidden bg-black">
                     <iframe
                       className="w-full h-full"
-                      src="https://www.youtube.com/embed/mwFYiFZO6sI"
+                      src="https://www.youtube.com/embed/n7vpvoaRgFY"
                       title="Podcast Audio Setup Tutorial for Beginners"
                       loading="lazy"
                       frameBorder={0}
