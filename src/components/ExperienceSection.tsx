@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { Star, CalendarCheck, Film, Sparkles, Send, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import arjunImg from "@/assets/testimonial-arjun.jpg";
-import priyaImg from "@/assets/testimonial-priya.jpg";
-import rohitImg from "@/assets/testimonial-rohit.jpg";
+import arjunImg from "@/assets/testimonial-ashish.png";
+import priyaImg from "@/assets/testimonial-sameer.png";
+import rohitImg from "@/assets/testimonial-srinivasa.png";
 
 const steps = [
   {
