@@ -614,27 +614,50 @@ const StudioSetupArticle = () => {
                   Recommended Videos for Setting Up Your Podcast Studio
                 </h2>
 
-                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
-                  How to Build a Home Podcast Studio for Beginners
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
+                  Recommended Video: Home Podcast Studio Setup for Beginners
                 </h3>
-                <div className="aspect-video w-full rounded-2xl overflow-hidden border border-border/60 bg-muted/40 flex items-center justify-center mb-3">
-                  <div className="text-center px-6">
-                    <Youtube className="w-10 h-10 text-primary mx-auto mb-3" />
-                    <p className="text-sm md:text-base text-foreground/70">Add your YouTube tutorial URL here.</p>
-                  </div>
-                </div>
-                <p className="text-xs text-foreground/50 mb-10">
-                  Replace this placeholder with an embedded iframe pointing to your chosen tutorial.
+                <p className="text-foreground/75 mb-4">
+                  A practical walkthrough of turning any spare room into a clean, content-ready podcast studio — covering layout, lighting and budget gear choices.
                 </p>
-
-                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
-                  Podcast Microphone and Audio Setup Tutorial
-                </h3>
-                <div className="aspect-video w-full rounded-2xl overflow-hidden border border-border/60 bg-muted/40 flex items-center justify-center">
-                  <div className="text-center px-6">
-                    <Youtube className="w-10 h-10 text-primary mx-auto mb-3" />
-                    <p className="text-sm md:text-base text-foreground/70">Add your YouTube audio setup URL here.</p>
+                <div className="rounded-2xl bg-card border border-border/60 shadow-sm p-3 md:p-4 mb-10">
+                  <div className="aspect-video w-full rounded-xl overflow-hidden bg-black">
+                    <iframe
+                      className="w-full h-full"
+                      src="https://www.youtube.com/embed/oVo33edZO3U"
+                      title="Home Podcast Studio Setup: Turn Any Room Into a Content Studio"
+                      loading="lazy"
+                      frameBorder={0}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
                   </div>
+                  <p className="mt-3 text-xs md:text-sm text-foreground/60">
+                    Watch: Home Podcast Studio Setup — Turn Any Room Into a Content Studio.
+                  </p>
+                </div>
+
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
+                  Recommended Video: Podcast Microphone and Audio Setup Tutorial
+                </h3>
+                <p className="text-foreground/75 mb-4">
+                  See how to position your mic, set gain correctly and dial in a professional vocal sound — even with an entry-level USB or XLR setup.
+                </p>
+                <div className="rounded-2xl bg-card border border-border/60 shadow-sm p-3 md:p-4">
+                  <div className="aspect-video w-full rounded-xl overflow-hidden bg-black">
+                    <iframe
+                      className="w-full h-full"
+                      src="https://www.youtube.com/embed/5lRMXJnykKQ"
+                      title="How to Setup Your Podcast Microphone to Sound like a Pro"
+                      loading="lazy"
+                      frameBorder={0}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
+                  </div>
+                  <p className="mt-3 text-xs md:text-sm text-foreground/60">
+                    Watch: How to Setup Your Podcast Microphone to Sound like a Pro.
+                  </p>
                 </div>
               </section>
 
@@ -1163,31 +1186,53 @@ const MistakesArticle = () => {
               {/* Videos */}
               <section id="videos" className="mb-14 scroll-mt-28">
                 <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-                  Recommended Video: How to Start a Podcast the Right Way
+                  Recommended Videos for Beginner Podcasters
                 </h2>
-                <div className="aspect-video w-full rounded-2xl overflow-hidden border border-border/60 bg-muted/40 mb-10">
-                  <iframe
-                    className="w-full h-full"
-                    src="https://www.youtube.com/embed/JeJ-JDU5bqw"
-                    title="How to Start a Podcast the Right Way"
-                    frameBorder={0}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  />
+
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
+                  Recommended Video: Avoid These Beginner Podcasting Mistakes
+                </h3>
+                <p className="text-foreground/75 mb-4">
+                  A clear, beginner-friendly tutorial on improving your podcast audio and avoiding the most common rookie sound mistakes that hurt listener retention.
+                </p>
+                <div className="rounded-2xl bg-card border border-border/60 shadow-sm p-3 md:p-4 mb-10">
+                  <div className="aspect-video w-full rounded-xl overflow-hidden bg-black">
+                    <iframe
+                      className="w-full h-full"
+                      src="https://www.youtube.com/embed/mwFYiFZO6sI"
+                      title="Podcast Audio Setup Tutorial for Beginners"
+                      loading="lazy"
+                      frameBorder={0}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
+                  </div>
+                  <p className="mt-3 text-xs md:text-sm text-foreground/60">
+                    Watch: Podcast Audio Setup Tutorial for Beginners.
+                  </p>
                 </div>
 
-                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6">
-                  Podcast Audio Setup Tutorial for Beginners
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
+                  Recommended Video: How to Start and Grow a Podcast the Right Way
                 </h3>
-                <div className="aspect-video w-full rounded-2xl overflow-hidden border border-border/60 bg-muted/40">
-                  <iframe
-                    className="w-full h-full"
-                    src="https://www.youtube.com/embed/mwFYiFZO6sI"
-                    title="Podcast Audio Setup Tutorial for Beginners"
-                    frameBorder={0}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  />
+                <p className="text-foreground/75 mb-4">
+                  A complete starter guide covering the planning, branding and promotion habits that separate podcasts that grow from podcasts that quietly disappear.
+                </p>
+                <div className="rounded-2xl bg-card border border-border/60 shadow-sm p-3 md:p-4">
+                  <div className="aspect-video w-full rounded-xl overflow-hidden bg-black">
+                    <iframe
+                      className="w-full h-full"
+                      src="https://www.youtube.com/embed/JeJ-JDU5bqw"
+                      title="How to Start a Podcast the Right Way"
+                      loading="lazy"
+                      frameBorder={0}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
+                  </div>
+                  <p className="mt-3 text-xs md:text-sm text-foreground/60">
+                    Watch: How to Start a Podcast the Right Way.
+                  </p>
                 </div>
               </section>
 
@@ -1914,20 +1959,48 @@ const BrandPodcastArticle = () => {
                 </h2>
 
                 <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
-                  How to Start a Branded Podcast for Your Business
+                  Recommended Video: Why Businesses Should Use Podcasting
                 </h3>
-                <div className="aspect-video w-full rounded-2xl overflow-hidden border border-dashed border-border/70 bg-muted/40 mb-10 flex items-center justify-center">
-                  <p className="text-sm text-foreground/60 px-6 text-center">
-                    Add your YouTube tutorial URL here.
+                <p className="text-foreground/75 mb-4">
+                  A clear breakdown of why podcasting has become a core trust-building and owned-media channel for modern brands — and how to think about it strategically.
+                </p>
+                <div className="rounded-2xl bg-card border border-border/60 shadow-sm p-3 md:p-4 mb-10">
+                  <div className="aspect-video w-full rounded-xl overflow-hidden bg-black">
+                    <iframe
+                      className="w-full h-full"
+                      src="https://www.youtube.com/embed/8GHizCb4B4k"
+                      title="The Importance of a Podcast Marketing Strategy"
+                      loading="lazy"
+                      frameBorder={0}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
+                  </div>
+                  <p className="mt-3 text-xs md:text-sm text-foreground/60">
+                    Watch: The Importance of a Podcast Marketing Strategy for Brands.
                   </p>
                 </div>
 
                 <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
-                  Podcast Marketing Strategy for Brands in 2026
+                  Recommended Video: Podcast Marketing Strategy for Brands
                 </h3>
-                <div className="aspect-video w-full rounded-2xl overflow-hidden border border-dashed border-border/70 bg-muted/40 flex items-center justify-center">
-                  <p className="text-sm text-foreground/60 px-6 text-center">
-                    Add your podcast marketing video URL here.
+                <p className="text-foreground/75 mb-4">
+                  Practical, low-budget marketing tactics brands can use to repurpose podcast episodes into social clips, blogs, newsletters and ongoing audience growth.
+                </p>
+                <div className="rounded-2xl bg-card border border-border/60 shadow-sm p-3 md:p-4">
+                  <div className="aspect-video w-full rounded-xl overflow-hidden bg-black">
+                    <iframe
+                      className="w-full h-full"
+                      src="https://www.youtube.com/embed/aDMy4_xXtqY"
+                      title="Podcast Marketing Strategies — 14 Free Marketing Ideas"
+                      loading="lazy"
+                      frameBorder={0}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
+                  </div>
+                  <p className="mt-3 text-xs md:text-sm text-foreground/60">
+                    Watch: 14 Podcast Marketing Strategies You Can Use This Week.
                   </p>
                 </div>
               </section>
