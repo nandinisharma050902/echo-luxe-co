@@ -1698,7 +1698,7 @@ const BrandPodcastArticle = () => {
             </h1>
             <p className="text-lg md:text-xl text-foreground/70 leading-relaxed mb-7 max-w-3xl">
               Podcasting is no longer just a creator trend. It is becoming one of the most powerful ways for
-              brands to build trust, authority and long-term audience relationships.
+              brands to build trust, authority and long term audience relationships.
             </p>
             <div className="flex flex-wrap items-center gap-5 text-xs md:text-sm text-muted-foreground">
               <span className="flex items-center gap-1.5">
@@ -1765,16 +1765,16 @@ const BrandPodcastArticle = () => {
               <section className="mb-14">
                 <p className="text-base md:text-lg text-foreground/80 leading-relaxed first-letter:text-5xl first-letter:font-bold first-letter:text-primary first-letter:mr-1 first-letter:float-left first-letter:leading-none first-letter:mt-1">
                   Attention is harder to earn than it has ever been, and audiences are more skeptical of polished
-                  marketing than at any point in the last decade. Banner blindness has become content blindness —
-                  feeds full of ads, sponsored posts and algorithm-optimized content that all blend together. In
+                  marketing than at any point in the last decade. Banner blindness has become content blindness
+                  feeds full of ads, sponsored posts and algorithm optimized content that all blend together. In
                   that environment, brands that want to actually be remembered need a content channel that is
                   human, direct and high-retention. That channel, increasingly, is podcasting.
                 </p>
                 <p className="text-base md:text-lg text-foreground/80 leading-relaxed mt-5">
                   This guide is for founders, marketers, agencies, consultants and creators who are wondering
-                  whether a brand podcast is worth the investment in 2026. Short answer: yes — but only if it's
-                  built like a long-term media asset, not a campaign. The pages below break down exactly why
-                  podcasting works for brands, how it compounds, and how to launch a show that earns trust,
+                  whether a brand podcast is worth the investment in 2026. Short answer: yes but only if it's
+                  built like a long term media asset, not a campaign. The pages below break down exactly why
+                  podcasting works for brands, how it compounds and how to launch a show that earns trust,
                   authority and audience for years.
                 </p>
               </section>
