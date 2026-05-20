@@ -21,7 +21,7 @@ const steps = [
   {
     icon: Sparkles,
     title: "Post-Production",
-    desc: "Our expert team handles editing, color grading, and sound to craft polished content.",
+    desc: "Our expert team handles editing, color grading and sound to craft polished content.",
     detail: "Delivered in 48–72 hrs",
   },
   {

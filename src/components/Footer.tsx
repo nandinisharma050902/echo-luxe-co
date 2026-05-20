@@ -13,7 +13,7 @@ const Footer = () => {
               <span className="font-heading text-lg font-bold text-foreground">Banter Studio</span>
             </div>
             <p className="text-muted-foreground font-body text-sm leading-relaxed">
-              Premium podcast & content studios for creators, brands, and visionaries. Build your voice. Amplify your story.
+              Premium podcast & content studios for creators, brands and visionaries. Build your voice. Amplify your story.
             </p>
           </div>
 
