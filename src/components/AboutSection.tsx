@@ -5,7 +5,7 @@ const services = [
   { icon: Lightbulb, title: "Conceptualization", desc: "We brainstorm and develop your podcast concept from scratch" },
   { icon: Users, title: "Guest Outreach", desc: "We connect you with the right guests for compelling conversations" },
   { icon: Mic2, title: "Recording", desc: "Multi platform distribution across all major channels" },
-  { icon: Scissors, title: "Editing & Post", desc: "Professional editing, mixing, and mastering of your content" },
+  { icon: Scissors, title: "Editing & Post", desc: "Professional editing, mixing and mastering of your content" },
   { icon: Send, title: "Distribution", desc: "Multi-platform distribution across all major channels" },
 ];
 

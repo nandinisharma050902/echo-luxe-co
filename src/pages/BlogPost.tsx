@@ -28,11 +28,11 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-const firstPostArticle = `Setting up your first podcast studio doesn't require a massive budget or a professional recording facility—it requires smart choices, a bit of planning, and a focus on sound quality over aesthetics. Start with your recording space, because even the best microphone can't fix poor acoustics. Choose a quiet room with minimal echo; soft furnishings like rugs, curtains, and even bookshelves help absorb sound and reduce reverb. Once your space is ready, invest in a good-quality USB or XLR microphone, this is the most important piece of gear, as clear audio is what keeps listeners engaged. Pair it with closed back headphones so you can monitor your recordings in real time without sound bleeding into the mic. If you're using an XLR mic, you'll also need an audio interface to connect it to your computer and ensure clean signal processing.
+const firstPostArticle = `Setting up your first podcast studio doesn't require a massive budget or a professional recording facility—it requires smart choices, a bit of planning and a focus on sound quality over aesthetics. Start with your recording space, because even the best microphone can't fix poor acoustics. Choose a quiet room with minimal echo; soft furnishings like rugs, curtains and even bookshelves help absorb sound and reduce reverb. Once your space is ready, invest in a good-quality USB or XLR microphone, this is the most important piece of gear, as clear audio is what keeps listeners engaged. Pair it with closed back headphones so you can monitor your recordings in real time without sound bleeding into the mic. If you're using an XLR mic, you'll also need an audio interface to connect it to your computer and ensure clean signal processing.
 
 Finally, think about workflow and comfort. Arrange your equipment so everything is within reach, keep cables organized and ensure your seating supports long recording sessions. Test your setup before publishing your first episode, paying attention to background noise, volume levels and clarity. With a thoughtful approach and a focus on fundamentals, you can create a podcast studio that sounds professional, feels comfortable and scales with your ambitions turning your ideas into a listening experience people will want to come back to.`;
 
-const thirdPostArticle = `Finally, starting a podcast is more achievable than ever. With affordable equipment and user friendly software, brands can produce high-quality content without a large upfront investment. The key is not perfection, but consistency and clarity. By focusing on delivering value, maintaining a regular publishing schedule, and continuously improving your content, you can build a strong and sustainable presence. In a world where attention is limited and trust is everything, podcasting stands out as a long term strategy that not only amplifies your brand's voice but also builds lasting relationships with your audience.`;
+const thirdPostArticle = `Finally, starting a podcast is more achievable than ever. With affordable equipment and user friendly software, brands can produce high-quality content without a large upfront investment. The key is not perfection, but consistency and clarity. By focusing on delivering value, maintaining a regular publishing schedule and continuously improving your content, you can build a strong and sustainable presence. In a world where attention is limited and trust is everything, podcasting stands out as a long term strategy that not only amplifies your brand's voice but also builds lasting relationships with your audience.`;
 
 // =====================================================================
 // "How to Set Up Your First Podcast Studio" — long-form article data
@@ -170,7 +170,7 @@ const studioSections: StudioSection[] = [
     title: "Pick Recording Software",
     paragraphs: [
       "Podcast recording software doesn't need to be complicated. The right tool is the one that matches your format, fits your skill level and lets you publish without friction. You can always upgrade once you know what you actually need.",
-      "There are four broad categories worth knowing about: simple voice recorders for solo episodes, multitrack DAWs for full editing control, remote interview platforms that record each guest on a separate clean track, and video recording tools for podcasts that will also live on YouTube.",
+      "There are four broad categories worth knowing about: simple voice recorders for solo episodes, multitrack DAWs for full editing control, remote interview platforms that record each guest on a separate clean track and video recording tools for podcasts that will also live on YouTube.",
     ],
     bullets: [
       "Multitrack recording so each speaker has their own clean audio track.",
@@ -186,8 +186,8 @@ const studioSections: StudioSection[] = [
     short: "Set Up Your Desk and Workflow",
     title: "Set Up Your Desk and Workflow",
     paragraphs: [
-      "Comfort and workflow matter more than they sound. Recording and editing a podcast involves long sessions, and a chaotic desk almost guarantees mistakes — wrong takes, missed cues, distracting noises and wasted energy that should be going into the conversation.",
-      "Spend an hour setting up your desk properly once, and you'll save yourself countless hours over the life of your show.",
+      "Comfort and workflow matter more than they sound. Recording and editing a podcast involves long sessions and a chaotic desk almost guarantees mistakes — wrong takes, missed cues, distracting noises and wasted energy that should be going into the conversation.",
+      "Spend an hour setting up your desk properly once and you'll save yourself countless hours over the life of your show.",
     ],
     bullets: [
       "Position the microphone at mouth level so you don't lean or strain.",
@@ -786,7 +786,7 @@ const mistakes: MistakeSection[] = [
     problem:
       "Listeners can forgive simple cover art or a beginner-level brand, but bad audio is almost impossible to sit through. Background hiss, uneven volume between speakers, room echo, harsh clipping and muffled vocals will push people to hit pause within the first thirty seconds — and most of them never come back.",
     why: "In a directory of millions of shows, audio quality is the fastest signal of whether a podcast is worth a listener's time. Poor sound suggests low effort, which makes everything that follows — your insights, your guests, your story — feel less credible.",
-    fix: "Use a decent dynamic USB or XLR microphone, speak about a fist's distance from it, and always wear closed-back headphones while recording so you can hear problems in real time. Record a 30-second test clip every session, watch your input levels (aim for peaks around -6 dB) and re-record if anything sounds off.",
+    fix: "Use a decent dynamic USB or XLR microphone, speak about a fist's distance from it and always wear closed-back headphones while recording so you can hear problems in real time. Record a 30-second test clip every session, watch your input levels (aim for peaks around -6 dB) and re-record if anything sounds off.",
     tip: "Record a short test clip at the start of every session and listen back on phone speakers — if it sounds rough there, it sounds rough everywhere.",
   },
   {
@@ -856,7 +856,7 @@ const mistakes: MistakeSection[] = [
     problem:
       "Long pauses, filler words, repeated points, background noise and abrupt transitions add up to a tiring listening experience. You don't need cinematic production, but raw recordings rarely respect your audience's time.",
     why: "Editing is where amateur recordings become professional shows. It tightens pacing, removes distractions and makes hosts and guests sound their best — which directly improves retention and reviews.",
-    fix: "Do a basic edit pass on every episode: trim dead air, remove the worst filler, balance levels between speakers, and add a clean intro and outro. Tools like Descript, Audacity, GarageBand or Adobe Audition are more than enough to get started.",
+    fix: "Do a basic edit pass on every episode: trim dead air, remove the worst filler, balance levels between speakers and add a clean intro and outro. Tools like Descript, Audacity, GarageBand or Adobe Audition are more than enough to get started.",
     tip: "If a section bores you while editing, it will bore your listener twice as much. Cut it.",
   },
   {
@@ -925,7 +925,7 @@ const faqs = [
   },
   {
     q: "How often should I publish podcast episodes?",
-    a: "Choose the cadence you can realistically sustain for at least six months. Weekly is ideal for growth, biweekly is a strong middle ground, and monthly is fine if it lets you maintain quality. Consistency matters more than frequency.",
+    a: "Choose the cadence you can realistically sustain for at least six months. Weekly is ideal for growth, biweekly is a strong middle ground and monthly is fine if it lets you maintain quality. Consistency matters more than frequency.",
   },
   {
     q: "How long does it take for a podcast to grow?",
@@ -1164,7 +1164,7 @@ const MistakesArticle = () => {
                   Beginner Podcast Launch Checklist
                 </h2>
                 <p className="text-foreground/70 mb-6">
-                  Print this, pin it above your desk, and tick each item before you publish your first episode.
+                  Print this, pin it above your desk and tick each item before you publish your first episode.
                 </p>
                 <ul className="grid sm:grid-cols-2 gap-3">
                   {checklist.map((item) => (
@@ -1395,7 +1395,7 @@ const brandSections: BrandSection[] = [
     short: "Brands Need Owned Media Channels",
     title: "Brands Need Owned Media Channels",
     paragraphs: [
-      "Building an entire brand on rented platforms is one of the riskiest strategies in modern marketing. Algorithms shift overnight, ad costs climb every quarter, and organic reach has been quietly declining for years. The brands that will compound an audience in 2026 are the ones that own a direct, durable line to their listeners.",
+      "Building an entire brand on rented platforms is one of the riskiest strategies in modern marketing. Algorithms shift overnight, ad costs climb every quarter and organic reach has been quietly declining for years. The brands that will compound an audience in 2026 are the ones that own a direct, durable line to their listeners.",
       "A podcast is one of the strongest owned media assets a brand can build. Episodes live on the brand's website, every major podcast app, YouTube and inside email — all distribution channels you actually control. That makes the show a long-term content asset, not a campaign.",
     ],
     bullets: [
@@ -1629,11 +1629,11 @@ const brandFaqs = [
   },
   {
     q: "How often should a brand publish podcast episodes?",
-    a: "Pick a cadence you can realistically sustain for at least six months. Weekly is ideal for growth, biweekly is a strong middle ground, and monthly is fine if it lets you protect quality. Consistency matters far more than frequency.",
+    a: "Pick a cadence you can realistically sustain for at least six months. Weekly is ideal for growth, biweekly is a strong middle ground and monthly is fine if it lets you protect quality. Consistency matters far more than frequency.",
   },
   {
     q: "Does a brand podcast need video?",
-    a: "Video isn't required, but it's increasingly valuable. A video version unlocks YouTube discovery, short-form clips for social, and added trust through visible faces. Many brands start audio-only and add video once the workflow is dialled in.",
+    a: "Video isn't required, but it's increasingly valuable. A video version unlocks YouTube discovery, short-form clips for social and added trust through visible faces. Many brands start audio-only and add video once the workflow is dialled in.",
   },
   {
     q: "How long should brand podcast episodes be?",
@@ -1764,7 +1764,7 @@ const BrandPodcastArticle = () => {
               {/* Intro */}
               <section className="mb-14">
                 <p className="text-base md:text-lg text-foreground/80 leading-relaxed first-letter:text-5xl first-letter:font-bold first-letter:text-primary first-letter:mr-1 first-letter:float-left first-letter:leading-none first-letter:mt-1">
-                  Attention is harder to earn than it has ever been, and audiences are more skeptical of polished
+                  Attention is harder to earn than it has ever been and audiences are more skeptical of polished
                   marketing than at any point in the last decade. Banner blindness has become content blindness
                   feeds full of ads, sponsored posts and algorithm optimized content that all blend together. In
                   that environment, brands that want to actually be remembered need a content channel that is
@@ -2155,7 +2155,7 @@ const BlogPost = () => {
       };
       setMeta(
         "description",
-        "Learn the most common podcasting mistakes beginners make, from poor audio quality to weak branding, inconsistent publishing, and lack of promotion."
+        "Learn the most common podcasting mistakes beginners make, from poor audio quality to weak branding, inconsistent publishing and lack of promotion."
       );
     } else if (post.slug === "how-to-set-up-your-first-podcast-studio") {
       document.title = "How to Set Up Your First Podcast Studio";
@@ -2170,7 +2170,7 @@ const BlogPost = () => {
       };
       setMeta(
         "description",
-        "Learn how to set up your first podcast studio with the right room, microphone, headphones, audio interface, recording software, acoustic treatment, and workflow."
+        "Learn how to set up your first podcast studio with the right room, microphone, headphones, audio interface, recording software, acoustic treatment and workflow."
       );
     } else if (post.slug === "why-every-brand-needs-a-podcast-in-2026") {
       document.title = "Why Every Brand Needs a Podcast in 2026";
@@ -2185,7 +2185,7 @@ const BlogPost = () => {
       };
       setMeta(
         "description",
-        "Discover why every brand needs a podcast in 2026 and how podcasting helps build trust, authority, audience relationships, thought leadership, and long-term brand growth."
+        "Discover why every brand needs a podcast in 2026 and how podcasting helps build trust, authority, audience relationships, thought leadership and long-term brand growth."
       );
     } else {
       document.title = post.title;
