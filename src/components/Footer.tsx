@@ -28,7 +28,7 @@ const Footer = () => {
               </a>
               <div className="flex items-start gap-3 text-muted-foreground text-sm font-body">
                 <MapPin className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                <span>A-1/106, Sector-8, Rohini, Delhi-110085<br />Near Rohini East & Pitampura Metro</span>
+                <span>A-1/106, Sector-8, Rohini, Delhi-110085<br />Near Rohini East & Pitampura Metro Station</span>
               </div>
             </div>
           </div>
