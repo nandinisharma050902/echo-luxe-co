@@ -25,7 +25,7 @@ const AboutSection = () => {
             Full Stack Podcast Production
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto font-body font-light">
-            Looking for a full-stack, result-driven podcast setup? Welcome to Banter Studio, we handle everything so you can focus on your fame.
+            Looking for a full-stack, result-driven podcast setup? Welcome to our studio, we handle everything so you can focus on your fame.
           </p>
         </motion.div>
 

@@ -33,7 +33,7 @@ const steps = [
 ];
 
 const testimonials = [
-  { name: "Ashish Majumdar", role: "CHRO @ Emirates Hospitals Group", image: arjunImg, text: "Banter Studio completely elevated our production quality. The lighting and sound are top-notch!", rating: 5 },
+  { name: "Ashish Majumdar", role: "CHRO @ Emirates Hospitals Group", image: arjunImg, text: "The team completely elevated our production quality. The lighting and sound are top-notch!", rating: 5 },
   { name: "Sameer Wadhawan", role: "Founder & CEO @ People Portfolio LLP", image: priyaImg, text: "The team handles everything from concept to distribution. A true full-stack studio experience.", rating: 5 },
   { name: "Srinivasa Rao Aluri", role: "Deeptech Investor, Chairman @ QNu", image: rohitImg, text: "Six studios with unique vibes, we always find the perfect setup for every episode.", rating: 5 },
 ];
