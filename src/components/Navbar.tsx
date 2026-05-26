@@ -76,7 +76,7 @@ const Navbar = () => {
         <a href="#hero" className="flex items-center group">
           <img
             src={logo}
-            alt="Banter Studio"
+            alt="​"
             width={200}
             height={72}
             className="h-14 md:h-16 lg:h-[72px] w-auto transition-transform duration-200 hover:scale-[1.04]"
